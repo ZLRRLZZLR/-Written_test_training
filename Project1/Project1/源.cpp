@@ -1,0 +1,158 @@
+#include<iostream>
+#include<cmath>
+#include<vector>
+
+using namespace std;
+
+//删除相邻数字的最大分数
+//#include <iostream>
+//#include<vector>
+//#include<cmath>
+//
+//using namespace std;
+//
+//int main() {
+//    int hash[10010] = { 0 };
+//    int n = 0;
+//    cin >> n;
+//    for (int i = 0; i < n; i++)
+//    {
+//        int tmp = 0;
+//        cin >> tmp;
+//        hash[tmp] += tmp;
+//    }
+//
+//    vector<int> f(10010, 0);
+//    vector<int> g(10010, 0);
+//
+//    int ret = 0;
+//    for (int i = 1; i < 10010; i++)
+//    {
+//        f[i] = hash[i] + g[i - 1];
+//        g[i] = max(f[i - 1], g[i - 1]);
+//        ret = max(ret, max(f[i], g[i]));
+//    }
+//    cout << ret << endl;
+//    return 0;
+//}
+// 64 位输出请用 printf("%lld")
+//组队竞赛
+//#include <iostream>
+//#include<vector>
+//#include<algorithm>
+//using namespace std;
+//
+//int main() {
+//    int n = 0;
+//    cin >> n;
+//    vector<int> arr(n * 3, 0);
+//    for (auto& i : arr) {
+//        cin >> i;
+//    }
+//    sort(arr.begin(), arr.end());
+//    long long ret = 0;
+//    for (int i = 3 * n - 2; n--; i -= 2)
+//    {
+//        ret += arr[i];
+//    }
+//
+//    cout << ret << endl;
+//    return 0;
+//}
+//// 64 位输出请用 printf("%lld")
+
+
+//#include<iostream>
+//#include<string>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    int n = 0, maxcount = 0;
+//    char maxval;
+//    cin >> n;
+//    string s;
+//    cin >> s;
+//    int hash[26] = { 0 };
+//    for (auto i : s)
+//    {
+//        hash[i - 'a']++;
+//        if (hash[i - 'a'] > maxcount)
+//        {
+//            maxval = i;
+//            maxcount = hash[i - 'a'];
+//        }
+//    }
+//
+//    if (maxcount > (n + 1) / 2)
+//    {
+//        cout << "no" << endl;
+//        return 0;
+//    }
+//
+//    string ret(n, ' ');
+//
+//    int i = 0;
+//    for (; hash[maxval - 'a'] > 0; i += 2)
+//    {
+//        ret[i] = maxval;
+//        hash[maxval - 'a']--;
+//    }
+//
+//    for (int j = 0; j < 26; j++)
+//    {
+//        while (hash[j] && j + 'a' != maxval)
+//        {
+//            if (i >= n) i = 1;
+//            ret[i] = j + 'a';
+//            i += 2;
+//            hash[j]--;
+//        }
+//    }
+//    cout << "yes" << endl;
+//    cout << ret << endl;
+//
+//    return 0;
+//}
+
+//class Solution {
+//public:
+//    /**
+//     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//     *
+//     *
+//     * @param arr int整型vector the array
+//     * @return int整型
+//     */
+//    int maxLength(vector<int>& arr) {
+//        int n = arr.size();
+//        int ret = 0;
+//        int hash[100001] = { 0 };
+//        int sum = 0;
+//        for (int left = 0, right = 0; right < n; right++)
+//        {
+//            ret = max(ret, sum);
+//            if (hash[arr[right]] > 0)
+//            {
+//                left = right;
+//                memset(hash, sizeof(hash), sizeof(int));
+//                sum = 1;
+//            }
+//            else
+//            {
+//                hash[arr[right]]++;
+//                sum++;
+//            }
+//        }
+//        ret = max(ret, sum);
+//        return ret;
+//    }
+//};
+//
+//int main()
+//{
+//    vector<int> v = { 1,2,3,4,1,5,6,7,8,1 };
+//    Solution().maxLength(v);
+//    return 0;
+//}
