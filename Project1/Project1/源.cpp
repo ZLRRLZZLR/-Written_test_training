@@ -4,51 +4,63 @@
 
 using namespace std;
 
-
-#include<iostream>
-#include<unordered_map>
-#include<vector>
-#include<queue>
-
-using namespace std;
-
-int main()
-{
-    int n = 0, m = 0;
-    cin >> n >> m;
-    unordered_map<int, vector<int>> hash;
-    unordered_map<int, int> in;
-    for (int i = 0; i < m; i++)
-    {
-        int a = 0, b = 0;
-        cin >> a >> b;
-        in[a];
-        hash[a].push_back(b);
-        in[b]++;
-    }
-
-    queue<int> q;
-    for (auto& [a, b] : in)
-    {
-        if (in[a] == 0)
-        {
-            q.push(a);
-        }
-    }
-
-    while (q.size())
-    {
-        int front = q.front();
-        q.pop();
-        cout << front << " ";
-        for (auto i : hash[front])
-        {
-            if (--in[i] == 0) q.push(i);
-        }
-    }
-
-    return 0;
-}
+//Ä£°æÍØÆËÅÅÐò
+//#include<iostream>
+//#include<unordered_map>
+//#include<vector>
+//#include<queue>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    int n = 0, m = 0;
+//    cin >> n >> m;
+//    unordered_map<int, vector<int>> hash;
+//    unordered_map<int, int> in;
+//    for (int i = 0; i < m; i++)
+//    {
+//        int a = 0, b = 0;
+//        cin >> a >> b;
+//        in[a];
+//        hash[a].push_back(b);
+//        in[b]++;
+//    }
+//
+//    vector<int> ret;
+//    queue<int> q;
+//    for (int i = 1; i <= n; i++)
+//    {
+//        if (in[i] == 0) q.push(i);
+//    }
+//
+//    while (q.size())
+//    {
+//        int front = q.front();
+//        q.pop();
+//        ret.push_back(front);
+//        for (auto i : hash[front])
+//        {
+//            if (--in[i] == 0) q.push(i);
+//        }
+//    }
+//
+//    if (ret.size() == n)
+//    {
+//        int i = 0;
+//        for (; i < ret.size() - 1; i++)
+//        {
+//            cout << ret[i] << " ";
+//        }
+//        cout << ret[i];
+//    }
+//    else
+//    {
+//        cout << -1 << endl;
+//    }
+//
+//    return 0;
+//}
 
 //#include<iostream>
 //
