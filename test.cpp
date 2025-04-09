@@ -1,5 +1,34 @@
 
-
+class Solution {
+    public:
+        /**
+         * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+         *
+         * 
+         * @param str string字符串 原串
+         * @param arg char字符型vector 需替换数组
+         * @return string字符串
+         */
+        string formatString(string str, vector<char>& arg) {
+            string s;
+            int index = 0;
+            for(auto ch : str)
+            {
+                if(s.size() && s.back() == '%' && ch == 's')
+                {
+                    s.pop_back();
+                    s.push_back(arg[index++]);
+                }
+                else s.push_back(ch);
+            }
+            int n = arg.size();
+            for(;index < n;index++)
+            {
+                s += arg[index];
+            }
+            return s;
+        }
+    };
 
 #include<iostream>
 #include<vector>

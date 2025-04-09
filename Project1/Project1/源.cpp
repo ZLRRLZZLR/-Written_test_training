@@ -4,6 +4,94 @@
 
 using namespace std;
 
+
+#include<iostream>
+#include<unordered_map>
+#include<vector>
+#include<queue>
+
+using namespace std;
+
+int main()
+{
+    int n = 0, m = 0;
+    cin >> n >> m;
+    unordered_map<int, vector<int>> hash;
+    unordered_map<int, int> in;
+    for (int i = 0; i < m; i++)
+    {
+        int a = 0, b = 0;
+        cin >> a >> b;
+        in[a];
+        hash[a].push_back(b);
+        in[b]++;
+    }
+
+    queue<int> q;
+    for (auto& [a, b] : in)
+    {
+        if (in[a] == 0)
+        {
+            q.push(a);
+        }
+    }
+
+    while (q.size())
+    {
+        int front = q.front();
+        q.pop();
+        cout << front << " ";
+        for (auto i : hash[front])
+        {
+            if (--in[i] == 0) q.push(i);
+        }
+    }
+
+    return 0;
+}
+
+//#include<iostream>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    int hash[100100] = { 0 };
+//    int n = 0, m = 0;
+//    cin >> n >> m;
+//    int maxval = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        int tmp = 0;
+//        cin >> tmp;
+//        if (++hash[tmp] > maxval)
+//            maxval = hash[tmp];
+//    }
+//
+//
+//    for (int i = 1; i <= maxval; i++)
+//    {
+//        int ret = 0;
+//        for (int j = 0; j < 100100; j++)
+//        {
+//            if (hash[j] != 0)
+//            {
+//                ret += (hash[j] / i) + (hash[j] % i == 0 ? 0 : 1);
+//            }
+//        }
+//        if (ret <= m)
+//        {
+//            cout << i << endl;
+//            return 0;
+//        }
+//    }
+//
+//    cout << -1 << endl;
+//    return 0;
+//}
+
+
+
 //删除相邻数字的最大分数
 //#include <iostream>
 //#include<vector>
