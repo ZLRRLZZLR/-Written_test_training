@@ -1,4 +1,118 @@
 
+#include<iostream>
+#include<vector>
+#include<map>
+#include<algorithm>
+using namespace std;
+
+int main()
+{
+    int n = 0,k = 0;
+    cin >> n >> k;
+
+    vector<pair<double,int>> arr;
+    for(int i = 1;i <= n;i++)
+    {
+        int a = 0,b = 0;
+       cin >> a >> b;
+       if(i >= k)
+       {
+        double num = a / b;
+        arr.push_back({num,i});
+        }
+   }
+
+    sort(arr.begin(),arr.end(),[](pair<double,int> p1,pair<double,int> p2)
+    {
+        if(p1.first == p2.first) return p1.second < p2.second;
+        else return p1.first > p2.first;
+    });
+
+    cout << arr[0].second << endl;
+    return 0;
+}
+
+#include<iostream>
+#include<stdio.h>
+#include<vector>
+
+using namespace std;
+
+int main()
+{
+    int n = 0,m = 0;
+    scanf("%d%d",&n,&m);
+    vector<vector<long long>> arr(n,vector<long long>(m,0));
+
+    vector<long long> ROWS(n,0);
+    vector<long long> LOWS(m,0);
+
+
+    for(int i = 0 ; i < n ; i++)
+    {
+        long long tmp = 0;
+        for(int j = 0 ; j < m ; j++)
+        {
+            scanf("%ld",&arr[i][j]);
+            tmp += arr[i][j];
+        }
+        ROWS[i] = tmp;
+    }
+
+    for(int j = 0 ; j < m ; j++)
+    {
+        long long tmp = 0;
+        for(int i = 0 ; i < n ; i++)
+        {
+            tmp += arr[i][j];
+        }
+        LOWS[j] = tmp;
+    }
+
+    for(int i = 0;i < n;i++)
+    {
+        for(int j = 0;j < m;j++)
+        {
+            long long num = ROWS[i] + LOWS[j] - arr[i][j];
+            printf("%ld ",num);
+        }
+        printf("\n");
+    }
+
+
+    return 0;
+}
+
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+    int n = 0;
+    cin >> n;
+    string s;
+    while(n)
+    {
+        if(n % 10 % 2 == 0) s += '0';
+        else s += '1';
+        n /= 10;
+    }
+    while(s.size() > 1 && s.back() == '0')
+    {
+        s.pop_back();
+    }
+    int m = s.size() - 1;
+    for(;m >= 0;m--)
+    {
+        cout << s[m];
+    }
+
+    return 0;
+}
+
+
 class Solution {
     public:
         /**

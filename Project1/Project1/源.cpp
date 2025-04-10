@@ -4,6 +4,61 @@
 
 using namespace std;
 
+#include <iostream>
+#include<vector>
+#include<cmath>
+using namespace std;
+
+bool check(int n)
+{
+    vector<int> arr;
+    while (n)
+    {
+        arr.push_back(n % 10);
+        n /= 10;
+    }
+    int num = arr.size();
+    for (int left = 0, right = 1; right < num; right++)
+    {
+        int tmp = arr[left] * 10 + arr[right];
+        if (tmp > 10)
+        {
+            int flag = 1;
+            for (int i = 2; i <= sqrt(tmp); i++)
+            {
+                if (tmp % i == 0) flag = 0;
+            }
+            if (flag) return true;
+        }
+        tmp = arr[right * 10] + arr[left];
+        if (tmp > 10)
+        {
+            int flag = 1;
+            for (int i = 2; i <= sqrt(tmp); i++)
+            {
+                if (tmp % i == 0) flag = 0;
+            }
+            if (flag) return true;
+        }
+    }
+    return false;
+}
+
+int main()
+{
+    int a = 0, b = 0;
+    cin >> a >> b;
+    int ret = 0;
+    for (int i = a; i <= b; i++)
+    {
+        if (check(i)) ret++;
+    }
+    cout << ret << endl;
+    return 0;
+}
+// 64 Î»Êä³öÇëÓÃ printf("%lld")
+
+
 //Ä£°æÍØÆËÅÅÐò
 //#include<iostream>
 //#include<unordered_map>
