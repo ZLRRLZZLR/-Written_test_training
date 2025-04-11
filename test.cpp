@@ -1,3 +1,45 @@
+#include <string>
+class Solution {
+public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     * 
+     * @param param string字符串 
+     * @return string字符串
+     */
+    string compressString(string param) {
+        char flag = param[0];
+        long long num = 0;
+        string ret;
+        for(auto ch : param)
+        {
+            if(ch == flag)
+            {
+                num++;
+            }
+            else
+            {
+                ret += flag;
+                if(num > 1)
+                {
+                    ret += to_string(num);
+                }
+                num = 1;
+                flag = ch;
+            }
+        }
+
+        ret += flag;
+        if(num > 1)
+        {
+            ret += to_string(num);
+        }
+
+        return ret;
+    }
+};
+
 
 #include<iostream>
 #include<vector>
