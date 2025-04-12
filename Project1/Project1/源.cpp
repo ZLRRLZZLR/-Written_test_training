@@ -4,59 +4,92 @@
 
 using namespace std;
 
-#include <iostream>
-#include<vector>
-#include<cmath>
-using namespace std;
 
-bool check(int n)
-{
-    vector<int> arr;
-    while (n)
-    {
-        arr.push_back(n % 10);
-        n /= 10;
-    }
-    int num = arr.size();
-    for (int left = 0, right = 1; right < num; right++)
-    {
-        int tmp = arr[left] * 10 + arr[right];
-        if (tmp > 10)
-        {
-            int flag = 1;
-            for (int i = 2; i <= sqrt(tmp); i++)
-            {
-                if (tmp % i == 0) flag = 0;
-            }
-            if (flag) return true;
-        }
-        tmp = arr[right * 10] + arr[left];
-        if (tmp > 10)
-        {
-            int flag = 1;
-            for (int i = 2; i <= sqrt(tmp); i++)
-            {
-                if (tmp % i == 0) flag = 0;
-            }
-            if (flag) return true;
-        }
-    }
-    return false;
-}
 
-int main()
-{
-    int a = 0, b = 0;
-    cin >> a >> b;
-    int ret = 0;
-    for (int i = a; i <= b; i++)
-    {
-        if (check(i)) ret++;
-    }
-    cout << ret << endl;
-    return 0;
-}
+//#include <iostream>
+//using namespace std;
+//
+//int main()
+//{
+//    string s;
+//    int k = 0;
+//    cin >> s >> k;
+//    double count = 0;
+//    int n = s.size();
+//    double sum = 0;
+//    int begin = 0;
+//    for (int left = 0, right = 0; right < n; right++)
+//    {
+//        if (s[right] == 'C' || s[right] == 'G') count += 0.5;
+//        if (right - left + 1 > k)
+//        {
+//            if (s[left] == 'C' || s[left] == 'G') count -= 0.5;
+//            left++;
+//        }
+//        if (right - left + 1 == k && count > sum)
+//        {
+//            begin = left;
+//            sum = count;
+//        }
+//    }
+//    cout << s.substr(begin, k) << endl;
+//}
 // 64 位输出请用 printf("%lld")
+// 64 位输出请用 printf("%lld")
+//
+//#include <iostream>
+//#include<vector>
+//#include<cmath>
+//using namespace std;
+//
+//bool check(int n)
+//{
+//    vector<int> arr;
+//    while (n)
+//    {
+//        arr.push_back(n % 10);
+//        n /= 10;
+//    }
+//    int num = arr.size();
+//    for (int left = 0, right = 1; right < num; right++)
+//    {
+//        int tmp = arr[left] * 10 + arr[right];
+//        if (tmp > 10)
+//        {
+//            int flag = 1;
+//            for (int i = 2; i <= sqrt(tmp); i++)
+//            {
+//                if (tmp % i == 0) flag = 0;
+//            }
+//            if (flag) return true;
+//        }
+//        tmp = arr[right * 10] + arr[left];
+//        if (tmp > 10)
+//        {
+//            int flag = 1;
+//            for (int i = 2; i <= sqrt(tmp); i++)
+//            {
+//                if (tmp % i == 0) flag = 0;
+//            }
+//            if (flag) return true;
+//        }
+//    }
+//    return false;
+//}
+//
+//int main()
+//{
+//    int a = 0, b = 0;
+//    cin >> a >> b;
+//    int ret = 0;
+//    for (int i = a; i <= b; i++)
+//    {
+//        if (check(i)) ret++;
+//    }
+//    cout << ret << endl;
+//    return 0;
+//}
+//// 64 位输出请用 printf("%lld")
 
 
 //模版拓扑排序
