@@ -5,7 +5,153 @@
 using namespace std;
 
 
+//#include<iostream>
+//#include<algorithm>
+//
+//using namespace std;
+//
+//typedef pair<int, int> PII;
+//PII arr[200010];
+//int n = 0, k = 0;
+//
+//int main()
+//{
+//
+//    cin >> n >> k;
+//    for (int i = 0; i < n; i++) cin >> arr[i].first;
+//    for (int i = 0; i < n; i++) cin >> arr[i].second;
+//
+//    sort(arr, arr + n, [](PII& a, PII& b)
+//        {
+//            if (a.second != b.second) return a.second > b.second;
+//            return a.first < b.first;
+//        });
+//
+//    long long ret1 = 0, ret2 = 0;
+//    for (int i = 0; i < k; i++)
+//    {
+//        ret1 += arr[i].first;
+//        ret2 += arr[i].second;
+//    }
+//    cout << ret1 << " " << ret2 << endl;
+//    return 0;
+//}
 
+//#include<iostream>
+//#include<vector>
+//#include<map>
+//#include<cmath>
+//
+//using namespace std;
+
+//int main()
+//{
+//    long long n = 0, k = 0;
+//    cin >> n >> k;
+//    vector<long long> a(n, 0);
+//    vector<long long> b(n, 0);
+//    long long tmp = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        cin >> tmp;
+//        if (i - 1 < 0) a[i] = tmp;
+//        else a[i] = a[i - 1] + tmp;
+//    }
+//    tmp = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        cin >> tmp;
+//        if (i - 1 < 0) b[i] = tmp;
+//        else b[i] = b[i - 1] + tmp;
+//    }
+//
+//    long long begin = 0, max1 = 0, max2 = 0, num1 = 0, num2 = 0;
+//    for (long long i = 0; i + k - 1 < n; i++)
+//    {
+//        if (i - 1 < 0)
+//        {
+//            num1 = a[i + k - 1];
+//            num2 = b[i + k - 1];
+//        }
+//        else
+//        {
+//            num1 = a[i + k - 1] - a[i - 1];
+//            num2 = b[i + k - 1] - b[i - 1];
+//        }
+//
+//        if (num1 > max1)
+//        {
+//            max1 = num1;
+//            max2 = num2;
+//            begin = i;
+//        }
+//        else if (num1 == max1 && num2 < max2)
+//        {
+//            max1 = num1;
+//            max2 = num2;
+//            begin = i;
+//        }
+//        else if (num1 == max1 && num2 == max2)
+//        {
+//            begin = min(begin, i);
+//        }
+//    }
+//    cout << begin + 1 << endl;
+//    return 0;
+//}
+
+//#include<iostream>
+//#include<vector>
+//#include<map>
+//#include<cmath>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    int n = 0, k = 0;
+//    cin >> n >> k;
+//    vector<long long> a(n, 0);
+//    vector<long long> b(n, 0);
+//    for (int i = 0; i < n; i++)
+//    {
+//        cin >> a[i];
+//    }
+//    for (int i = 0; i < n; i++)
+//    {
+//        cin >> b[i];
+//    }
+//    long long begin = 0, max1 = 0, max2 = 0, num1 = 0, num2 = 0;
+//    for (long long left = 0, right = 0; right < n; right++)
+//    {
+//        num1 += a[right];
+//        num2 += b[right];
+//        if (right - left + 1 > k)
+//        {
+//            num1 -= a[left];
+//            num2 -= b[left];
+//            left++;
+//        }
+        //if (num1 > max1)
+        //{
+        //    max1 = num1;
+        //    max2 = num2;
+        //    begin = left;
+        //}
+        //else if (num1 == max1 && num2 < max2)
+        //{
+        //    max1 = num1;
+        //    max2 = num2;
+        //    begin = left;
+        //}
+        //else if (num1 == max1 && num2 == max2)
+        //{
+        //    begin = min(begin, left);
+        //}
+//    }
+//    cout << begin + 1 << endl;
+//    return 0;
+//}
 //#include <iostream>
 //using namespace std;
 //

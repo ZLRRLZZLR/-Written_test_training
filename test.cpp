@@ -1,3 +1,59 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+    long long t = 0;
+    cin >> t;
+    while(t--)
+    {
+        long long n = 0;
+        string s;
+        cin >> n;
+        for(int i = 0;i < n;i++)
+        {
+            string tmp;
+            cin >> tmp;
+            s += tmp[0];
+        }
+
+        if(n == 1)
+        {
+            cout << "Yes" << endl;
+            continue;
+        }
+
+        int m = n - 1,left = 0,right = 0;
+        if(n % 2 == 0)
+        {
+            left = m / 2;
+            right = left + 1;
+        }
+        else
+        {
+            left = right = m / 2;
+        }
+        
+        int flag = 1;
+        while(left >= 0 && right < n)
+        {
+            if(s[left] != s[right])
+            {
+                cout << "No" << endl;
+                flag = 0;
+                break;
+            }
+            left--;
+            right++;
+        }
+        if(flag) cout << "Yes" << endl;
+    }
+    return 0;
+}
+
+
 #include <string>
 class Solution {
 public:
