@@ -4,6 +4,120 @@
 
 using namespace std;
 
+//#include<iostream>
+//#include<vector>
+//#include<string>
+//#include<unordered_map>
+//using namespace std;
+//
+//bool check(unordered_map<char, int>& hash1, unordered_map<char, int>& hash2, vector<string>& v, int left, int right)
+//{
+//    for (auto& [a, b] : hash1)
+//    {
+//        if (hash2.count(a))
+//        {
+//            return true;
+//        }
+//    }
+//    return false;
+//}
+//
+//int main()
+//{
+//    int n = 0;
+//    cin >> n;
+//    while (n--)
+//    {
+//        vector<string> v;
+//        int num = 0;
+//        cin >> num;
+//        while (num--)
+//        {
+//            string s;
+//            cin >> s;
+//            v.push_back(s);
+//        }
+//        int k = v.size();
+//        int left = 0, right = k - 1;
+//        while (left < right)
+//        {
+//            unordered_map<char, int> hash1;
+//            unordered_map<char, int> hash2;
+//            for (auto ch : v[left]) hash1[ch]++;
+//            for (auto ch : v[right]) hash2[ch]++;
+//            if (check(hash1, hash2, v, left, right))
+//            {
+//                left++;
+//                right--;
+//            }
+//            else
+//            {
+//                break;
+//            }
+//        }
+//        if (left >= right)
+//            cout << "Yes" << endl;
+//        else
+//            cout << "No" << endl;
+//    }
+//
+//    return 0;
+//}
+
+//#include <iostream>
+//using namespace std;
+//
+//int gcd(int a, int b)
+//{
+//    if (b == 0) return a;
+//    return gcd(b, a % b);
+//}
+//
+//
+//int main()
+//{
+//
+//    int n = 0, a = 0;
+//    while (cin >> n >> a)
+//    {
+//        for (int i = 0; i < n; i++)
+//        {
+//            int tmp = 0;
+//            cin >> tmp;
+//            if (tmp <= a) a += tmp;
+//            else a += gcd(a, tmp);
+//        }
+//
+//        cout << a << endl;
+//    }
+//    return 0;
+//}
+// 64 位输出请用 printf("%lld")
+//class Solution {
+//public:
+//    /**
+//     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//     *
+//     * 计算01背包问题的结果
+//     * @param V int整型 背包的体积
+//     * @param n int整型 物品的个数
+//     * @param vw int整型vector<vector<>> 第一维度为n,第二维度为2的二维数组,vw[i][0],vw[i][1]分别描述i+1个物品的vi,wi
+//     * @return int整型
+//     */
+//    int knapsack(int V, int n, vector<vector<int> >& vw) {
+//        int num = vw.size();
+//        vector<int> dp(V + 1, 0);
+//        for (int i = 1; i <= n; i++)
+//        {
+//            for (int j = V; j >= vw[i - 1][0]; j--)
+//            {
+//                dp[j] = max(dp[j], dp[j - vw[i - 1][0]] + vw[i - 1][1]);
+//            }
+//        }
+//
+//        return dp[V];
+//    }
+//};
 
 //#include<iostream>
 //#include<algorithm>
