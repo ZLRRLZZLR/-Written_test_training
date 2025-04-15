@@ -4,6 +4,114 @@
 
 using namespace std;
 
+
+//#include<iostream>
+//#include<string>
+//
+//using namespace std;
+//
+//bool check(string s)
+//{
+//    int n = s.size();
+//    int left = 0, right = n - 1;
+//    while (left < right)
+//    {
+//        if (s[left] != s[right]) return false;
+//        else
+//        {
+//            left++;
+//            right--;
+//        }
+//    }
+//    return true;
+//}
+//
+//int main()
+//{
+//    string s;
+//    cin >> s;
+//
+//    char c = s[0];
+//    int flag = 1;
+//    for (auto ch : s)
+//    {
+//        if (c != ch)
+//        {
+//            flag = 0;
+//            break;
+//        }
+//    }
+//    if (flag == 1)
+//    {
+//        cout << 0 << endl;
+//    }
+//    else
+//    {
+//        if (check(s))
+//        {
+//            cout << s.size() - 1 << endl;
+//        }
+//        else
+//        {
+//            cout << s.size() << endl;
+//        }
+//    }
+//    return 0;
+//}
+//#include<iostream>
+//#include<vector>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    int n = 0;
+//    cin >> n;
+//    vector<int> arr(n);
+//
+//    for (auto& i : arr) cin >> i;
+//    vector<int> dp(n + 1, 0);
+//
+//    int ret = -0x3f3f3f3f;
+//    for (int i = 1; i <= n; i++)
+//    {
+//        dp[i] = max(dp[i - 1], 0) + arr[i - 1];
+//
+//        ret = max(dp[i], ret);
+//    }
+//
+//    cout << ret << endl;
+//    return 0;
+//}
+//#include<iostream>
+//#include<cmath>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    long long a = 0, h = 0, b = 0, k = 0;
+//    cin >> a >> h >> b >> k;
+//    long long ret = 0;
+//    long long n = min(h / b, k / a);
+//    ret = n * (a + b);
+//
+//    h -= n * b;
+//    k -= n * a;
+//
+//
+//    if (h > 0 && k > 0)
+//    {
+//        h -= b;
+//        k -= a;
+//        ret += a + b;
+//    }
+//    if (h > 0) ret += a * 10;
+//    if (k > 0) ret += b * 10;
+//
+//    cout << ret << endl;
+//    return 0;
+//}
 //#include<iostream>
 //#include<vector>
 //#include<string>
