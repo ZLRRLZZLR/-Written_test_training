@@ -4,6 +4,108 @@
 
 using namespace std;
 
+
+//#include <iostream>
+//#include<vector>
+//using namespace std;
+//
+//int main()
+//{
+//    int n = 0;
+//    cin >> n;
+//    vector<int> dp(n, 0);
+//    int maxval = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        cin >> dp[i];
+//        maxval = max(dp[i], maxval);
+//    }
+//    for (auto i : dp)
+//    {
+//        if (maxval % i == 0)
+//        {
+//            int x = maxval / i;
+//            if (x & (x - 1) != 0)
+//            {
+//                cout << "NO" << endl;
+//                return 0;
+//            }
+//        }
+//        else
+//        {
+//            cout << "NO" << endl;
+//            return 0;
+//        }
+//    }
+//    cout << "YES" << endl;
+//    return 0;
+//}
+//// 64 位输出请用 printf("%lld")
+
+//#include <iostream>
+//#include<string>
+//using namespace std;
+//
+//#include<iostream>
+//#include<vector>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    int n = 0;
+//    cin >> n;
+//    vector<long long> arr(n, 0);
+//    for (int i = 0; i < n; i++)
+//    {
+//        cin >> arr[i];
+//    }
+//
+//    long long minval = arr[0];
+//    for (int i = 0; i < n; i++)
+//    {
+//        minval = min(minval, arr[i]);
+//    }
+//
+//    for (int i = 0; i < n; i++)
+//    {
+//        if (arr[i] != minval && arr[i] != (minval << 1))
+//        {
+//            cout << "NO" << endl;
+//            return 0;
+//        }
+//    }
+//    cout << "YES" << endl;
+//
+//    return 0;
+//}
+
+
+//int main()
+//{
+//    string A, B;
+//    cin >> A >> B;
+//    int n = A.size();
+//    int m = B.size();
+//
+//    int ret = 0x3f3f3f3f;
+//    for (int i = 0; i <= m - n; i++)
+//    {
+//        int tmp = 0;
+//        int left = i;
+//        for (int j = 0; j < n; j++)
+//        {
+//            if (A[j] != B[left]) tmp++;
+//            left++;
+//        }
+//        ret = min(tmp, ret);
+//    }
+//
+//    cout << ret << endl;
+//}
+// 64 位输出请用 printf("%lld")
+
+
 //#include <iostream>
 //#include<string>
 //#include<vector>

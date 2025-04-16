@@ -1,4 +1,175 @@
 #include<iostream>
+#include<vector>
+#include<algorithm>
+
+using namespace std;
+
+int main()
+{
+    int V = 0,n = 0;
+    cin >> V >> n;
+    vector<int> v;
+    int cur = n;
+    while(cur--)
+    {
+        int tmp = 0;
+        cin >> tmp;
+        v.push_back(tmp);
+    }
+    sort(v.begin(),v.end());
+    for(int left = 0,right = n - 1;left <= right;)
+    {
+        if(V >= v[right]) V -= v[right--];
+        else if(V >= v[left]) V -= v[left++];
+        else break;
+    }
+
+    cout << V << endl;
+    return 0;
+}
+
+
+
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+int main()
+{
+    int n = 0;
+    cin >> n;
+    vector<long long> arr(n,0);
+    for(int i = 0;i < n;i++)
+    {
+        cin >> arr[i];
+    }
+
+    long long minval = arr[0];
+    for(int i = 0;i < n;i++)
+    {
+        minval = min(minval,arr[i]);
+    }
+
+    for(int i = 0;i < n;i++)
+    {
+        if(arr[i] != minval && arr[i] != (minval << 1))
+        {
+            cout << "NO" << endl;
+            return 0;
+        }
+    }
+    cout << "YES" << endl;
+
+    return 0;
+}
+
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+    string A , B;
+    cin >> B >> A;
+    int n = A.size(),m = B.size();
+    int hash[26] = {0};
+    for(auto ch : A)
+    {
+        hash[ch - 'a']++;
+    }
+    for(auto ch : B)
+    {
+        hash[ch - 'a']--;
+    }
+    int gap = n - m;
+    for(int i = 0;i < 26;i++)
+    {
+        if(hash[i] < 0) hash[i] = 0;
+        while(hash[i] > 0 && gap > 0)
+        {
+            hash[i]--;
+            gap--;
+        }
+        if(gap == 0) break;
+    }
+    int ret = 0;
+    for(int i = 0;i < 26;i++)
+    {
+        if(hash[i] > 0) ret++;
+    }
+
+    cout << ret << endl;
+    return 0;
+}
+
+
+
+
+
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+
+using namespace std;
+
+int main()
+{
+    int V = 0,n = 0;
+    cin >> V >> n;
+    vector<int> v;
+    int cur = n;
+    while(cur--)
+    {
+        int tmp = 0;
+        cin >> tmp;
+        v.push_back(tmp);
+    }
+    sort(v.begin(),v.end());
+    for(int left = 0,right = n - 1;left <= right;)
+    {
+        if(V >= v[right]) V -= v[right--];
+        else if(V >= v[left]) V -= v[left++];
+        else break;
+    }
+
+    cout << V << endl;
+    return 0;
+}
+
+
+#include<iostream>
+#include<vector>
+#include<cmath>
+
+using namespace std;
+
+int main()
+{
+    long long n = 0;
+    cin >> n;
+
+    vector<double> arr(n);
+    for(auto& i : arr) cin >> i;
+
+    vector<double> dp(n + 1,0);
+    double ret = -0x3f3f3f3f;
+    for(int i = 1;i <= n;i++)
+    {
+        if(arr[i - 1] < 0) dp[i] = arr[i - 1];
+        else dp[i] = max(arr[i - 1],dp[i - 1] + arr[i - 1]);
+        ret = max(ret,dp[i]);
+    }
+
+    cout << (long long)ret << endl;
+    return 0;
+}
+
+
+
+#include<iostream>
 #include<string>
 
 using namespace std;
