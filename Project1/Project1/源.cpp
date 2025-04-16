@@ -4,7 +4,116 @@
 
 using namespace std;
 
+//#include <iostream>
+//#include<string>
+//#include<vector>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    string s;
+//    cin >> s;
+//
+//    int n = s.size();
+//    vector<vector<int>> dp(n + 1, vector<int>(n + 1.0));
+//
+//    for (int i = n - 1; i >= 0; i--)
+//    {
+//        dp[i][i] = 1;
+//        for (int j = i + 1; j < n; j++)
+//        {
+//            if (s[i] == s[j]) dp[i][j] = dp[i + 1][j - 1] + 2;
+//            else dp[i][j] = max(dp[i][j - 1], dp[i + 1][j]);
+//        }
+//    }
+//
+//    cout << dp[0][n - 1] << endl;
+//    return 0;
+//}
+//// 64 位输出请用 printf("%lld")
 
+//#include <iostream>
+//#include<string>
+//#include<vector>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    string s;
+//    cin >> s;
+//
+//    int n = s.size();
+//    vector<vector<int>> dp(n + 1, vector<int>(n + 1.0));
+//    dp[0][0] = 1;
+//    dp[n - 1][n - 1] = 1;
+//
+//    for (int i = n - 2; i >= 0; i--)
+//    {
+//        for (int j = 1; j <= n - 1; j++)
+//        {
+//            if (i == j) dp[i][j] = 1;
+//            if (i < j)
+//            {
+//                if (s[i] == s[j]) dp[i][j] = dp[i + 1][j - 1] + 2;
+//                else dp[i][j] = max(dp[i][j - 1], dp[i + 1][j]);
+//            }
+//        }
+//    }
+//
+//    cout << dp[0][n - 1] << endl;
+//    return 0;
+//}
+//// 64 位输出请用 printf("%lld")
+
+//#include <iostream>
+//using namespace std;
+//int n;
+//int main()
+//{
+//    cin >> n;
+//    int left = 1, right = n;
+//    while (left <= right)
+//    {
+//        cout << left << " ";
+//        left++;
+//        if (left <= right)
+//        {
+//            cout << right << " ";
+//            right--;
+//        }
+//    }
+//    return 0;
+//}
+
+//#include<iostream>
+//#include<vector>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    int n = 0;
+//    cin >> n;
+//
+//    int left = 1, right = n;
+//    vector<int> ret;
+//    while (left < right)
+//    {
+//        ret.push_back(left++);
+//        ret.push_back(right--);
+//    }
+//    ret.push_back(right);
+//
+//    for (int i = 0; i < n - 1; i++)
+//    {
+//        cout << ret[i] << " ";
+//    }
+//
+//    cout << ret[n - 1];
+//    return 0;
+//}
 //#include<iostream>
 //#include<string>
 //
