@@ -4,7 +4,37 @@
 
 using namespace std;
 
-
+//#include<iostream>
+//#include<vector>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    int V = 0, n = 0;
+//    cin >> V >> n;
+//    vector<int> arr;
+//    for (int i = 0; i < n; i++)
+//    {
+//        int tmp = 0;
+//        cin >> tmp;
+//        arr.push_back(tmp);
+//    }
+//    vector<int> dp(V + 1, 0);
+//
+//    int ret = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        for (int j = V; j >= arr[i]; j--)
+//        {
+//            dp[j] = max(dp[j], dp[j - arr[i]] + arr[i]);
+//            ret = max(ret, dp[j]);
+//        }
+//    }
+//
+//    cout << V - ret << endl;
+//    return 0;
+//}
 //#include <iostream>
 //#include<vector>
 //using namespace std;
