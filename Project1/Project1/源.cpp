@@ -4,6 +4,295 @@
 
 using namespace std;
 
+//#include <iostream>
+//#include<string>
+//using namespace std;
+//
+//int main()
+//{
+//    int sum[2] = { 0 };
+//    int n = 0;
+//    cin >> n;
+//    string s;
+//    cin >> s;
+//    for (auto ch : s) sum[ch - '0']++;
+//
+//    int left = 0, right = 0, ret = 0, m = s.size();
+//    int count[2] = { 0 };
+//
+//    while (right < n - 1)
+//    {
+//        count[s[right] - '0']++;
+//
+//        if (right - left + 1 > m / 2)
+//        {
+//            count[s[left] - '0']--;
+//            left++;
+//        }
+//
+//        if (right - left + 1 == m / 2 && count[0] * 2 == sum[0] && count[1] * 2 == sum[1])
+//        {
+//            ret += 2;
+//        }
+//        right++;
+//    }
+//    cout << ret << endl;
+//    return 0;
+//}
+//// 64 位输出请用 printf("%lld")
+
+//#include <iostream>
+//#include<vector>
+//using namespace std;
+//
+//int main()
+//{
+//    int N = 0;
+//    cin >> N;
+//    vector<vector<int>> dp(N + 1, vector<int>(N + 1));
+//    int x = 0;
+//    for (int i = 1; i <= N; i++)
+//    {
+//        for (int j = 1; j <= N; j++)
+//        {
+//            cin >> x;
+//            dp[i][j] = dp[i - 1][j] + dp[i][j - 1] - dp[i - 1][j - 1] + x;
+//        }
+//    }
+//
+//    int ret = -128;
+//    for (int x1 = 1; x1 <= N; x1++)
+//    {
+//        for (int y1 = 1; y1 <= N; y1++)
+//        {
+//            for (int x2 = x1; x2 <= N; x2++)
+//            {
+//                for (int y2 = y1; y2 <= N; y2++)
+//                {
+//                    ret = max(ret, dp[x2][y2] - dp[x1 - 1][y2] - dp[x2][y1 - 1] + dp[x1 - 1][y1 - 1]);
+//                }
+//            }
+//        }
+//    }
+//
+//    cout << ret << endl;
+//
+//    return 0;
+//}
+//// 64 位输出请用 printf("%lld")
+
+//class Solution {
+//public:
+//    /**
+//     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//     *
+//     *
+//     * @param m int整型vector<vector<>>
+//     * @return int整型
+//     */
+//    bool vis[200] = { false };
+//    int citys(vector<vector<int> >& m) {
+//        int n = m.
+//            size();
+//        int ret = 0;
+//        for (int i = 0; i < n; i++)
+//        {
+//            if (!vis[i])
+//            {
+//                bfs(m, i);
+//                ret++;
+//            }
+//        }
+//        return ret;
+//    }
+//
+//    void bfs(vector<vector<int> >& m, int pos)
+//    {
+//        queue<int> q;
+//        q.emplace(pos);
+//        while (q.size())
+//        {
+//            int pos = q.front();
+//            q.pop();
+//            for (int i = 0; i < m.size(); i++)
+//            {
+//                if (!vis[i] && m[pos][i])
+//                {
+//                    q.push(i);
+//                    vis[i] = true;
+//                }
+//            }
+//        }
+//    }
+//};
+
+///**
+// * struct TreeNode {
+// *	int val;
+// *	struct TreeNode *left;
+// *	struct TreeNode *right;
+// *	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+// * };
+// */
+//class Solution {
+//public:
+//    /**
+//     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//     *
+//     *
+//     * @param pRoot TreeNode类
+//     * @return bool布尔型
+//     */
+//    int IsBalanced(TreeNode* pRoot)
+//    {
+//        if (pRoot == nullptr) return 0;
+//        int left = IsBalanced(pRoot->left);
+//        if (left == -1) return -1;
+//        int right = IsBalanced(pRoot->right);
+//        if (right == -1) return -1;
+//        return abs(left - right) <= 1 ? max(left, right) + 1 : -1;
+//    }
+//
+//    bool IsBalanced_Solution(TreeNode* pRoot) {
+//        return IsBalanced(pRoot) != -1;
+//    }
+//};
+
+//class Solution {
+//public:
+//    /**
+//     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//     *
+//     *
+//     * @param m int整型vector<vector<>>
+//     * @return int整型
+//     */
+//    bool vis[200] = { false };
+//    int citys(vector<vector<int> >& m) {
+//        int n = m.
+//            size();
+//        int ret = 0;
+//        for (int i = 0; i < n; i++)
+//        {
+//            if (!vis[i])
+//            {
+//                dfs(m, i);
+//                ret++;
+//            }
+//        }
+//        return ret;
+//    }
+//
+//    void dfs(vector<vector<int> >& m, int pos)
+//    {
+//        vis[pos] = true;
+//        for (int i = 0; i < m.size(); i++)
+//        {
+//            if (!vis[i] && m[pos][i])
+//                dfs(m, i);
+//        }
+//    }
+//};
+
+
+//#include <iostream>
+//#include<unordered_set>
+//#include<string>
+//#include<algorithm>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    unordered_set<string> hash;
+//    int t = 0;
+//    cin >> t;
+//    while (t--)
+//    {
+//        string s;
+//        cin >> s;
+//        sort(s.begin(), s.end());
+//        hash.insert(s);
+//    }
+//
+//    cout << hash.size() << endl;
+//    return 0;
+//}
+//// 64 位输出请用 printf("%lld")
+
+//#include <iostream>
+//using namespace std;
+//
+//int main()
+//{
+//    int t = 0;
+//    cin >> t;
+//    while (t--)
+//    {
+//        int h, a, H, A;
+//        cin >> h >> a >> H >> A;
+//
+//        if (a >= H)
+//        {
+//            cout << -1 << endl;
+//            continue;
+//        }
+//
+//        int m = H / a + (H % a != 0 ? 1 : 0);
+//        int n = m - 1;
+//        int x = n * A;
+//
+//        int ret = h / x - (h % x == 0 ? 1 : 0);
+//        cout << ret << endl;
+//    }
+//
+//    return 0;
+//}
+// 64 位输出请用 printf("%lld")
+
+//#include<iostream>
+//#include<vector>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    int n = 0;
+//    cin >> n;
+//    vector<char> arr(n);
+//    int n1 = 0, n0 = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        cin >> arr[i];
+//        if (arr[i] == '1') n1++;
+//        if (arr[i] == '0') n0++;
+//    }
+//    int l1 = 0, l0 = 0;
+//    int len = n / 2;
+//    int ret = 0;
+//    int left = 0, right = 0;
+//
+//    for (; left < n; right++)
+//    {
+//        right %= n;
+//        if (arr[right] == '1') l1++;
+//        if (arr[right] == '0') l0++;
+//
+//        if (right - left + 1 > len)
+//        {
+//            if (arr[left] == '1') l1--;
+//            if (arr[left] == '0') l0--;
+//            left++;
+//        }
+//
+//        if (l1 == n1 && l0 == n0) ret++;
+//    }
+//
+//    cout << ret << endl;
+//    return 0;
+//}
+
+
 //#include<iostream>
 //#include<vector>
 //
