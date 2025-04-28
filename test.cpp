@@ -1,4 +1,123 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
 
+int main()
+{
+    int n = 0;
+    cin >> n;
+    int sum = 0;
+    vector<int> arr(n);
+    //cout << n << endl;
+    for(int i = 0;i < n;i++) 
+    {
+        cin >> arr[i];
+        sum += arr[i];
+        //cout << arr[i];
+    }
+    sort(arr.begin(),arr.end());
+    sum /= 2;
+    int tmp = 0;
+    for(int left = 0,right = 0;right < n;right++)
+    {
+        tmp += arr[right];
+        //cout << arr[right];
+        if(tmp == sum)
+        {
+            cout << "true" << endl;
+            return 0;
+        }
+        if(tmp > sum)
+        {
+            tmp -= arr[left--];
+        }
+    }
+    cout << "false" << endl;
+
+    return 0;
+}
+
+
+
+#include<iostream>
+#include<string>
+#include<cmath>
+#include<map>
+
+using namespace std;
+
+bool func(int num)
+{
+    for(int i = 2;i < num;i++)
+    {
+        if(num % i == 0) return false;
+    }
+    return true;
+}
+
+int main()
+{
+    map<char,int> hash;
+    string s;
+    getline(cin,s);
+    //cout << s << endl;
+    int maxn = -0x3f3f3f3f;
+    int minn = 0X3f3f3f3f;
+    for(auto& ch : s)
+    {
+        if(ch >= 'a' && ch <= 'z')
+        hash[ch]++;
+    }
+    for(auto& [a,b] : hash)
+    {
+        maxn = max(b,maxn);
+        minn = min(b,minn);
+    }
+    int num = maxn - minn;
+    if(num && func(num))
+    {
+        cout << "Lucky Word" << endl;
+        cout << num << endl;
+    }
+    else
+    {
+        cout << "No Answer" << endl;
+        cout << 0 << endl;
+    }
+    return 0;
+}
+
+
+class Solution {
+    public:
+        /**
+         * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+         *
+         * 
+         * @param schedule int整型vector<vector<>> 
+         * @return bool布尔型
+         */
+        bool hostschedule(vector<vector<int>>& schedule) {
+            sort(schedule.begin(),schedule.end(),[&](vector<int> a,vector<int> b)
+            {
+                return a[0] == b[0] ? a[1] < b[1] : a[0] < b[0]; 
+            });
+            int n = schedule.size();
+            int flag = schedule[0][1];
+            for(int i = 1;i < n;i++)
+            {
+                //cout << flag << " " << schedule[i][0] << endl;
+                if(flag <= schedule[i][0])
+                {
+    
+                    flag = schedule[i][1];
+                }
+                else return false;
+            }
+            return true;
+        }
+    };
 
 
 
