@@ -1,4 +1,154 @@
 #include<iostream>
+using namespace std;
+
+int main()
+{
+    int q = 0;
+    cin >> q;
+    while(q--)
+    {
+        string s;
+        cin >> s;
+        int i = 0;
+        for(;i < s.size();i++)
+        {
+            if(s[i] % 2 == 0) break;
+        }
+        if(i == s.size())
+        {
+            cout << -1 << endl;
+        }
+        else
+        {
+            string ret = s.substr(0,i) + s.substr(i + 1,s.size()) + s[i];
+            int pos = 0;
+            for(;pos < ret.size() ;pos++)
+            {
+                if(ret[pos] != '0') break;
+            }
+            ret = ret.substr(pos,ret.size());
+            while(pos > 0)
+            {
+                ret += '0';
+                pos--;
+            }
+            cout << ret << endl;
+        }
+    }
+    return 0;
+}
+
+
+
+class Solution {
+    public:
+        /**
+         * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+         *
+         * 计算成功举办活动需要多少名主持人
+         * @param n int整型 有n个活动
+         * @param startEnd int整型vector<vector<>> startEnd[i][0]用于表示第i个活动的开始时间，startEnd[i][1]表示第i个活动的结束时间
+         * @return int整型
+         */
+        int minmumNumberOfHost(int n, vector<vector<int> >& startEnd) {
+            sort(startEnd.begin(),startEnd.end(),[&](vector<int>a,vector<int>b)
+            {
+                return a[0] == b[0] ? a[1] < b[1] : a[0] < b[0];
+            });
+    
+            unordered_set<int> hash;
+            long long ret = 1,flag = startEnd[0][1];
+            for(long long i = 1;i < n;i++)
+            {
+                if(flag > startEnd[i][0])
+                {
+                    ret++;
+                }
+                startEnd[i][1];
+            }
+            return ret;
+        }
+    };
+
+
+#include<iostream>
+#include<vector>
+#include<string>
+using namespace std;
+
+int dx[4] = {1,-1,0,0};
+int dy[4] = {0,0,1,-1};
+bool vis[1001][1001] = {false};
+
+int n = 0,m = 0;
+int x1 = 0,y1 = 0,x2 = 0,y2 = 0;
+int ret = 0x3f3f3f3f;
+int pos = 0;
+
+
+void dfs(vector<string>& arr,int i,int j)
+{
+    if(i == x2 && j == y2)
+    {
+        ret = min(ret,pos);
+        return ;
+    }
+    for(int k = 0;k < 4;k++)
+    {
+        int x = i + dx[k],y = j + dy[k];
+        if(x >= 0 && x < m && y >= 0 && y < n && !vis[x][y] && arr[x][y] == '.')
+        {
+            vis[x][y] = true;
+            pos++;
+            dfs(arr,x,y);
+            vis[x][y] = false;
+            pos--;
+        }
+    }
+}
+
+int main()
+{
+    vector<string> arr;
+    cin >> n >> m;
+
+    cin >> x1 >> y1 >> x2 >> y2;
+    x1--;
+    y1--;
+    x2--;
+    y2--;
+    for(int i = 0;i < n;i++)
+    {
+        string s;
+        cin >> s;
+        arr.push_back(s);
+    }
+
+    dfs(arr,x1,y1);
+    cout << (ret == 0x3f3f3f3f ? -1 : ret) << endl;
+    return 0;
+}
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int n = 0,m = 0;
+    cin >> n >> m;
+
+    long long ret = n;
+    int tmp = m - 1;
+    while(tmp--)
+    {
+        ret *= (n - 1) % 109;
+    }
+    cout << ret << endl;
+    return 0;
+}
+
+
+#include<iostream>
 #include<vector>
 #include<algorithm>
 using namespace std;
