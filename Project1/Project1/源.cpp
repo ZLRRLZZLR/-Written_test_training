@@ -4,6 +4,32 @@
 
 using namespace std;
 
+//#include<iostream>
+//#include<vector>
+//#include<algorithm>
+//using namespace std;
+//
+//int main()
+//{
+//    int n, p;
+//    cin >> n >> p;
+//    vector<int> arr(n);
+//    for (int i = 0; i < n; i++) cin >> arr[i];
+//    sort(arr.begin(), arr.end());
+//    p *= 2;
+//    int ret = 0;
+//    for (int left = 0, right = 0; right < n; right++)
+//    {
+//        while (arr[right] - arr[left] > p)
+//        {
+//            left++;
+//        }
+//        ret = max(ret, right - left + 1);
+//    }
+//
+//    cout << ret << endl;
+//    return 0;
+//}
 
 //#include<iostream>
 //#include<vector>
