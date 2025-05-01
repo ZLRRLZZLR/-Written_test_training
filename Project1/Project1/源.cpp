@@ -4,6 +4,123 @@
 
 using namespace std;
 
+
+//#include<iostream>
+//#include<string>
+//using namespace std;
+//
+//int main()
+//{
+//    string s;
+//    cin >> s;
+//    int n = s.size();
+//    int ret = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        if (i + 1 < n && s[i] == s[i + 1])
+//        {
+//            ret = 2;
+//            break;
+//        }
+//        else if (i + 2 < n && s[i] == s[i + 2])
+//        {
+//            ret = 3;
+//        }
+//    }
+//    cout << (ret == 0 ? -1 : ret) << endl;
+//    return 0;
+//}
+
+//#include <iostream>
+//#include<vector>
+//using namespace std;
+//
+//int main()
+//{
+//    int n = 0;
+//    cin >> n;
+//    vector<int>  arr(n);
+//    int sum = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        cin >> arr[i];
+//        sum += arr[i];
+//    }
+//
+//    if (sum % 2 != 0)
+//    {
+//        cout << "false" << endl;
+//        return 0;
+//    }
+//    vector<bool> dp(n + 1);
+//    dp[0] = true;
+//    sum /= 2;
+//
+//    for (int i = 1; i <= n; i++)
+//    {
+//        for (int j = arr[i - 1]; j <= sum; j++)
+//        {
+//            dp[j] = dp[j] || dp[j - arr[i - 1]];
+//        }
+//    }
+//    if (dp[sum])    cout << "true" << endl;
+//    else cout << "false" << endl;
+//
+//}
+//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+
+//#include <iostream>
+//#include <string>
+//#include <cmath>
+//#include <map>
+//
+//using namespace std;
+//
+//bool func(int num)
+//{
+//    if (num <= 1) return false;
+//    for (int i = 2; i < num; i++)
+//    {
+//        if (num % i == 0)
+//            return false;
+//    }
+//    return true;
+//}
+//
+//int main()
+//{
+//    map<char, int> hash;
+//    string s;
+//    getline(cin, s);
+//    // cout << s << endl;
+//    int maxn = -0x3f3f3f3f;
+//    int minn = 0X3f3f3f3f;
+//    for (auto& ch : s)
+//    {
+//        if (ch >= 'a' && ch <= 'z')
+//            hash[ch]++;
+//    }
+//    for (auto& [a, b] : hash)
+//    {
+//        maxn = max(b, maxn);
+//        minn = min(b, minn);
+//    }
+//    int num = maxn - minn;
+//    if (func(num))
+//    {
+//        cout << "Lucky Word" << endl;
+//        cout << num << endl;
+//    }
+//    else
+//    {
+//        cout << "No Answer" << endl;
+//        cout << 0 << endl;
+//    }
+//    return 0;
+//}
+
+
+
 //#include <iostream>
 //#include<string>
 //using namespace std;
