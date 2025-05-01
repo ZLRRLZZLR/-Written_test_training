@@ -6,6 +6,36 @@ using namespace std;
 
 
 //#include<iostream>
+//#include<vector>
+//using namespace std;
+//
+//int main()
+//{
+//    double n = 0;
+//    cin >> n;
+//    vector<long long> arr(n);
+//    for (int i = 0; i < n; i++)
+//    {
+//        cin >> arr[i];
+//    }
+//
+//    vector<long long> f(n);
+//    vector<long long> g(n);
+//    f[0] = arr[0];
+//
+//    long long ret = f[0];
+//    for (int i = 1; i < n; i++)
+//    {
+//        f[i] = g[i - 1] + arr[i];
+//        g[i] = max(f[i - 1], g[i - 1]);
+//        ret = max(ret, max(f[i], g[i]));
+//    }
+//    cout << ret << endl;
+//
+//    return 0;
+//}
+
+//#include<iostream>
 //#include<string>
 //using namespace std;
 //
