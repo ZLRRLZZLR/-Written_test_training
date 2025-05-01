@@ -4,6 +4,25 @@
 
 using namespace std;
 
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int n = 0, m = 0;
+    cin >> n >> m;
+    int ret = n;
+    int num = m - 1;
+    while (num--)
+    {
+        ret = ret * (n - 1) % 109;
+    }
+
+    cout << ret << endl;
+    return 0;
+}
+
+
 //#include<iostream>
 //#include<vector>
 //#include<algorithm>
