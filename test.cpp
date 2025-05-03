@@ -1,4 +1,106 @@
 #include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+    int n , m ;
+    cin >> n >> m;
+    string s1 , s2;
+    cin >> s1 >> s2;
+
+    vector<vector<int>> dp(n + 1,vector<int>(m + 1));
+
+    for(int i = 1;i <= n;i++)
+    {
+        for(int j = 1;j <= m;j++)
+        {
+            if(s1[i - 1] == s2[j - 1]) dp[i][j] = dp[i - 1][j - 1] + 1;
+            else dp[i][j] = max(dp[i - 1][j],dp[i][j - 1]);
+        }
+    }
+
+    cout << dp[n][m] <<endl;
+    return 0;
+}
+
+
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+
+using namespace std;
+
+int main()
+{
+    int n = 0,k = 0;
+    cin >> n >> k;
+
+    vector<int> arr(n);
+    for(auto& i : arr) cin >> i;
+
+    sort(arr.begin(),arr.end());
+    int ret = 0;
+    for(int left = 0,right = 0;right < n;right++)
+    {
+        while(arr[right] - arr[left] > k)
+        {
+            left++;
+        }
+
+        //cout << arr[left] << " : "<< arr[right] << endl;
+        ret = max(ret,right - left + 1);
+    }
+
+    cout << ret << endl;
+    return 0;
+}
+
+
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+bool func(long long a,long long b)
+{
+    long long num = a * b;
+    if(num <= 1) return false;
+    for(long long i = 2;i <= sqrt(num);i++)
+    {
+        if(num % i == 0) return false;
+    }
+    return true;
+}
+
+
+int main()
+{
+    int T = 0;
+    cin >> T;
+    while(T--)
+    {
+        long long a = 0,b = 0;
+        cin >> a >> b;
+        if(func(a,b))
+        {
+            cout << "YES" << endl;
+        }
+        else
+        {
+            cout << "NO" << endl;
+        }
+    }
+    return 0;
+}
+
+
+
+
+#include<iostream>
 using namespace std;
 
 int main()
