@@ -1,6 +1,56 @@
 #include<iostream>
 #include<vector>
 #include<string>
+using namespace std;
+
+int main()
+{
+    string s;
+    cin >> s;
+    int n = s.size();
+    vector<int> arr(n);
+    int sum = 0;
+    for(int i = 0;i < n;i++)
+    {
+        arr[i] = s[i] - '0';
+        sum += arr[i];
+    }
+
+    if(sum % 2)
+    {
+        cout << "No" << endl;
+    }
+    else
+    {
+        sum /= 2;
+        vector<bool> dp(sum + 1);
+        dp[0] = true;
+
+        for(int i = 1;i <= n;i++)
+        {
+            for(int j = sum;j >= arr[i - 1];j--)
+            {
+                dp[j] = dp[j] || dp[j - arr[i - 1]];
+            }
+        }
+
+        if(dp[sum])
+        {
+            cout << "Yes" << endl;
+        }
+        else
+        {
+            cout << "No" << endl;
+        }
+    }
+    return 0;
+}
+
+
+
+#include<iostream>
+#include<vector>
+#include<string>
 
 using namespace std;
 
