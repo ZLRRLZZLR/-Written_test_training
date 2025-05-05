@@ -4,6 +4,45 @@
 
 using namespace std;
 
+//#include <iostream>
+//#include<vector>
+//using namespace std;
+//
+//int main()
+//{
+//    int n = 0;
+//    cin >> n;
+//    vector<int> arr(n);
+//    for (auto& i : arr) cin >> i;
+//    int ret = 0;
+//    for (int i = 0; i < n;)
+//    {
+//        if (i == n - 1)
+//        {
+//            ret++;
+//            break;
+//        }
+//        if (arr[i] < arr[i + 1])
+//        {
+//            while (i + 1 < n && arr[i] <= arr[i + 1]) i++;
+//            ret++;
+//        }
+//        else if (arr[i] > arr[i + 1])
+//        {
+//            while (i + 1 < n && arr[i] >= arr[i + 1]) i++;
+//            ret++;
+//        }
+//        else
+//        {
+//            while (i + 1 < n && arr[i] == arr[i + 1]) i++;
+//        }
+//        i++;
+//    }
+//    cout << ret << endl;
+//    return 0;
+//}
+//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+
 ///**
 // * struct TreeNode {
 // *	int val;
