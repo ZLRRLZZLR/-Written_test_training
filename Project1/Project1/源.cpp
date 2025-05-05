@@ -4,6 +4,50 @@
 
 using namespace std;
 
+//#include<iostream>
+//
+//using namespace std;
+//bool vis[15] = { false };
+//int ret = 0;
+//int arr[15];
+//int n = 0;
+//
+//void dfs(int pos)
+//{
+//    if (pos == n)
+//    {
+//        ret++;
+//        return;
+//    }
+//    for (int i = 1; i <= n; i++)
+//    {
+//        if (!vis[i] && (arr[i] == i || !vis[arr[i]]))
+//        {
+//            vis[i] = true;
+//            dfs(pos + 1);
+//            vis[i] = false;
+//        }
+//    }
+//}
+//
+//int main()
+//{
+//    cin >> n;
+//
+//    for (int i = 1; i <= n; i++) cin >> arr[i];
+//
+//    for (int i = 1; i <= n; i++)
+//    {
+//        vis[i] = true;
+//        dfs(1);
+//        vis[i] = false;
+//    }
+//
+//    cout << ret << endl;
+//    return 0;
+//}
+
+
 //#include <iostream>
 //#include<string>
 //using namespace std;
