@@ -4,6 +4,67 @@
 
 using namespace std;
 
+//走迷宫
+//#include <iostream>
+//#include<vector>
+//#include<queue>
+//using namespace std;
+//
+//int dx[4] = { 1,-1,0,0 };
+//int dy[4] = { 0,0,1,-1 };
+//
+//typedef pair<int, int> PII;
+//
+//int main()
+//{
+//    int n, m, x1, x2, y1, y2;
+//    cin >> n >> m >> x1 >> y1 >> x2 >> y2;
+//    x1 -= 1;
+//    y1 -= 1;
+//    x2 -= 1;
+//    y2 -= 1;
+//
+//    vector<vector<char>> arr(n, vector<char>(m));
+//    for (int i = 0; i < n; i++)
+//    {
+//        for (int j = 0; j < m; j++)
+//        {
+//            cin >> arr[i][j];
+//        }
+//    }
+//    queue<PII> q;
+//    q.emplace(x1, y1);
+//    int level = 1;
+//    int ret = 0;
+//    while (q.size())
+//    {
+//        while (level--)
+//        {
+//            auto& [i, j] = q.front();
+//            if (i == x2 && j == y2)
+//            {
+//                cout << ret << endl;
+//                return 0;
+//            }
+//            q.pop();
+//            for (int k = 0; k < 4; k++)
+//            {
+//                int x = i + dx[k], y = j + dy[k];
+//                if (x >= 0 && x < n && y >= 0 && y < m && arr[x][y] == '.')
+//                {
+//                    q.emplace(x, y);
+//                    arr[x][y] = '*';
+//                }
+//            }
+//        }
+//        level = q.size();
+//        ret++;
+//    }
+//
+//    cout << -1 << endl;
+//    return 0;
+//}
+//// 64 位输出请用 printf("%lld")
 
 //#include <functional>
 //class Solution {
