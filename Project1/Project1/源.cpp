@@ -4,6 +4,36 @@
 
 using namespace std;
 
+//#include <iostream>
+//#include<string>
+//using namespace std;
+//
+//int main()
+//{
+//    int q = 0;
+//    cin >> q;
+//    while (q--)
+//    {
+//        string s;
+//        cin >> s;
+//
+//        int n = s.size();
+//        for (int i = n - 1; i >= 0; i--)
+//        {
+//            if ((s[i] - '0') % 2 == 0)
+//            {
+//                swap(s[i], s[n - 1]);
+//                cout << s << endl;
+//                break;
+//            }
+//        }
+//        if ((s[n - 1] - '0') % 2 != 0) cout << -1 << endl;
+//    }
+//
+//}
+//// 64 位输出请用 printf("%lld")
+
+
 //走迷宫
 //#include <iostream>
 //#include<vector>
