@@ -4,6 +4,41 @@
 
 using namespace std;
 
+///**
+// * struct TreeNode {
+// *	int val;
+// *	struct TreeNode *left;
+// *	struct TreeNode *right;
+// *	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+// * };
+// */
+//class Solution {
+//public:
+//    /**
+//     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//     *
+//     *
+//     * @param root TreeNode类
+//     * @return int整型
+//     */
+//     //树形dp 后序遍历
+//    int ret = -0x3f3f3f3f;
+//    int PathSum(TreeNode* root)
+//    {
+//        if (root == nullptr) return 0;
+//        int l = max(PathSum(root->left), 0);//左边单径最大和
+//        int r = max(PathSum(root->right), 0);//左边单径最大和
+//        ret = max(ret, root->val + l + r);//路径最大和
+//        return root->val + max(r, l);//经过root的最大单径
+//    }
+//    int maxPathSum(TreeNode* root)
+//    {
+//        PathSum(root);
+//        return ret;
+//    }
+//};
+
+
 //#include<iostream>
 //
 //using namespace std;
