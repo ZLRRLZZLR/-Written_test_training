@@ -1,4 +1,47 @@
 #include<iostream>
+#include <string>
+#include<cmath>
+#include<algorithm>
+
+using namespace std;
+
+bool func(long long num)
+{
+    for(long long i = 2;i <= sqrt(num);i++)
+    {
+        if(num % i == 0) 
+        {
+            //cout << num << ":" << i << endl;
+            return false;
+        }
+    }
+    return true;
+}
+
+
+int main()
+{
+    string t;
+    cin >> t;
+    string tmp = t.substr(0,t.size() - 1);
+    reverse(tmp.begin(),tmp.end());
+    t += tmp;
+    long long num = stoll(t);
+    //cout << num << endl;
+    if(func(num))
+    {
+        cout << "prime" << endl;
+    }
+    else
+    {
+        cout << "noprime" << endl;
+    }
+
+    return 0;
+}
+
+
+#include<iostream>
 #include<vector>
 #include<string>
 using namespace std;

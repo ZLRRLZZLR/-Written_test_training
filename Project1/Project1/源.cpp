@@ -4,6 +4,37 @@
 
 using namespace std;
 
+
+//Ïû³ıÕûÊı
+//#include<iostream>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    int T = 0;
+//    cin >> T;
+//    while (T--)
+//    {
+//        int H = 0;
+//        cin >> H;
+//        int ret = 0;
+//        long long a = 1;
+//        while (H)
+//        {
+//            H -= a;
+//            ret++;
+//            if (H % (2 * a) == 0)
+//            {
+//                a *= 2;
+//            }
+//        }
+//        cout << ret << endl;
+//    }
+//    return 0;
+//}
+
+
 //#include <iostream>
 //#include<vector>
 //using namespace std;
