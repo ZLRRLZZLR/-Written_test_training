@@ -1,4 +1,117 @@
 #include<iostream>
+#include<vector>
+
+using namespace std;
+int main()
+{
+    int n ;
+    cin >> n;
+    if(n == 1) 
+    {
+        cout << 1 << endl;
+        return 0;
+    }
+    if(n == 2)
+    {
+        cout << 2 << endl;
+        return 0;
+    }
+    int a = 2;
+    int c = 0;
+    for(int i = 3;i <= n;i++)
+    {
+        c = a * 2;
+        a = c;
+    }
+
+    cout << c << endl;
+    return 0;
+}
+
+class Solution {
+    public:
+        /**
+         * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+         *
+         * 
+         * @param str string字符串 
+         * @return string字符串vector
+         */
+        int n = 0;
+        vector<string> ret;
+        set<string> st;
+        bool vis[11] = {false};
+        string s;
+        void dfs(string str)
+        {
+            if(str.size() == n)
+            {
+                st.insert(str);
+                return ;
+            }
+    
+            for(int i = 0;i < n;i++)
+            {
+                if(!vis[i])
+                {
+                string tmp;
+                tmp += str + s[i];
+                vis[i] = true;
+                dfs(tmp);
+                vis[i] = false;
+                }
+            }
+    
+        }
+    
+        vector<string> Permutation(string str) 
+        {
+            n = str.size();
+            s = str;
+            for(int i = 0;i < n;i++)
+            {
+    
+                string tmp;
+                tmp += str[i];
+                vis[i] = true;
+                dfs(tmp);
+                vis[i] = false;
+            }
+    
+            return vector<string>(st.begin(),st.end());
+        }
+    };
+
+
+#include<iostream>
+#include<string>
+#include<unordered_map>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    string s;
+    cin >> s;
+    unordered_map<char,int> hash;
+    int n = s.size();
+    int ret = 0;
+    for(int left = 0,right = 0;right < n;right++)
+    {
+        hash[s[right]]++;
+        while(hash.size() > 2)
+        {
+            if(--hash[s[left]] == 0) hash.erase(s[left]);
+            left++;
+        }
+        ret = max(ret,right - left + 1);
+    }
+
+    cout << ret << endl;
+    return 0;
+}
+
+#include<iostream>
 #include <string>
 #include<cmath>
 #include<algorithm>
