@@ -2,6 +2,167 @@
 #include<vector>
 
 using namespace std;
+
+int dx[4] = {1,-1,0,0};
+int dy[4] = {0,0,1,-1};
+int n = 0;
+int m = 0;
+int ret1 = 0;
+int ret2 = 0x3f3f3f3f;
+bool vis[31][31] = {false};
+
+    void dfs(vector<vector<char>>& matrix,int i,int j,int pos)
+    {
+        if(matrix[i][j] == 'e')
+        {
+            ret1++;
+            ret2 = min(ret2,pos);
+            return ;
+        }
+        for(int k = 0;k < 4;k++)
+        {
+            int x = i + dx[k],y = j + dy[k];
+            if(x >= 0 && x < n && y >= 0 && y < m && !vis[x][y] && (matrix[x][y] == '.' || matrix[x][y] == 'e'))
+            {
+                vis[x][y] = true;
+                dfs(matrix,x,y,pos + 1);
+                vis[x][y] = false;
+            }
+        }
+    }
+
+int main()
+{
+    cin >> n >> m;
+    vector<vector<char>> arr(n,vector<char>(m));
+    for(int i = 0;i < n;i++)
+    {
+        for(int j = 0;j < m;j++)
+        {
+            cin >> arr[i][j];
+        }
+    }
+
+    for(int i = 0;i < n;i++)
+    {
+        for(int j = 0;j < m;j++)
+        {
+            if(arr[i][j] == 'k')
+            {
+            vis[i][j] = true;
+            dfs(arr,i,j,0);
+            vis[i][j] = false;
+            break;
+            }
+        }
+    }
+
+    if(ret1 == 0) cout << -1 << endl;
+    else cout << ret1 << " " << ret2 << endl;
+    return 0;
+}
+
+
+class Solution {
+    public:
+        /**
+         * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+         *
+         * 递增路径的最大长度
+         * @param matrix int整型vector<vector<>> 描述矩阵的每个数
+         * @return int整型
+         */
+    int dx[4] = {1,-1,0,0};
+    int dy[4] = {0,0,1,-1};
+    int n = 0;
+    int m = 0;
+    int ret = 0;
+    bool vis[1001][1001] = {false};
+        int solve(vector<vector<int> >& matrix) {
+             n = matrix.size();
+             m = matrix[0].size();
+            for(int i = 0;i < n;i++)
+            {
+                for(int j = 0;j < m;j++)
+                {
+                    vis[i][j] = true;
+                    dfs(matrix,i,j,1);
+                    vis[i][j] = false;
+                }
+            }
+            return ret;
+        }
+        void dfs(vector<vector<int> >& matrix,int i,int j,int pos)
+        {
+            for(int k = 0;k < 4;k++)
+            {
+                int x = i + dx[k],y = j + dy[k];
+                if(x >= 0 && x < n && y >= 0 && y < m && !vis[x][y] && matrix[x][y] > matrix[i][j])
+                {
+                    vis[x][y] = true;
+                    dfs(matrix,x,y,pos + 1);
+                    vis[x][y] = false;
+                }
+            }
+            ret = max(ret,pos);
+        }
+    };
+
+
+
+#include<iostream>
+#include<string>
+
+using namespace std;
+int main()
+{
+    int i = 0;
+    string s;
+    cin >> s;
+    long long ISBN = 0;
+    for(int j = 0;j < s.size() - 1;j++)
+    {
+        if(s[j] >= '0' && s[j] <= '9')
+        {
+            ISBN += (s[j] - '0') * (i + 1);
+            i++;
+        }
+    }
+
+    ISBN %= 11;
+    if(ISBN != 10)
+    {
+    if(ISBN + '0' == s[s.size() - 1])
+    {
+        cout << "Right" << endl;
+    }
+    else
+    {
+        s[s.size() - 1] = ISBN + '0';
+        cout << s << endl;
+    }
+    }
+    else
+    {
+        if(s[s.size() - 1] == 'X')
+        {
+                    cout << "Right" << endl;
+        }
+            else
+    {
+        s[s.size() - 1] = 'X';
+        cout << s << endl;
+    }
+    }
+
+
+    return 0;
+}
+
+#include<iostream>
+#include<vector>
+
+using namespace std;
 int main()
 {
     int n ;
