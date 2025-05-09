@@ -1,3 +1,71 @@
+
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+    string s;
+    int n;
+    cin >>n >> s;
+
+    int ret = 0;
+    for(int i = 0;i < n;i++)
+    {
+        for(int j = i + 1;j < n;j++)
+        {
+            for(int k = j + 1;k < n;k++)
+            {
+                if(s[j] == s[k] && s[i] != s[j])
+                ret++;
+            }
+        }
+    }
+
+    cout << ret << endl;
+    return 0;
+}
+
+
+
+#include<iostream>
+#include<set>
+#include<string>
+#include<algorithm>
+
+using namespace std;
+
+
+int main()
+{
+    string s;
+    cin >> s;
+    reverse(s.begin(),s.end());
+
+    int i = 0;
+    for(;i < s.size();)
+    {
+        if(s[i] != '0')
+        break;
+        else
+        i++;
+    }
+    s = s.substr(i);
+    set<char> st(s.begin(),s.end());
+    auto bg = st.rbegin();
+    string ret;
+    while(bg != st.rend())
+    {
+        ret += *bg;
+        bg++;
+    }
+    cout << stoi(ret) << endl;
+    return 0;
+}
+
+
+
 #include<iostream>
 #include<vector>
 
