@@ -4,6 +4,43 @@
 
 using namespace std;
 
+//#include<iostream>
+//#include<unordered_set>
+//#include<string>
+//#include<algorithm>
+//
+//using namespace std;
+//
+//
+//int main()
+//{
+//    string s;
+//    cin >> s;
+//    reverse(s.begin(), s.end());
+//    int i = 0;
+//    for (; i < s.size();)
+//    {
+//        if (s[i] != '0')
+//            break;
+//        else
+//            i++;
+//    }
+//    s = s.substr(i);
+//    unordered_set<char> st;
+//    string ret;
+//    for (auto& ch : s)
+//    {
+//        if (!st.count(ch))
+//        {
+//            st.insert(ch);
+//            ret += ch;
+//        }
+//    }
+//
+//    cout << ret << endl;
+//
+//    return 0;
+//}
 
 //Ïû³ýÕûÊý
 //#include<iostream>
