@@ -4,6 +4,276 @@
 
 using namespace std;
 
+//#include <iostream>
+//#include<algorithm>
+//#include<vector>
+//#include<map>
+//using namespace std;
+//
+//typedef pair<int, int> PII;
+//
+//int main()
+//{
+//    int n = 0;
+//    cin >> n;
+//    vector<PII> arr;
+//    while (n--)
+//    {
+//        int a, b;
+//        cin >> a >> b;
+//        arr.emplace_back(a, b);
+//    }
+//    sort(arr.begin(), arr.end());
+//    int ret = 0;
+//    int tmp = arr[0].second;
+//    for (auto& i : arr)
+//    {
+//        if (i.first < tmp)
+//        {
+//            tmp = min(i.second, tmp);
+//        }
+//        else
+//        {
+//            ret++;
+//            tmp = i.second;
+//        }
+//    }
+//    cout << ret + 1 << endl;
+//
+//    return 0;
+//}
+//// 64 位输出请用 printf("%lld")
+
+
+//#include <iostream>
+//#include<algorithm>
+//#include<vector>
+//#include<map>
+//using namespace std;
+//
+//typedef pair<int, int> PII;
+//
+//int main()
+//{
+//    int n = 0;
+//    cin >> n;
+//    vector<PII> arr;
+//    while (n--)
+//    {
+//        int a, b;
+//        cin >> a >> b;
+//        arr.emplace_back(a, b);
+//    }
+//    sort(arr.begin(), arr.end());
+//    vector<PII> ret;
+//    for (auto& i : arr)
+//    {
+//        auto& [a, b] = i;
+//        if (ret.empty() || ret.back().second <= a)
+//        {
+//            ret.emplace_back(a, b);
+//        }
+//        else if (ret.back().second > a && ret.back().second > b)
+//        {
+//            ret.pop_back();
+//            ret.emplace_back(a, b);
+//        }
+//    }
+//    cout << ret.size() << endl;
+//
+//    return 0;
+//}
+//// 64 位输出请用 printf("%lld")
+
+
+//#include<iostream>
+//
+//using namespace std;
+//
+//#include<iostream>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    int T;
+//    cin >> T;
+//    while (T--)
+//    {
+//        long long n, a, b, ret = 0;
+//        cin >> n >> a >> b;
+//        if (n <= 2)
+//        {
+//            cout << min(a, b) << endl;
+//        }
+//        else
+//        {
+//            if (3 * a < 2 * b)
+//            {
+//                ret += n / 2 * a;
+//                n %= 2;
+//                if (n != 0) ret += min(min(a, b), b - a);
+//            }
+//            else
+//            {
+//                ret += n / 3 * b;
+//                n %= 3;
+//                if (n == 1) ret += min(min(a, b), 2 * a - b);
+//                if (n == 2) ret += min(min(a, b), 3 * a - b);
+//            }
+//            cout << ret << endl;
+//        }
+//    }
+//
+//    return 0;
+//}
+
+
+//int main()
+//{
+//    int T;
+//    cin >> T;
+//    while (T--)
+//    {
+//        int n, a, b, ret = 0;
+//        cin >> n >> a >> b;
+//        if (n <= 2)
+//        {
+//            cout << min(a, b);
+//        }
+//        else
+//        {
+//            if (3 * a < 2 * b)
+//            {
+//                ret += n / 2 * a;
+//                n %= 2;
+//                if (n != 0) ret += min(min(a, b), b - a);
+//            }
+//            else
+//            {
+//                ret += n / 3 * b;
+//                n %= 3;
+//                if (n == 1) ret += min(min(a, b), 2 * a - b);
+//                else if (n == 2) ret += min(min(a, b), 3 * a - b);
+//            }
+//            cout << ret << endl;
+//        }
+//    }
+//
+//    return 0;
+//}
+
+
+//#include<iostream>
+//#include<queue>
+//using namespace std;
+//
+//int main()
+//{
+//    int n, k;
+//    cin >> n >> k;
+//    priority_queue<int, vector<int>, greater<int>> heap;
+//    for (int i = 0; i < n; i++)
+//    {
+//        int num;
+//        cin >> num;
+//        heap.push(num);
+//    }
+//    int num = 0;
+//    int ret = 0;
+//    while (heap.top() + num <= k)
+//    {
+//        ret++;
+//        int top = heap.top();
+//        heap.pop();
+//        num += top;
+//        heap.push(top * 2);
+//    }
+//
+//    cout << ret << endl;
+//    return 0;
+//}
+
+
+//#include<iostream>
+//#include<cmath>
+//using namespace std;
+//
+//bool func(long long num)
+//{
+//    if (num <= 1) return false;
+//    for (long long i = 2; i <= sqrt(num); i++)
+//    {
+//        if (num % i == 0) return false;
+//    }
+//    return true;
+//}
+//
+//
+//int main()
+//{
+//    int T = 0;
+//    cin >> T;
+//    while (T--)
+//    {
+//        long long a = 0, b = 0;
+//        cin >> a >> b;
+//        if ((a == 1 && func(b)) || (b == 1 && func(a)))
+//        {
+//            cout << "YES" << endl;
+//        }
+//        else
+//        {
+//            cout << "NO" << endl;
+//        }
+//    }
+//    return 0;
+//}
+
+
+//class Solution {
+//public:
+//    /**
+//     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//     *
+//     * 该数组最长严格上升子序列的长度
+//     * @param a int整型vector 给定的数组
+//     * @return int整型
+//     */
+//    int LIS(vector<int>& a)
+//    {
+//        vector<int> arr;
+//        int n = a.size();
+//        for (int i = 0; i < n; i++)
+//        {
+//            int num = a[i];
+//            if (arr.empty() || arr.back() < num)
+//            {
+//                arr.push_back(num);
+//            }
+//            else
+//            {
+//                int left = 0, right = arr.size();
+//                while (left < right)
+//                {
+//                    int mid = left + (right - left) / 2;
+//                    if (arr[mid] < num)
+//                    {
+//                        left = mid + 1;
+//                    }
+//                    else
+//                    {
+//                        right = mid;
+//                    }
+//                }
+//                arr[left] = num;
+//            }
+//        }
+//        return arr.size();
+//    }
+//};
+
+
 //#include<iostream>
 //#include<unordered_set>
 //#include<string>
