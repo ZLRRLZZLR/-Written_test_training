@@ -4,6 +4,49 @@
 
 using namespace std;
 
+#include <iostream>
+#include<vector>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for (int i = 0; i < n; i++) cin >> arr[i];
+
+    int d, k;
+    cin >> d >> k;
+
+    vector<vector<long long>> f(n + 1, vector<long long>(k + 1, -0x3f3f3f3f3f3f3f3f));
+    vector<vector<long long>> g(n + 1, vector<long long>(k + 1, -0x3f3f3f3f3f3f3f3f));
+
+    for (int i = 1; i <= n; i++)
+    {
+        f[i][1] = arr[i - 1];
+        g[i][1] = arr[i - 1];
+    }
+
+    long long ret = -0x3f3f3f3f3f3f3f3f;
+    for (int i = 2; i <= n; i++)
+    {
+        for (int j = 2; j <= min(i, k); j++)
+        {
+            int left = max(i - d, j - 1);
+            for (int prev = left; prev <= i - 1; prev++)
+            {
+                f[i][j] = max(f[i][j], max(f[prev][j - 1] * arr[i - 1], g[prev][j - 1] * arr[i]));
+                g[i][j] = min(g[i][j], max(f[prev][j - 1] * arr[i - 1], g[prev][j - 1] * arr[i]));
+            }
+            ret = max(ret, f[i][j]);
+        }
+    }
+
+    cout << ret << endl;
+    return 0;
+}
+//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+
 //#include <iostream>
 //#include<algorithm>
 //#include<vector>
