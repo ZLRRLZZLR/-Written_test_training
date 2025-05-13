@@ -4,48 +4,94 @@
 
 using namespace std;
 
-#include <iostream>
-#include<vector>
-using namespace std;
+//class Solution {
+//public:
+//    /**
+//     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//     *
+//     * 递增路径的最大长度
+//     * @param matrix int整型vector<vector<>> 描述矩阵的每个数
+//     * @return int整型
+//     */
+//    int dx[4] = { 1,-1,0,0 };
+//    int dy[4] = { 0,0,1,-1 };
+//    int n = 0;
+//    int m = 0;
+//    int ret = 0;
+//    bool vis[1001][1001] = { false };
+//    int solve(vector<vector<int> >& matrix) {
+//        n = matrix.size();
+//        m = matrix[0].size();
+//        for (int i = 0; i < n; i++)
+//        {
+//            for (int j = 0; j < m; j++)
+//            {
+//                vis[i][j] = true;
+//                dfs(matrix, i, j, 1);
+//                vis[i][j] = false;
+//            }
+//        }
+//        return ret;
+//    }
+//    void dfs(vector<vector<int> >& matrix, int i, int j, int pos)
+//    {
+//        for (int k = 0; k < 4; k++)
+//        {
+//            int x = i + dx[k], y = j + dy[k];
+//            if (x >= 0 && x < n && y >= 0 && y < m && !vis[x][y] && matrix[x][y] > matrix[i][j])
+//            {
+//                vis[x][y] = true;
+//                dfs(matrix, x, y, pos + 1);
+//                vis[x][y] = false;
+//            }
+//        }
+//        ret = max(ret, pos);
+//    }
+//};
 
-int main()
-{
-    int n;
-    cin >> n;
-    vector<int> arr(n);
-    for (int i = 0; i < n; i++) cin >> arr[i];
 
-    int d, k;
-    cin >> d >> k;
-
-    vector<vector<long long>> f(n + 1, vector<long long>(k + 1, -0x3f3f3f3f3f3f3f3f));
-    vector<vector<long long>> g(n + 1, vector<long long>(k + 1, -0x3f3f3f3f3f3f3f3f));
-
-    for (int i = 1; i <= n; i++)
-    {
-        f[i][1] = arr[i - 1];
-        g[i][1] = arr[i - 1];
-    }
-
-    long long ret = -0x3f3f3f3f3f3f3f3f;
-    for (int i = 2; i <= n; i++)
-    {
-        for (int j = 2; j <= min(i, k); j++)
-        {
-            int left = max(i - d, j - 1);
-            for (int prev = left; prev <= i - 1; prev++)
-            {
-                f[i][j] = max(f[i][j], max(f[prev][j - 1] * arr[i - 1], g[prev][j - 1] * arr[i]));
-                g[i][j] = min(g[i][j], max(f[prev][j - 1] * arr[i - 1], g[prev][j - 1] * arr[i]));
-            }
-            ret = max(ret, f[i][j]);
-        }
-    }
-
-    cout << ret << endl;
-    return 0;
-}
-//// 64 位输出请用 printf("%lld")
+//#include <iostream>
+//#include<vector>
+//using namespace std;
+//
+//int main()
+//{
+//    int n;
+//    cin >> n;
+//    vector<int> arr(n);
+//    for (int i = 0; i < n; i++) cin >> arr[i];
+//
+//    int d, k;
+//    cin >> d >> k;
+//
+//    vector<vector<long long>> f(n + 1, vector<long long>(k + 1, -0x3f3f3f3f3f3f3f3f));
+//    vector<vector<long long>> g(n + 1, vector<long long>(k + 1, -0x3f3f3f3f3f3f3f3f));
+//
+//    for (int i = 1; i <= n; i++)
+//    {
+//        f[i][1] = arr[i - 1];
+//        g[i][1] = arr[i - 1];
+//    }
+//
+//    long long ret = -0x3f3f3f3f3f3f3f3f;
+//    for (int i = 2; i <= n; i++)
+//    {
+//        for (int j = 2; j <= min(i, k); j++)
+//        {
+//            int left = max(i - d, j - 1);
+//            for (int prev = left; prev <= i - 1; prev++)
+//            {
+//                f[i][j] = max(f[i][j], max(f[prev][j - 1] * arr[i - 1], g[prev][j - 1] * arr[i]));
+//                g[i][j] = min(g[i][j], max(f[prev][j - 1] * arr[i - 1], g[prev][j - 1] * arr[i]));
+//            }
+//            ret = max(ret, f[i][j]);
+//        }
+//    }
+//
+//    cout << ret << endl;
+//    return 0;
+//}
+////// 64 位输出请用 printf("%lld")
 
 //#include <iostream>
 //#include<algorithm>
