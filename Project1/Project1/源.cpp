@@ -4,6 +4,44 @@
 
 using namespace std;
 
+//#include <algorithm>
+//#include <iostream>
+//#include<vector>
+//using namespace std;
+//
+//int main()
+//{
+//    int n;
+//    cin >> n;
+//    vector<int> arr(n + 1);
+//    for (int i = 1; i <= n; i++) cin >> arr[i];
+//
+//    int d, k;
+//    cin >> k >> d;
+//
+//    vector<vector<long long>> f(n + 1, vector<long long>(k + 1, -0x3f3f3f3f3f3f3f3f));
+//    vector<vector<long long>> g(n + 1, vector<long long>(k + 1, 0x3f3f3f3f3f3f3f3f));
+//
+//    long long ret = -0x3f3f3f3f3f3f3f3f;
+//    for (int i = 1; i <= n; i++)
+//    {
+//        f[i][1] = g[i][1] = arr[i];
+//        for (int j = 2; j <= min(i, k); j++)
+//        {
+//            for (int prev = max(i - d, j - 1); prev <= i - 1; prev++)
+//            {
+//                f[i][j] = max(f[i][j], max(f[prev][j - 1] * arr[i], g[prev][j - 1] * arr[i]));
+//                g[i][j] = min(g[i][j], min(f[prev][j - 1] * arr[i], g[prev][j - 1] * arr[i]));
+//            }
+//        }
+//    }
+//
+//    for (int i = k; i <= n; i++) ret = max(ret, f[i][k]);
+//    cout << ret << endl;
+//    return 0;
+//}
+////// 64 Î»Êä³öÇëÓÃ printf("%lld")
+
 //class Solution {
 //public:
 //    /**
