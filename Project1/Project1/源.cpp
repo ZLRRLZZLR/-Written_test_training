@@ -4,6 +4,119 @@
 
 using namespace std;
 
+//class Solution {
+//public:
+//    /**
+//     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//     *
+//     * 递增路径的最大长度
+//     * @param matrix int整型vector<vector<>> 描述矩阵的每个数
+//     * @return int整型
+//     */
+//    int dx[4] = { 1,-1,0,0 };
+//    int dy[4] = { 0,0,1,-1 };
+//    int n = 0;
+//    int m = 0;
+//    int ret = 1;
+//    int vis[1001][1001];
+//    int solve(vector<vector<int> >& matrix) {
+//        memset(vis, -1, sizeof(vis));
+//        n = matrix.size();
+//        m = matrix[0].size();
+//        for (int i = 0; i < n; i++)
+//        {
+//            for (int j = 0; j < m; j++)
+//            {
+//                ret = max(ret, dfs(matrix, i, j));
+//            }
+//        }
+//        return ret;
+//    }
+//    int dfs(vector<vector<int> >& matrix, int i, int j)
+//    {
+//        if (vis[i][j] != -1) return vis[i][j];
+//        int len = 1;
+//        for (int k = 0; k < 4; k++)
+//        {
+//            int x = i + dx[k], y = j + dy[k];
+//            if (x >= 0 && x < n && y >= 0 && y < m && matrix[x][y] > matrix[i][j])
+//            {
+//                len = max(len, 1 + dfs(matrix, x, y));
+//            }
+//        }
+//        vis[i][j] = len;
+//        return len;
+//    }
+//};
+//#include<iostream>
+//#include<queue>
+//#include <cstring>
+//using namespace std;
+//
+//int n, m;
+//int val[31][31];
+//char arr[31][31];
+//
+//int dx[4] = { 1,-1,0,0 };
+//int dy[4] = { 0,0,1,-1 };
+//int x1, y1;
+//
+//typedef pair<int, int> PII;
+//int main()
+//{
+//    cin >> n >> m;
+//    queue<PII> q;
+//    for (int i = 1; i <= n; i++)
+//    {
+//        for (int j = 1; j <= m; j++)
+//        {
+//            cin >> arr[i][j];
+//            if (arr[i][j] == 'k')
+//            {
+//                q.emplace(i, j);
+//                x1 = i, y1 = j;
+//            }
+//        }
+//    }
+//    memset(val, -1, sizeof(val));
+//    val[x1][y1] = 0;
+//    while (q.size())
+//    {
+//        auto& [a, b] = q.front();
+//        q.pop();
+//        for (int k = 0; k < 4; k++)
+//        {
+//            int x = a + dx[k], y = b + dy[k];
+//            if (x >= 1 && x <= n && y >= 1 && y <= m && val[x][y] == -1 && arr[x][y] != '*')
+//            {
+//                val[x][y] = val[a][b] + 1;
+//                if (arr[x][y] != 'e')
+//                    q.emplace(x, y);
+//            }
+//        }
+//    }
+//
+//    int ret1 = 1e9;
+//    int ret2 = 0;
+//    for (int i = 1; i <= n; i++)
+//    {
+//        for (int j = 1; j <= m; j++)
+//        {
+//            if (arr[i][j] == 'e' && val[i][j] != -1)
+//            {
+//                ret1 = min(val[i][j], ret1);
+//                ret2++;
+//            }
+//        }
+//    }
+//    if (ret2 == 0) cout << -1 << endl;
+//    else cout << ret2 << " " << ret1 << endl;
+//
+//    return 0;
+//}
+
+
+
 //#include<iostream>
 //#include<string>
 //
