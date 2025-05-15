@@ -4,6 +4,141 @@
 
 using namespace std;
 
+//#include<iostream>
+//#include<string>
+//
+//using namespace std;
+//int main()
+//{
+//    int i = 0;
+//    string s;
+//    cin >> s;
+//    long long ISBN = 0;
+//    for (int j = 0; j < s.size() - 1; j++)
+//    {
+//        if (s[j] >= '0' && s[j] <= '9')
+//        {
+//            ISBN += (s[j] - '0') * (i + 1);
+//            i++;
+//        }
+//    }
+//
+//    ISBN %= 11;
+//    if (ISBN == s[s.size() - 1] - '0' || (ISBN == 10 && s[s.size() - 1] == 'X'))
+//    {
+//        cout << "Right" << endl;
+//    }
+//    else
+//    {
+//        s[s.size() - 1] = ISBN == 10 ? 'X' : ISBN + '0';
+//        cout << s << endl;
+//    }
+//
+//    return 0;
+//}
+
+//class Solution {
+//public:
+//    /**
+//     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//     *
+//     *
+//     * @param str string字符串
+//     * @return string字符串vector
+//     */
+//    int n = 0;
+//    vector<string> ret;
+//    bool vis[11] = { false };
+//    string s;
+//    string path;
+//    void dfs(int pos)
+//    {
+//        if (pos == n)
+//        {
+//            ret.push_back(path);
+//            return;
+//        }
+//
+//        for (int i = 0; i < n; i++)
+//        {
+//            if (!vis[i])
+//            {
+//                if (i > 0 && s[i] == s[i - 1] && vis[i - 1]) continue;//剪纸，去掉相同字母带来的重复
+//                path.push_back(s[i]);
+//                vis[i] = true;
+//                dfs(pos + 1);
+//                vis[i] = false;
+//                path.pop_back();
+//            }
+//        }
+//
+//    }
+//
+//    vector<string> Permutation(string str)
+//    {
+//        sort(str.begin(), str.end());
+//        n = str.size();
+//        s = str;
+//        dfs(0);
+//        return ret;
+//    }
+//};
+
+//class Solution {
+//public:
+//    /**
+//     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//     *
+//     *
+//     * @param str string字符串
+//     * @return string字符串vector
+//     */
+//    int n = 0;
+//    vector<string> ret;
+//    bool vis[11] = { false };
+//    string s;
+//    void dfs(string str)
+//    {
+//        if (str.size() == n)
+//        {
+//            ret.push_back(str);
+//            return;
+//        }
+//
+//        for (int i = 0; i < n; i++)
+//        {
+//            if (!vis[i])
+//            {
+//                if (i > 0 && s[i] == s[i - 1] && vis[i - 1]) continue;//剪纸，去掉相同字母带来的重复
+//                string tmp;
+//                tmp += str + s[i];
+//                vis[i] = true;
+//                dfs(tmp);
+//                vis[i] = false;
+//            }
+//        }
+//
+//    }
+//
+//    vector<string> Permutation(string str)
+//    {
+//        sort(str.begin(), str.end());
+//        n = str.size();
+//        s = str;
+//        for (int i = 0; i < n; i++)
+//        {
+//
+//            string tmp;
+//            tmp += str[i];
+//            vis[i] = true;
+//            dfs(tmp);
+//            vis[i] = false;
+//        }
+//
+//        return ret;
+//    }
+//};
+
 //#include <algorithm>
 //#include <iostream>
 //#include<vector>
