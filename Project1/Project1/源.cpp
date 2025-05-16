@@ -4,6 +4,29 @@
 
 using namespace std;
 
+
+//#include <iostream>
+//#include<cmath>
+//using namespace std;
+//
+//int main()
+//{
+//    int n = 0;
+//    while (cin >> n)
+//    {
+//        int num = 0;
+//        while (pow(2, num) - 1 <= n)
+//        {
+//            num++;
+//        }
+//
+//        cout << pow(2, num - 1) - 1 << endl;
+//    }
+//
+//    return 0;
+//}
+//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+
 //class Solution {
 //public:
 //    /**
