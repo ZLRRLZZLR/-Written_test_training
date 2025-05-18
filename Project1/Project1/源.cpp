@@ -1,3 +1,80 @@
+/**
+ * struct ListNode {
+ *	int val;
+ *	struct ListNode *next;
+ *	ListNode(int x) : val(x), next(nullptr) {}
+ * };
+ */
+class Solution {
+public:
+    /**
+     * ä»£ç ä¸­çš„ç±»åã€æ–¹æ³•åã€å‚æ•°åå·²ç»æŒ‡å®šï¼Œè¯·å‹¿ä¿®æ”¹ï¼Œç›´æ¥è¿”å›æ–¹æ³•è§„å®šçš„å€¼å³å¯
+     *
+     * 
+     * @param lists ListNodeç±»vector 
+     * @return ListNodeç±»
+     */
+    struct Compare
+    {
+        bool operator()(ListNode* a,ListNode* b)
+        {
+            return a->val > b->val;
+        }
+    };
+
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
+        priority_queue<ListNode*,vector<ListNode*>,Compare> pq;
+
+        for(auto& arr : lists)
+        {
+            while(arr)
+            {
+                pq.push(arr);
+                arr = arr->next;
+            }
+        }
+
+        ListNode* newhead = new ListNode(-1);
+        ListNode* newtail = newhead;
+
+        while(pq.size())
+        {
+            newtail->next = pq.top();
+            pq.pop();
+            newtail = newtail->next;
+        }
+        newtail->next = nullptr;
+        return newhead->next;
+    }
+};
+
+class Solution {
+public:
+    /**
+     * ä»£ç ä¸­çš„ç±»åã€æ–¹æ³•åã€å‚æ•°åå·²ç»æŒ‡å®šï¼Œè¯·å‹¿ä¿®æ”¹ï¼Œç›´æ¥è¿”å›æ–¹æ³•è§„å®šçš„å€¼å³å¯
+     *
+     * æ—‹è½¬å­—ç¬¦ä¸²
+     * @param A stringå­—ç¬¦ä¸² 
+     * @param B stringå­—ç¬¦ä¸² 
+     * @return boolå¸ƒå°”å‹
+     */
+    bool solve(string A, string B) {
+        int n = A.size();
+        if(A == B) return true;
+        else
+        {
+            string s = A;
+            while(n--)
+            {
+                s = s.substr(1) + s[0];
+                if(s == B) return true;
+            }
+        }
+        return false;
+    }
+};
+
+
 #include<iostream>
 #include<cmath>
 #include<vector>
@@ -26,7 +103,7 @@ using namespace std;
 //    cout << ret << endl;
 //    return 0;
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 //#include <iostream>
 //#include<queue>
@@ -58,7 +135,7 @@ using namespace std;
 //    cout << ret << endl;
 //    return 0;
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 //#include <iostream>
 //#include<string>
@@ -93,7 +170,7 @@ using namespace std;
 //
 //    return 0;
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 //#include <iostream>
 //#include<vector>
@@ -156,16 +233,16 @@ using namespace std;
 //
 //    return 0;
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 //class Solution {
 //public:
 //    /**
-//     * ´úÂëÖĞµÄÀàÃû¡¢·½·¨Ãû¡¢²ÎÊıÃûÒÑ¾­Ö¸¶¨£¬ÇëÎğĞŞ¸Ä£¬Ö±½Ó·µ»Ø·½·¨¹æ¶¨µÄÖµ¼´¿É
+//     * ä»£ç ä¸­çš„ç±»åã€æ–¹æ³•åã€å‚æ•°åå·²ç»æŒ‡å®šï¼Œè¯·å‹¿ä¿®æ”¹ï¼Œç›´æ¥è¿”å›æ–¹æ³•è§„å®šçš„å€¼å³å¯
 //     *
-//     * µİÔöÂ·¾¶µÄ×î´ó³¤¶È
-//     * @param matrix intÕûĞÍvector<vector<>> ÃèÊö¾ØÕóµÄÃ¿¸öÊı
-//     * @return intÕûĞÍ
+//     * é€’å¢è·¯å¾„çš„æœ€å¤§é•¿åº¦
+//     * @param matrix intæ•´å‹vector<vector<>> æè¿°çŸ©é˜µçš„æ¯ä¸ªæ•°
+//     * @return intæ•´å‹
 //     */
 //    int dx[4] = { 1,-1,0,0 };
 //    int dy[4] = { 0,0,1,-1 };
@@ -307,11 +384,11 @@ using namespace std;
 //class Solution {
 //public:
 //    /**
-//     * ´úÂëÖĞµÄÀàÃû¡¢·½·¨Ãû¡¢²ÎÊıÃûÒÑ¾­Ö¸¶¨£¬ÇëÎğĞŞ¸Ä£¬Ö±½Ó·µ»Ø·½·¨¹æ¶¨µÄÖµ¼´¿É
+//     * ä»£ç ä¸­çš„ç±»åã€æ–¹æ³•åã€å‚æ•°åå·²ç»æŒ‡å®šï¼Œè¯·å‹¿ä¿®æ”¹ï¼Œç›´æ¥è¿”å›æ–¹æ³•è§„å®šçš„å€¼å³å¯
 //     *
 //     *
-//     * @param str string×Ö·û´®
-//     * @return string×Ö·û´®vector
+//     * @param str stringå­—ç¬¦ä¸²
+//     * @return stringå­—ç¬¦ä¸²vector
 //     */
 //    int n = 0;
 //    vector<string> ret;
@@ -330,7 +407,7 @@ using namespace std;
 //        {
 //            if (!vis[i])
 //            {
-//                if (i > 0 && s[i] == s[i - 1] && vis[i - 1]) continue;//¼ôÖ½£¬È¥µôÏàÍ¬×ÖÄ¸´øÀ´µÄÖØ¸´
+//                if (i > 0 && s[i] == s[i - 1] && vis[i - 1]) continue;//å‰ªçº¸ï¼Œå»æ‰ç›¸åŒå­—æ¯å¸¦æ¥çš„é‡å¤
 //                path.push_back(s[i]);
 //                vis[i] = true;
 //                dfs(pos + 1);
@@ -354,11 +431,11 @@ using namespace std;
 //class Solution {
 //public:
 //    /**
-//     * ´úÂëÖĞµÄÀàÃû¡¢·½·¨Ãû¡¢²ÎÊıÃûÒÑ¾­Ö¸¶¨£¬ÇëÎğĞŞ¸Ä£¬Ö±½Ó·µ»Ø·½·¨¹æ¶¨µÄÖµ¼´¿É
+//     * ä»£ç ä¸­çš„ç±»åã€æ–¹æ³•åã€å‚æ•°åå·²ç»æŒ‡å®šï¼Œè¯·å‹¿ä¿®æ”¹ï¼Œç›´æ¥è¿”å›æ–¹æ³•è§„å®šçš„å€¼å³å¯
 //     *
 //     *
-//     * @param str string×Ö·û´®
-//     * @return string×Ö·û´®vector
+//     * @param str stringå­—ç¬¦ä¸²
+//     * @return stringå­—ç¬¦ä¸²vector
 //     */
 //    int n = 0;
 //    vector<string> ret;
@@ -376,7 +453,7 @@ using namespace std;
 //        {
 //            if (!vis[i])
 //            {
-//                if (i > 0 && s[i] == s[i - 1] && vis[i - 1]) continue;//¼ôÖ½£¬È¥µôÏàÍ¬×ÖÄ¸´øÀ´µÄÖØ¸´
+//                if (i > 0 && s[i] == s[i - 1] && vis[i - 1]) continue;//å‰ªçº¸ï¼Œå»æ‰ç›¸åŒå­—æ¯å¸¦æ¥çš„é‡å¤
 //                string tmp;
 //                tmp += str + s[i];
 //                vis[i] = true;
@@ -442,16 +519,16 @@ using namespace std;
 //    cout << ret << endl;
 //    return 0;
 //}
-////// 64 Î»Êä³öÇëÓÃ printf("%lld")
+////// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 //class Solution {
 //public:
 //    /**
-//     * ´úÂëÖĞµÄÀàÃû¡¢·½·¨Ãû¡¢²ÎÊıÃûÒÑ¾­Ö¸¶¨£¬ÇëÎğĞŞ¸Ä£¬Ö±½Ó·µ»Ø·½·¨¹æ¶¨µÄÖµ¼´¿É
+//     * ä»£ç ä¸­çš„ç±»åã€æ–¹æ³•åã€å‚æ•°åå·²ç»æŒ‡å®šï¼Œè¯·å‹¿ä¿®æ”¹ï¼Œç›´æ¥è¿”å›æ–¹æ³•è§„å®šçš„å€¼å³å¯
 //     *
-//     * µİÔöÂ·¾¶µÄ×î´ó³¤¶È
-//     * @param matrix intÕûĞÍvector<vector<>> ÃèÊö¾ØÕóµÄÃ¿¸öÊı
-//     * @return intÕûĞÍ
+//     * é€’å¢è·¯å¾„çš„æœ€å¤§é•¿åº¦
+//     * @param matrix intæ•´å‹vector<vector<>> æè¿°çŸ©é˜µçš„æ¯ä¸ªæ•°
+//     * @return intæ•´å‹
 //     */
 //    int dx[4] = { 1,-1,0,0 };
 //    int dy[4] = { 0,0,1,-1 };
@@ -531,7 +608,7 @@ using namespace std;
 //    cout << ret << endl;
 //    return 0;
 //}
-////// 64 Î»Êä³öÇëÓÃ printf("%lld")
+////// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 //#include <iostream>
 //#include<algorithm>
@@ -571,7 +648,7 @@ using namespace std;
 //
 //    return 0;
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 
 //#include <iostream>
@@ -612,7 +689,7 @@ using namespace std;
 //
 //    return 0;
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 
 //#include<iostream>
@@ -763,11 +840,11 @@ using namespace std;
 //class Solution {
 //public:
 //    /**
-//     * ´úÂëÖĞµÄÀàÃû¡¢·½·¨Ãû¡¢²ÎÊıÃûÒÑ¾­Ö¸¶¨£¬ÇëÎğĞŞ¸Ä£¬Ö±½Ó·µ»Ø·½·¨¹æ¶¨µÄÖµ¼´¿É
+//     * ä»£ç ä¸­çš„ç±»åã€æ–¹æ³•åã€å‚æ•°åå·²ç»æŒ‡å®šï¼Œè¯·å‹¿ä¿®æ”¹ï¼Œç›´æ¥è¿”å›æ–¹æ³•è§„å®šçš„å€¼å³å¯
 //     *
-//     * ¸ÃÊı×é×î³¤ÑÏ¸ñÉÏÉı×ÓĞòÁĞµÄ³¤¶È
-//     * @param a intÕûĞÍvector ¸ø¶¨µÄÊı×é
-//     * @return intÕûĞÍ
+//     * è¯¥æ•°ç»„æœ€é•¿ä¸¥æ ¼ä¸Šå‡å­åºåˆ—çš„é•¿åº¦
+//     * @param a intæ•´å‹vector ç»™å®šçš„æ•°ç»„
+//     * @return intæ•´å‹
 //     */
 //    int LIS(vector<int>& a)
 //    {
@@ -841,7 +918,7 @@ using namespace std;
 //    return 0;
 //}
 
-//Ïû³ıÕûÊı
+//æ¶ˆé™¤æ•´æ•°
 //#include<iostream>
 //
 //using namespace std;
@@ -908,7 +985,7 @@ using namespace std;
 //    cout << ret << endl;
 //    return 0;
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 ///**
 // * struct TreeNode {
@@ -921,21 +998,21 @@ using namespace std;
 //class Solution {
 //public:
 //    /**
-//     * ´úÂëÖĞµÄÀàÃû¡¢·½·¨Ãû¡¢²ÎÊıÃûÒÑ¾­Ö¸¶¨£¬ÇëÎğĞŞ¸Ä£¬Ö±½Ó·µ»Ø·½·¨¹æ¶¨µÄÖµ¼´¿É
+//     * ä»£ç ä¸­çš„ç±»åã€æ–¹æ³•åã€å‚æ•°åå·²ç»æŒ‡å®šï¼Œè¯·å‹¿ä¿®æ”¹ï¼Œç›´æ¥è¿”å›æ–¹æ³•è§„å®šçš„å€¼å³å¯
 //     *
 //     *
-//     * @param root TreeNodeÀà
-//     * @return intÕûĞÍ
+//     * @param root TreeNodeç±»
+//     * @return intæ•´å‹
 //     */
-//     //Ê÷ĞÎdp ºóĞò±éÀú
+//     //æ ‘å½¢dp ååºéå†
 //    int ret = -0x3f3f3f3f;
 //    int PathSum(TreeNode* root)
 //    {
 //        if (root == nullptr) return 0;
-//        int l = max(PathSum(root->left), 0);//×ó±ßµ¥¾¶×î´óºÍ
-//        int r = max(PathSum(root->right), 0);//×ó±ßµ¥¾¶×î´óºÍ
-//        ret = max(ret, root->val + l + r);//Â·¾¶×î´óºÍ
-//        return root->val + max(r, l);//¾­¹ırootµÄ×î´óµ¥¾¶
+//        int l = max(PathSum(root->left), 0);//å·¦è¾¹å•å¾„æœ€å¤§å’Œ
+//        int r = max(PathSum(root->right), 0);//å·¦è¾¹å•å¾„æœ€å¤§å’Œ
+//        ret = max(ret, root->val + l + r);//è·¯å¾„æœ€å¤§å’Œ
+//        return root->val + max(r, l);//ç»è¿‡rootçš„æœ€å¤§å•å¾„
 //    }
 //    int maxPathSum(TreeNode* root)
 //    {
@@ -1016,10 +1093,10 @@ using namespace std;
 //    }
 //
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 
-//×ßÃÔ¹¬
+//èµ°è¿·å®«
 //#include <iostream>
 //#include<vector>
 //#include<queue>
@@ -1079,18 +1156,18 @@ using namespace std;
 //    cout << -1 << endl;
 //    return 0;
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 //#include <functional>
 //class Solution {
 //public:
 //    /**
-//     * ´úÂëÖĞµÄÀàÃû¡¢·½·¨Ãû¡¢²ÎÊıÃûÒÑ¾­Ö¸¶¨£¬ÇëÎğĞŞ¸Ä£¬Ö±½Ó·µ»Ø·½·¨¹æ¶¨µÄÖµ¼´¿É
+//     * ä»£ç ä¸­çš„ç±»åã€æ–¹æ³•åã€å‚æ•°åå·²ç»æŒ‡å®šï¼Œè¯·å‹¿ä¿®æ”¹ï¼Œç›´æ¥è¿”å›æ–¹æ³•è§„å®šçš„å€¼å³å¯
 //     *
-//     * ¼ÆËã³É¹¦¾Ù°ì»î¶¯ĞèÒª¶àÉÙÃûÖ÷³ÖÈË
-//     * @param n intÕûĞÍ ÓĞn¸ö»î¶¯
-//     * @param startEnd intÕûĞÍvector<vector<>> startEnd[i][0]ÓÃÓÚ±íÊ¾µÚi¸ö»î¶¯µÄ¿ªÊ¼Ê±¼ä£¬startEnd[i][1]±íÊ¾µÚi¸ö»î¶¯µÄ½áÊøÊ±¼ä
-//     * @return intÕûĞÍ
+//     * è®¡ç®—æˆåŠŸä¸¾åŠæ´»åŠ¨éœ€è¦å¤šå°‘åä¸»æŒäºº
+//     * @param n intæ•´å‹ æœ‰nä¸ªæ´»åŠ¨
+//     * @param startEnd intæ•´å‹vector<vector<>> startEnd[i][0]ç”¨äºè¡¨ç¤ºç¬¬iä¸ªæ´»åŠ¨çš„å¼€å§‹æ—¶é—´ï¼ŒstartEnd[i][1]è¡¨ç¤ºç¬¬iä¸ªæ´»åŠ¨çš„ç»“æŸæ—¶é—´
+//     * @return intæ•´å‹
 //     */
 //    int minmumNumberOfHost(int n, vector<vector<int> >& startEnd)
 //    {
@@ -1253,7 +1330,7 @@ using namespace std;
 //    else cout << "false" << endl;
 //
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 //#include <iostream>
 //#include <string>
@@ -1342,7 +1419,7 @@ using namespace std;
 //    cout << ret << endl;
 //    return 0;
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 //#include <iostream>
 //#include<vector>
@@ -1382,16 +1459,16 @@ using namespace std;
 //
 //    return 0;
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 //class Solution {
 //public:
 //    /**
-//     * ´úÂëÖĞµÄÀàÃû¡¢·½·¨Ãû¡¢²ÎÊıÃûÒÑ¾­Ö¸¶¨£¬ÇëÎğĞŞ¸Ä£¬Ö±½Ó·µ»Ø·½·¨¹æ¶¨µÄÖµ¼´¿É
+//     * ä»£ç ä¸­çš„ç±»åã€æ–¹æ³•åã€å‚æ•°åå·²ç»æŒ‡å®šï¼Œè¯·å‹¿ä¿®æ”¹ï¼Œç›´æ¥è¿”å›æ–¹æ³•è§„å®šçš„å€¼å³å¯
 //     *
 //     *
-//     * @param m intÕûĞÍvector<vector<>>
-//     * @return intÕûĞÍ
+//     * @param m intæ•´å‹vector<vector<>>
+//     * @return intæ•´å‹
 //     */
 //    bool vis[200] = { false };
 //    int citys(vector<vector<int> >& m) {
@@ -1440,11 +1517,11 @@ using namespace std;
 //class Solution {
 //public:
 //    /**
-//     * ´úÂëÖĞµÄÀàÃû¡¢·½·¨Ãû¡¢²ÎÊıÃûÒÑ¾­Ö¸¶¨£¬ÇëÎğĞŞ¸Ä£¬Ö±½Ó·µ»Ø·½·¨¹æ¶¨µÄÖµ¼´¿É
+//     * ä»£ç ä¸­çš„ç±»åã€æ–¹æ³•åã€å‚æ•°åå·²ç»æŒ‡å®šï¼Œè¯·å‹¿ä¿®æ”¹ï¼Œç›´æ¥è¿”å›æ–¹æ³•è§„å®šçš„å€¼å³å¯
 //     *
 //     *
-//     * @param pRoot TreeNodeÀà
-//     * @return bool²¼¶ûĞÍ
+//     * @param pRoot TreeNodeç±»
+//     * @return boolå¸ƒå°”å‹
 //     */
 //    int IsBalanced(TreeNode* pRoot)
 //    {
@@ -1464,11 +1541,11 @@ using namespace std;
 //class Solution {
 //public:
 //    /**
-//     * ´úÂëÖĞµÄÀàÃû¡¢·½·¨Ãû¡¢²ÎÊıÃûÒÑ¾­Ö¸¶¨£¬ÇëÎğĞŞ¸Ä£¬Ö±½Ó·µ»Ø·½·¨¹æ¶¨µÄÖµ¼´¿É
+//     * ä»£ç ä¸­çš„ç±»åã€æ–¹æ³•åã€å‚æ•°åå·²ç»æŒ‡å®šï¼Œè¯·å‹¿ä¿®æ”¹ï¼Œç›´æ¥è¿”å›æ–¹æ³•è§„å®šçš„å€¼å³å¯
 //     *
 //     *
-//     * @param m intÕûĞÍvector<vector<>>
-//     * @return intÕûĞÍ
+//     * @param m intæ•´å‹vector<vector<>>
+//     * @return intæ•´å‹
 //     */
 //    bool vis[200] = { false };
 //    int citys(vector<vector<int> >& m) {
@@ -1521,7 +1598,7 @@ using namespace std;
 //    cout << hash.size() << endl;
 //    return 0;
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 //#include <iostream>
 //using namespace std;
@@ -1551,7 +1628,7 @@ using namespace std;
 //
 //    return 0;
 //}
-// 64 Î»Êä³öÇëÓÃ printf("%lld")
+// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 //#include<iostream>
 //#include<vector>
@@ -1662,7 +1739,7 @@ using namespace std;
 //    cout << "YES" << endl;
 //    return 0;
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 //#include <iostream>
 //#include<string>
@@ -1725,7 +1802,7 @@ using namespace std;
 //
 //    cout << ret << endl;
 //}
-// 64 Î»Êä³öÇëÓÃ printf("%lld")
+// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 
 //#include <iostream>
@@ -1755,7 +1832,7 @@ using namespace std;
 //    cout << dp[0][n - 1] << endl;
 //    return 0;
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 //#include <iostream>
 //#include<string>
@@ -1789,7 +1866,7 @@ using namespace std;
 //    cout << dp[0][n - 1] << endl;
 //    return 0;
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 //#include <iostream>
 //using namespace std;
@@ -2033,17 +2110,17 @@ using namespace std;
 //    }
 //    return 0;
 //}
-// 64 Î»Êä³öÇëÓÃ printf("%lld")
+// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 //class Solution {
 //public:
 //    /**
-//     * ´úÂëÖĞµÄÀàÃû¡¢·½·¨Ãû¡¢²ÎÊıÃûÒÑ¾­Ö¸¶¨£¬ÇëÎğĞŞ¸Ä£¬Ö±½Ó·µ»Ø·½·¨¹æ¶¨µÄÖµ¼´¿É
+//     * ä»£ç ä¸­çš„ç±»åã€æ–¹æ³•åã€å‚æ•°åå·²ç»æŒ‡å®šï¼Œè¯·å‹¿ä¿®æ”¹ï¼Œç›´æ¥è¿”å›æ–¹æ³•è§„å®šçš„å€¼å³å¯
 //     *
-//     * ¼ÆËã01±³°üÎÊÌâµÄ½á¹û
-//     * @param V intÕûĞÍ ±³°üµÄÌå»ı
-//     * @param n intÕûĞÍ ÎïÆ·µÄ¸öÊı
-//     * @param vw intÕûĞÍvector<vector<>> µÚÒ»Î¬¶ÈÎªn,µÚ¶şÎ¬¶ÈÎª2µÄ¶şÎ¬Êı×é,vw[i][0],vw[i][1]·Ö±ğÃèÊöi+1¸öÎïÆ·µÄvi,wi
-//     * @return intÕûĞÍ
+//     * è®¡ç®—01èƒŒåŒ…é—®é¢˜çš„ç»“æœ
+//     * @param V intæ•´å‹ èƒŒåŒ…çš„ä½“ç§¯
+//     * @param n intæ•´å‹ ç‰©å“çš„ä¸ªæ•°
+//     * @param vw intæ•´å‹vector<vector<>> ç¬¬ä¸€ç»´åº¦ä¸ºn,ç¬¬äºŒç»´åº¦ä¸º2çš„äºŒç»´æ•°ç»„,vw[i][0],vw[i][1]åˆ†åˆ«æè¿°i+1ä¸ªç‰©å“çš„vi,wi
+//     * @return intæ•´å‹
 //     */
 //    int knapsack(int V, int n, vector<vector<int> >& vw) {
 //        int num = vw.size();
@@ -2235,8 +2312,8 @@ using namespace std;
 //    }
 //    cout << s.substr(begin, k) << endl;
 //}
-// 64 Î»Êä³öÇëÓÃ printf("%lld")
-// 64 Î»Êä³öÇëÓÃ printf("%lld")
+// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
+// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 //
 //#include <iostream>
 //#include<vector>
@@ -2290,10 +2367,10 @@ using namespace std;
 //    cout << ret << endl;
 //    return 0;
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 
-//Ä£°æÍØÆËÅÅĞò
+//æ¨¡ç‰ˆæ‹“æ‰‘æ’åº
 //#include<iostream>
 //#include<unordered_map>
 //#include<vector>
@@ -2393,7 +2470,7 @@ using namespace std;
 
 
 
-//É¾³ıÏàÁÚÊı×ÖµÄ×î´ó·ÖÊı
+//åˆ é™¤ç›¸é‚»æ•°å­—çš„æœ€å¤§åˆ†æ•°
 //#include <iostream>
 //#include<vector>
 //#include<cmath>
@@ -2424,8 +2501,8 @@ using namespace std;
 //    cout << ret << endl;
 //    return 0;
 //}
-// 64 Î»Êä³öÇëÓÃ printf("%lld")
-//×é¶Ó¾ºÈü
+// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
+//ç»„é˜Ÿç«èµ›
 //#include <iostream>
 //#include<vector>
 //#include<algorithm>
@@ -2448,7 +2525,7 @@ using namespace std;
 //    cout << ret << endl;
 //    return 0;
 //}
-//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+//// 64 ä½è¾“å‡ºè¯·ç”¨ printf("%lld")
 
 
 //#include<iostream>
@@ -2508,11 +2585,11 @@ using namespace std;
 //class Solution {
 //public:
 //    /**
-//     * ´úÂëÖĞµÄÀàÃû¡¢·½·¨Ãû¡¢²ÎÊıÃûÒÑ¾­Ö¸¶¨£¬ÇëÎğĞŞ¸Ä£¬Ö±½Ó·µ»Ø·½·¨¹æ¶¨µÄÖµ¼´¿É
+//     * ä»£ç ä¸­çš„ç±»åã€æ–¹æ³•åã€å‚æ•°åå·²ç»æŒ‡å®šï¼Œè¯·å‹¿ä¿®æ”¹ï¼Œç›´æ¥è¿”å›æ–¹æ³•è§„å®šçš„å€¼å³å¯
 //     *
 //     *
-//     * @param arr intÕûĞÍvector the array
-//     * @return intÕûĞÍ
+//     * @param arr intæ•´å‹vector the array
+//     * @return intæ•´å‹
 //     */
 //    int maxLength(vector<int>& arr) {
 //        int n = arr.size();
