@@ -4,6 +4,46 @@
 
 using namespace std;
 
+//#include <iostream>
+//#include<vector>
+//using namespace std;
+//
+//int n, m;
+//bool choose[11] = { false };
+//int sum = 0;
+//void dfs(int x)
+//{
+//    if (sum == m)
+//    {
+//        for (int i = 1; i <= n; i++)
+//        {
+//            if (choose[i])
+//                cout << i << " ";
+//        }
+//        cout << endl;
+//        return;
+//    }
+//    if (sum > m || x > n) return;
+//
+//    sum += x;
+//    choose[x] = true;
+//    dfs(x + 1);
+//    choose[x] = false;
+//    sum -= x;
+//
+//    dfs(x + 1);
+//}
+//
+//
+//int main()
+//{
+//    cin >> n >> m;
+//    dfs(1);
+//
+//    return 0;
+//}
+
+
 
 //#include <iostream>
 //#include<cmath>
