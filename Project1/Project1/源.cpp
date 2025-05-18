@@ -5,6 +5,30 @@
 using namespace std;
 
 //#include <iostream>
+//#include<string>
+//using namespace std;
+//
+//int main()
+//{
+//    long long f[26] = { 0 };
+//    long long g[26] = { 0 };
+//    long long ret = 0, n;
+//    string s;
+//    cin >> n >> s;
+//
+//    for (int i = 0; i < n; i++)
+//    {
+//        ret += f[s[i] - 'a'];
+//        f[s[i] - 'a'] += i - g[s[i] - 'a'];
+//        g[s[i] - 'a'] += 1;
+//    }
+//
+//    cout << ret << endl;
+//    return 0;
+//}
+//// 64 Î»Êä³öÇëÓÃ printf("%lld")
+
+//#include <iostream>
 //#include<queue>
 //using namespace std;
 //
