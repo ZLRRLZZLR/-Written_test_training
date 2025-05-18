@@ -1,3 +1,179 @@
+//#include<iostream>
+//#include<cstring>
+//using namespace std;
+//
+//int n, m;
+//int dist[101][101];
+//int arr[101][101];
+//int dx[4] = { 1,-1,0,0 };
+//int dy[4] = { 0,0,1,-1 };
+//
+//
+//int dfs(int i, int j)
+//{
+//    if (dist[i][j] != -1) return dist[i][j];
+//
+//    int len = 1;
+//    for (int k = 0; k < 4; k++)
+//    {
+//        int x = i + dx[k], y = j + dy[k];
+//        if (x >= 0 && x < n && y >= 0 && y < m && arr[x][y] < arr[i][j])
+//        {
+//            len = max(len, dfs(x, y) + 1);
+//        }
+//    }
+//    dist[i][j] = len;
+//    return dist[i][j];
+//}
+//
+//
+//int main()
+//{
+//    cin >> n >> m;
+//
+//    for (int i = 0; i < n; i++)
+//    {
+//        for (int j = 0; j < m; j++)
+//        {
+//            cin >> arr[i][j];
+//        }
+//    }
+//
+//    memset(dist, -1, sizeof(dist));
+//
+//    int ret = 0;
+//    for (int i = 0; i < n; i++)
+//    {
+//        for (int j = 0; j < m; j++)
+//        {
+//            ret = max(ret, dfs(i, j));
+//        }
+//    }
+//    cout << ret << endl;
+//    return 0;
+//}
+
+///**
+// * struct ListNode {
+// *	int val;
+// *	struct ListNode *next;
+// *	ListNode(int x) : val(x), next(nullptr) {}
+// * };
+// */
+//class Solution {
+//public:
+//    /**
+//     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//     *
+//     *
+//     * @param lists ListNode类vector
+//     * @return ListNode类
+//     */
+//    struct Compare
+//    {
+//        bool operator()(ListNode* a, ListNode* b)
+//        {
+//            return a->val > b->val;
+//        }
+//    };
+//
+//    ListNode* mergeKLists(vector<ListNode*>& lists) {
+//        priority_queue<ListNode*, vector<ListNode*>, Compare> pq;
+//
+//        for (auto& head : lists)
+//        {
+//            if (head)
+//                pq.push(head);
+//        }
+//
+//        ListNode* newhead = new ListNode(-1);
+//        ListNode* newtail = newhead;
+//
+//        while (pq.size())
+//        {
+//            ListNode* cur = pq.top();
+//            pq.pop();
+//            newtail->next = cur;
+//            newtail = newtail->next;
+//            if (cur->next) pq.push(cur->next);
+//        }
+//        newtail->next = nullptr;
+//        return newhead->next;
+//    }
+//};
+
+//class Solution {
+//public:
+//    /**
+//     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//     *
+//     * 旋转字符串
+//     * @param A string字符串 
+//     * @param B string字符串 
+//     * @return bool布尔型
+//     */
+//    bool solve(string A, string B) {
+//        if(A.size() != B.size()) return false;
+//        return (A + A).find(B) != -1;
+//    }
+//};
+//
+//#include<iostream>
+//#include<cstdlib>
+//#include<cstring>
+//using namespace std;
+//
+//int n , m;
+//
+//int dist[101][101];
+//int arr[101][101];
+//int dx[4] = {1,-1,0,0};
+//int dy[4] = {0,0,1,-1};
+//int ret = 0;
+//
+//int dfs(int i,int j)
+//{
+//    if(dist[i][j] != -1) return dist[i][j];
+//
+//    for(int k = 0;k < 4;k++)
+//    {
+//        int x = i + dx[k]; 
+//        int y = j + dy[k];
+//        if(x >= 0 && x < n && y >= 0 && y < m && arr[x][y] <= arr[i][j])
+//        {
+//            dist[i][j] = max(dfs(x,y) + 1,dist[i][j]);
+//        }
+//    }
+//    ret = max(ret,dist[i][j]);
+//
+//    return dist[i][j];
+//}
+//
+//
+//int main()
+//{
+//    cin >> n >> m;
+//    memset(dist,-1,sizeof(dist));
+//    for(int i = 0;i < n;i++)
+//    {
+//        for(int j = 0;j < m;j++)
+//        {
+//            cin >> arr[i][j];
+//        }
+//    }
+//    for(int i = 0;i < n;i++)
+//    {
+//        for(int j = 0;j < m;j++)
+//        {
+//            dfs(i,j);
+//        }
+//    }
+//
+//    cout << ret << endl;
+//    return 0;
+//}
+
+
 /**
  * struct ListNode {
  *	int val;
