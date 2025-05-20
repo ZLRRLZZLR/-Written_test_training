@@ -1,57 +1,196 @@
-//#include<iostream>
-//#include<cstring>
-//using namespace std;
-//
-//int n, m;
-//int dist[101][101];
-//int arr[101][101];
-//int dx[4] = { 1,-1,0,0 };
-//int dy[4] = { 0,0,1,-1 };
-//
-//
-//int dfs(int i, int j)
-//{
-//    if (dist[i][j] != -1) return dist[i][j];
-//
-//    int len = 1;
-//    for (int k = 0; k < 4; k++)
-//    {
-//        int x = i + dx[k], y = j + dy[k];
-//        if (x >= 0 && x < n && y >= 0 && y < m && arr[x][y] < arr[i][j])
-//        {
-//            len = max(len, dfs(x, y) + 1);
-//        }
-//    }
-//    dist[i][j] = len;
-//    return dist[i][j];
-//}
-//
-//
-//int main()
-//{
-//    cin >> n >> m;
-//
-//    for (int i = 0; i < n; i++)
-//    {
-//        for (int j = 0; j < m; j++)
-//        {
-//            cin >> arr[i][j];
-//        }
-//    }
-//
-//    memset(dist, -1, sizeof(dist));
-//
-//    int ret = 0;
-//    for (int i = 0; i < n; i++)
-//    {
-//        for (int j = 0; j < m; j++)
-//        {
-//            ret = max(ret, dfs(i, j));
-//        }
-//    }
-//    cout << ret << endl;
-//    return 0;
-//}
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+int main()
+{
+    long long n,k;
+    cin >> n >> k;
+    vector<long long> arr(n);
+    int sum = 0;
+    for(int i = 0;i < n;i++) {
+        cin >> arr[i];
+        sum += arr[i];
+    }
+    vector<vector<bool>> dp(n + 1,vector<bool>(sum + 1,false));
+    for(int i = 0;i <= n;i++)
+        dp[i][0] = true;
+    for(int i = 1;i <= n;i++)
+    {
+        for(int j = arr[i - 1];j <= sum;j++)
+        {
+            dp[i][j] = dp[i][j - arr[i - 1]] || dp[i - 1][j];
+        }
+    }
+
+    int ret = 0;
+    for(int j = 0;j <= sum;j++)
+    {
+        if(j % k == 0 && dp[n][j])
+        {
+            ret = j;
+        }
+    }
+
+    cout << ret << endl;
+
+    return 0;
+}
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int dp[1001][1001];
+int n;
+
+void func1()
+{
+    for(int i = n - 1;i >= 0;i--)
+    {
+        for(int j = n - 1;j >= 0;j--)
+        {
+            cout << dp[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+void func2()
+{
+    for(int i = n - 1;i >= 0;i--)
+    {
+        for(int j = 0;j < n;j++)
+        {
+            cout << dp[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+
+
+
+int main()
+{
+    cin >> n;
+    for(int i = 0;i < n;i++)
+    {
+        for(int j = 0;j < n;j++)
+        {
+            cin >> dp[i][j];
+        }
+    }
+    int q;
+    cin >> q;
+    while(q--)
+    {
+        int x;
+        cin >> x;
+        if(x == 1) func1();
+        else if(x == 2) func2();
+    }
+
+    return 0;
+}
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main()
+{
+    long long n = 0;
+    cin >> n;
+    vector<long long> arr(n + 1);
+    vector<long long> dp(n + 1);
+    for(int i = 1;i <= n;i++) cin >> arr[i];
+
+    long long max1 = arr[1];
+    long long max2 = arr[1];
+
+    for(int i = 1;i <= n;i++)
+    {
+        if(arr[i] >= max2)
+        {
+            max1 = max2;
+            max2 = arr[i];
+        }
+        else if(arr[i] > max1)
+        {
+            max1 = arr[i];
+        }
+        dp[i] = max1;
+    }
+
+    long long q;
+    cin >> q;
+    while(q--)
+    {
+        long long num;
+        cin >> num;
+
+        cout << dp[num] << endl;
+    }
+
+    return 0;
+}
+
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+int n,m;
+int dist[101][101];
+int arr[101][101];
+int dx[4] = {1,-1,0,0};
+int dy[4] = {0,0,1,-1};
+
+
+int dfs(int i,int j)
+{
+    if(dist[i][j] != -1) return dist[i][j];
+
+    int len = 1;
+    for(int k = 0;k < 4;k++)
+    {
+        int x = i + dx[k],y = j + dy[k];
+        if(x >= 0 && x < n && y >= 0 && y < m && arr[x][y] < arr[i][j])
+        {
+            len = max(len,dfs(x,y) + 1);
+        }
+    }
+    dist[i][j] = len;
+    return dist[i][j];
+}
+
+
+int main()
+{
+    cin >> n >> m;
+
+    for(int i = 0;i < n;i++)
+    {
+        for(int j = 0;j < m;j++)
+        {
+            cin >> arr[i][j];
+        }
+    }
+
+    memset(dist,-1,sizeof(dist));
+
+    int ret = 0;
+    for(int i = 0;i < n;i++)
+    {
+        for(int j = 0;j < m;j++)
+        {
+            ret = max(ret,dfs(i,j));
+        }
+    }
+    cout << ret << endl;
+    return 0;
+}
 
 ///**
 // * struct ListNode {
