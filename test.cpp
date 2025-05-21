@@ -1,19 +1,137 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    int maxval = sqrt(n);;
+    if(maxval * maxval == n)
+    {
+        cout << 1 << endl;
+        return 0;
+    }
+    else
+    {
+        int ret = 1;
+        int sum = maxval * maxval;
+        for(int i = maxval;i>=0;i--)
+        {
+            while(sum + i * i <= n)
+            {
+                ret++;
+                sum += i * i;
+                if(sum == n)
+                {
+                    cout << ret << endl;
+                    return 0;
+                }
+            }
+        }
+    }
+    return 0;
+}
 
 
 
+#include<iostream>
+#include<unordered_map>
+#include<string>
+#include<queue>
+using namespace std;
+
+int main()
+{
+    unordered_map<char,int> hash;
+    string s;
+    cin >> s;
+    for(auto ch : s) hash[ch]++;
+
+    priority_queue<int,vector<int>,greater<int>> pq;
+    for(auto i : hash) pq.push(i.second);
+    int ret = 0;
+    if(pq.size() == 1) {
+        ret = pq.top();
+        cout << ret << endl;
+        return 0;
+    }
+    while(pq.size() > 1)
+    {
+        int a = pq.top();
+        pq.pop();
+        int b = pq.top();
+        pq.pop();
+        ret += a + b;
+        pq.push(a + b);
+    }
+
+    cout << ret << endl;
+    return 0;
+}
+
+#include<iostream>
+#include<unordered_map>
+#include<string>
+#include<queue>
+using namespace std;
+
+int main()
+{
+    unordered_map<char,int> hash;
+    string s;
+    cin >> s;
+    for(auto ch : s) hash[ch]++;
+
+    priority_queue<int,vector<int>,greater<int>> pq;
+    for(auto i : hash) pq.push(i.second);
+
+    int ret = 0;
+    while(pq.size() > 1)
+    {
+        int a = pq.top();
+        pq.pop();
+        int b = pq.top();
+        pq.pop();
+        ret += a + b;
+        pq.push(a + b);
+    }
+
+    cout << ret << endl;
+    return 0;
+}
 
 
+#include<iostream>
+#include<cmath>
+using namespace std;
 
+int main()
+{
+    int hash[26] = {0};
 
+    char ch;
+    while(cin >> ch)
+    {
+        if(ch != ' ') hash[ch - 'a']++;
+    }
 
+    int maxval = 0;
+    for(auto i : hash)
+    {
+        maxval = max(i,maxval);
+    }
+    for(int i = 0;i < 26;i++)
+    {
+        if(hash[i] == maxval)
+        {
+            cout << (char)(i + 'a') << endl;
+            break;
+        }
+    }
 
-
-
-
-
-
-
-
+    return 0;
+}
 
 #include<iostream>
 #include<vector>
