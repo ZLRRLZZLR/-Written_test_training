@@ -1,3 +1,37 @@
+class Solution {
+public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     * 
+     * @param A int整型vector<vector<>> 
+     * @param f int整型vector<vector<>> 
+     * @return int整型vector<vector<>>
+     */
+    int dx[4] = {1,-1,0,0};
+    int dy[4] = {0,0,1,-1};
+    vector<vector<int> > flipChess(vector<vector<int> >& A, vector<vector<int> >& f) {
+        int n = A.size();
+        int m = A[0].size();
+        for(auto& arr : f)
+        {
+            int a = arr[0] - 1;
+            int b = arr[1] - 1;
+            for(int k = 0;k < 4;k++)
+            {
+                int x = a + dx[k],y = b + dy[k];
+                if(x >= 0 && x < n && y >= 0 && y < m)
+                {
+                    A[x][y] = !A[x][y];
+                }
+            }
+        }
+
+        return A;
+    }
+};
+
+
 #include<iostream>
 #include<cmath>
 using namespace std;
