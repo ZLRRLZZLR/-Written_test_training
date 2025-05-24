@@ -1,3 +1,53 @@
+
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main()
+{
+    int n,aim;
+    vector<int> arr(n);
+    cin >> n >> aim;
+    for(int i = 0;i < n;i++) cin >> arr[i];
+
+    vector<int> dp(aim + 1,0x3f3f3f3f);
+    dp[0] = 0;
+
+    for(int i = 1;i <= n;i++)
+    {
+        for(int j = arr[i - 1];j <= aim;j++)
+        {
+            dp[j] = min(dp[j],dp[j - arr[i - 1]] + 1);
+        }
+    }
+
+    cout << dp[aim] << endl;
+    return 0;
+}
+
+#include <functional>
+class Solution {
+public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     * 
+     * @param A int整型vector 
+     * @param n int整型 
+     * @return int整型
+     */
+    int getDis(vector<int>& A, int n) {
+        int a = A[0],ret = 0;
+        for(int i = 0;i < n;i++)
+        {
+            ret = max(A[i] - a,ret);
+            a = min(a,A[i]);
+        }
+
+        return ret;
+    }
+};
+
 class Solution {
 public:
     /**
