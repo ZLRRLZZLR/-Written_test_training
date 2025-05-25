@@ -21,7 +21,7 @@ int main()
         }
     }
 
-    cout << dp[aim] << endl;
+    cout << (dp[aim] ==  0x3f3f3f3f ? -1 : dp[aim]) << endl;
     return 0;
 }
 
