@@ -1,3 +1,26 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    int n,m;
+    cin >> n >> m;
+
+    int tmp1 = m,tmp2 = n;
+    double ret1 = 1;
+    while(tmp1)
+    {
+        ret1 *= tmp2--;
+        ret1 /= tmp1--;
+    }
+
+    double ret = pow(0.8,m) * pow(0.2,n - m) * ret1;
+
+    printf("%0.4lf",ret);
+    return 0;
+}
+
 
 #include<iostream>
 #include<vector>
