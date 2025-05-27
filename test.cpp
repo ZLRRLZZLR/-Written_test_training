@@ -1,4 +1,140 @@
 #include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+    int n = 0;
+    cin >> n;
+    string s;
+    cin >> s;
+    if(n == 1)
+    {
+        cout << 0 <<endl;
+        return 0;
+    }
+    int ret = 0;
+    for(int left = 0,right = 1;right < n;)
+    {
+        if(s[left] == s[right])
+        {
+            left++;
+            right++;
+        }
+        else if(s[left] < s[right])
+        {
+            left++;
+            right++;
+        }
+        else
+        {
+            ret++;
+            left++;
+            right++;
+        }
+    }
+
+    cout << ret << endl;
+    return 0;
+}
+
+
+#include<iostream>
+#include<vector>
+#include<unordered_set>
+#include<cmath>
+#include<algorithm>
+using namespace std;
+
+unordered_set<int> hash;
+
+bool func(int num)
+{
+    for(int i = 2;i <= sqrt(num);i++)
+    {
+        if(num % i == 0) return false;
+    }
+
+    return true;
+}
+
+
+int main()
+{
+    unordered_set<int> hash;
+
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for(auto& i : arr) cin >> i;
+    sort(arr.begin(),arr.end());
+    reverse(arr.begin(),arr.end());
+    int sum = 0;
+
+    for(auto& num : arr)
+    {
+        int flag = 1;
+        for(int i = 2;i <= num;i++)
+        {
+            if(num % i == 0)
+            {
+                if(func(i) && !hash.count(i))
+                {
+                    hash.insert(i);
+                    sum += i;
+                    flag = 0;
+                    cout << i <<endl;
+                    break;
+                }
+            }
+        }
+        if(flag)
+        {
+            cout << -1 << endl;
+            return 0;
+        }
+    }
+
+    cout << sum << endl;
+    return 0;
+}
+
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+
+    for(auto& i : arr) cin >> i;
+    sort(arr.begin(),arr.end());
+
+    if(n == 1)
+    {
+        cout << arr[0] << endl;
+    }
+    else if(n == 2)
+    {
+        cout << arr[1] - arr[0] << endl;
+    }
+
+    int ret = 0x3f3f3f3f;
+    for(int left = 0,right = 1;right < n;left++,right++)
+    {
+        ret = min(arr[right] - arr[left],ret);
+    }
+
+    cout << ret << endl;
+
+    return 0;
+}
+
+#include<iostream>
 #include<cmath>
 using namespace std;
 
