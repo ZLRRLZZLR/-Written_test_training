@@ -1,4 +1,229 @@
 #include<iostream>
+#include<vector>
+using namespace std;
+
+int main() {
+    long long n, x;
+    cin >> n >> x;
+    vector<int> arr(n);
+    long long sum = 0;
+    long long ret = 0;
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+        sum += arr[i];
+    }
+    int num = n;
+    while (x <= num) {
+        for (int i = 0;i < n;i++) {
+            if (arr[i] > 0) {
+                if (--arr[i] == 0) {
+                    num--;
+                }
+                sum--;
+            }
+        }
+        ret += x;
+    }
+    ret += sum;
+    cout << ret << endl;
+    return 0;
+}
+
+
+class Solution {
+  public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     *
+     * @param CityMap int整型vector<vector<>>
+     * @param n int整型
+     * @param m int整型
+     * @return int整型
+     */
+    typedef pair<int, int> PII;
+    int dx[4] = {1, -1, 0, 0};
+    int dy[4] = {0, 0, 1, -1};
+    int ret;
+    int n;
+    int m;
+    queue<PII> q;
+    bool vis1[11][11];
+    bool vis2[11][11];
+
+    int bfs(vector<vector<int> >& CityMap, int i, int j) {
+        q.emplace(i, j);
+        vis1[i][j] = true;
+        int level = 1;
+        while (q.size()) {
+            //cout << level << endl;
+            while (level--) {
+                auto& [a, b] = q.front();
+                q.pop();
+                //cout << CityMap[a][b] << endl;
+                if (CityMap[a][b] == 2) {
+                    return ret;
+                }
+                for (int k = 0; k < 4; k++) {
+                    int x = dx[k] + a, y = dy[k] + b;
+                    //cout << dx[k] << ' ' << dy[k] << endl;
+                    //cout << x << ' ' << y << endl;
+                    if (x >= 0 && x < n && y >= 0 && y < m && !vis1[x][y] && CityMap[x][y] != -1) {
+                        vis1[x][y] = true;
+                        q.emplace(x, y);
+                    }
+                }
+            }
+            level = q.size();
+            //cout << level << endl;
+            if (level) {
+                //cout << "test" << endl;
+                ret++;
+            }
+        }
+        return -1;
+    }
+
+    void dfs(vector<vector<int> >& CityMap, int i, int j, int pos) {
+        if (CityMap[i][j] == 2) {
+            if (pos == flag) ret++;
+            return ;
+        }
+
+        for (int k = 0; k < 4; k++) {
+            memset(vis2, false, sizeof(vis2));
+            int x = dx[k] + i, y = dy[k] + j;
+            if (x >= 0 && x < n && y >= 0 && y < m && !vis2[x][y] && CityMap[x][y] != -1) {
+                vis2[x][y] = true;
+                dfs(CityMap, x, y, pos + 1);
+            }
+        }
+
+    }
+
+
+    int flag = 0;
+    int countPath(vector<vector<int> >& CityMap, int _n, int _m) {
+        memset(vis1, false, sizeof(vis1));
+        ret = 0;
+        n = _n;
+        m = _m;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (CityMap[i][j] == 1) {
+                    flag = bfs(CityMap, i, j);
+                    dfs(CityMap, i, j,0);
+                }
+            }
+        }
+        return ret;
+    }
+};
+
+
+class Solution {
+  public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     *
+     * @param CityMap int整型vector<vector<>>
+     * @param n int整型
+     * @param m int整型
+     * @return int整型
+     */
+    typedef pair<int, int> PII;
+    int dx[4] = {1, -1, 0, 0};
+    int dy[4] = {0, 0, 1, -1};
+    int ret;
+    int n;
+    int m;
+    queue<PII> q;
+    int countPath(vector<vector<int> >& CityMap, int _n, int _m) {
+        ret = 0;
+        n = _n;
+        m = _m;
+        bool vis[11][11] = {false};
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (CityMap[i][j] == 1) {
+                    q.emplace(i, j);
+                    vis[i][j] = true;
+                    int level = 1;
+                    while (q.size()) {
+                        //cout << level << endl;
+                        while (level--) {
+                            auto& [a,b] = q.front();
+                            q.pop();
+                            cout << CityMap[a][b] << endl;
+                            if(CityMap[a][b] == 2)
+                            {
+                                return ret;
+                            }
+                            for (int k = 0; k < 4; k++) {
+                                int x = dx[k] + a, y = dy[k] + b;
+                                //cout << dx[k] << ' ' << dy[k] << endl; 
+                                //cout << x << ' ' << y << endl;
+                                if (x >= 0 && x < n && y >= 0 && y < m && !vis[x][y] && CityMap[x][y] != -1) {
+                                    vis[x][y] = true;
+                                    q.emplace(x, y);
+                                }
+                            }
+                        }
+                        level = q.size();
+                        //cout << level << endl;
+                        if (level) 
+                        {
+                            //cout << "test" << endl;
+                            ret++;
+                        }
+                    }
+                }
+            }
+        }
+
+        return -1;
+    }
+};
+
+
+#include<iostream>
+#include<vector>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+    if(n == 1)
+    {
+        cout << 1 << endl;
+        return 0;
+    }
+    vector<int> arr(n);
+    for(auto& i : arr) cin >> i;
+
+    int ret = 1;
+    for(int left = 0,right = 1;right < n;right++)
+    {
+        if(arr[right] - arr[right - 1] <= 8)
+        {
+            ret = max(right - left + 1,ret);
+        }
+        else
+        {
+            left = right;
+        }
+    }
+
+
+    cout << ret << endl;
+    return 0;
+}
+
+
+#include<iostream>
 #include<string>
 using namespace std;
 
