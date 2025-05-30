@@ -1,3 +1,74 @@
+class Solution {
+public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     * 栈排序
+     * @param a int整型vector 描述入栈顺序
+     * @return int整型vector
+     */
+    vector<int> solve(vector<int>& a) {
+        vector<int> qin;
+        vector<int> qout;
+        int maxval = 0;
+        for(auto i : a)
+        {
+            maxval = max(maxval,i);
+        }
+        int n = a.size();
+        for(int i = 0;i < n;i++)
+        {
+            if(a[i] == maxval)
+            {
+                qout.push_back(a[i]);
+            }
+            else
+            {
+                if(qout.size() && qout.back() - a[i] == 1)
+                {
+                    qout.push_back(a[i]);
+                }
+                else
+                {
+                    qin.push_back(a[i]);
+                }
+            }
+        }
+            while(qin.size())
+            {
+                qout.push_back(qin.back());
+                qin.pop_back();
+            }
+            return qout;
+    }
+};
+
+#include<iostream>
+#include<vector>
+#include<cstdio>
+using namespace std;
+
+int main()
+{
+    int n,m;
+    cin >> n >> m;
+    double sum = 0;
+    for(int i = 0;i < n - m;i++)
+    {
+        int num;
+        cin >> num;
+        sum += num;
+    }
+
+    double maxval = (double)((sum + m * 5) / n);
+    double minval = (double)((sum + m * 1) / n);
+
+    printf("%0.5lf %0.5lf",minval,maxval);
+
+    return 0;
+}
+
+
 #include<iostream>
 #include<vector>
 using namespace std;
