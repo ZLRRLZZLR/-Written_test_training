@@ -1,7 +1,62 @@
 #include<iostream>
 #include<vector>
+#include<unordered_map>
+#include<queue>
 
 using namespace std;
+
+//#include <memory>
+//class Solution {
+//public:
+//    /**
+//     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//     *
+//     *
+//     * @param numProject int整型
+//     * @param groups int整型vector<vector<>>
+//     * @return int整型vector
+//     */
+//    vector<int> findOrder(int numProject, vector<vector<int> >& groups)
+//    {
+//        unordered_map<int, vector<int>> edges;
+//        vector<int> in(numProject, 0);
+//
+//        vector<int> ret;
+//        queue<int> q;
+//        for (int i = 0; i < groups.size(); i++)//建图
+//        {
+//            int a = groups[i][0], b = groups[i][1];
+//            edges[b].push_back(a);
+//            in[a]++;
+//        }
+//
+//        for (int i = 0; i < numProject; i++)//入度为0的点
+//        {
+//            if (in[i] == 0) q.push(i);
+//        }
+//
+//        while (q.size())
+//        {
+//            int a = q.front();
+//            ret.push_back(a);
+//            q.pop();
+//            for (auto& ch : edges[a])
+//            {
+//                if (--in[ch] == 0) q.push(ch);
+//            }
+//        }
+//
+//        if (ret.size() == numProject) return ret;
+//        else return {};
+//    }
+//};
+//
+//int main()
+//{
+//    vector<vector<int>> tmp = { {2,1} };
+//    Solution().findOrder(3, tmp);
+//}
+
 
 //#include<iostream>
 //#include<cmath>
