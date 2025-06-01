@@ -3,6 +3,30 @@
 
 using namespace std;
 
+
+//#include<iostream>
+//#include<vector>
+//#include<cmath>
+//using namespace std;
+//
+//int n;
+//
+//int main()
+//{
+//    cin >> n;
+//    vector<int> dp(n + 1, 0x3f3f3f3f);
+//    dp[0] = 0;
+//    for (int i = 1; i <= sqrt(n); i++)
+//    {
+//        for (int j = i * i; j <= n; j++)
+//        {
+//            dp[j] = min(dp[j], dp[j - i * i] + 1);
+//        }
+//    }
+//    cout << dp[n] << endl;
+//    return 0;
+//}
+
 //#include<iostream>
 //#include<vector>
 //using namespace std;
