@@ -3,6 +3,31 @@
 
 using namespace std;
 
+//#include<iostream>
+//#include<cmath>
+//#include<string>
+//
+//using namespace std;
+//
+//int main()
+//{
+//    string s;
+//    cin >> s;
+//    int ret = 0x3f3f3f3f;
+//    for (int i = 'a'; i <= 'z'; i++)
+//    {
+//        int sum = 0;
+//        for (auto& ch : s)
+//        {
+//            sum += min(abs(ch - i), 26 - abs(ch - i));
+//        }
+//        ret = min(sum, ret);
+//    }
+//
+//    cout << ret << endl;
+//    return 0;
+//}
+
 
 //#include<iostream>
 //#include<vector>
