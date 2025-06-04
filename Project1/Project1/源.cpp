@@ -5,6 +5,50 @@
 
 using namespace std;
 
+//#include <cstdio>
+//#include <iostream>
+//#include<vector>
+//#include<cstring>
+//using namespace std;
+//
+//int n;
+//int arr[1001];
+//int f[1001];
+//int g[1001];
+//
+//
+//int main() {
+//    cin >> n;
+//    for (int i = 1; i <= n; i++) cin >> arr[i];
+//
+//    int ret = 0;
+//    for (int i = 1; i <= n; i++) {
+//        f[i] = 1;
+//        for (int j = 1; j <= i - 1; j++) {
+//            if (arr[i] > arr[j]) {
+//                f[i] = max(f[i], f[j] + 1);
+//            }
+//        }
+//    }
+//    for (int i = n; i >= 1; i--)
+//    {
+//        g[i] = 1;
+//        for (int j = n; j >= i + 1; j--) {
+//            if (arr[i] > arr[j]) {
+//                g[i] = max(g[i], g[j] + 1);
+//            }
+//        }
+//    }
+//
+//    for (int i = 1; i <= n; i++)
+//    {
+//        ret = max(ret, f[i] + g[i] - 1);
+//    }
+//    cout << n - ret << endl;
+//    return 0;
+//}
+//// 64 位输出请用 printf("%lld")
+
 //#include <memory>
 //class Solution {
 //public:
