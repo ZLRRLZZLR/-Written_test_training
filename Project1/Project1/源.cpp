@@ -5,6 +5,32 @@
 
 using namespace std;
 
+//#include<iostream>
+//#include<vector>
+//
+//using namespace std;
+//
+//int n;
+//
+//int main()
+//{
+//    cin >> n;
+//    vector<long long> arr(n + 1);
+//    for (int i = 1; i <= n; i++)
+//    {
+//        cin >> arr[i];
+//    }
+//
+//    vector<long long> dp(n + 1, 0);
+//    for (int i = 3; i <= n; i++)
+//    {
+//        dp[i] = max(dp[i - 3] + arr[i - 1], dp[i - 1]);
+//    }
+//
+//    cout << dp[n] << endl;
+//    return 0;
+//}
+
 //#include <cstdio>
 //#include <iostream>
 //#include<vector>
