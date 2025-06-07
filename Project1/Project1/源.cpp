@@ -5,6 +5,53 @@
 
 using namespace std;
 
+#include<iostream>
+#include<queue>
+
+using namespace std;
+
+int n;
+int arr[3000];
+
+
+int main()
+{
+    cin >> n;
+
+    for (int i = 1; i <= n; i++)
+    {
+        cin >> arr[i];
+    }
+    queue<int> q;
+    q.push(1);
+    int level = 1;
+    int left = 0, right = 0;
+    int ret = 0;
+    while (q.size())
+    {
+        while (level--)
+        {
+            int i = q.front();
+            q.pop();
+            if (arr[i] + i >= n)
+            {
+                cout << ret << endl;
+                return 0;
+            }
+            right = max(right, arr[i] + i);
+            q.push(arr[i] + i);
+        }
+        if (left > right)
+        {
+            cout << -1 << endl;
+        }
+        left = right + 1;
+        level = q.size();
+        ret++;
+    }
+    return 0;
+}
+
 //#include<iostream>
 //#include<vector>
 //
