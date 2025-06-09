@@ -5,6 +5,49 @@
 
 using namespace std;
 
+
+//#include<iostream>
+//#include<unordered_map>
+//#include<string>
+//using namespace std;
+//
+//long long n, l, r;
+//string s;
+//
+//
+//long long func(long long m)
+//{
+//    long long x = 0;
+//    unordered_map<char, long long> hash;
+//    for (int left = 0, right = 0; right < s.size(); right++)
+//    {
+//        hash[s[right]]++;
+//        while (hash.size() > m)
+//        {
+//            --hash[s[left]];
+//            if (!hash[s[left]])
+//            {
+//                hash.erase(s[left]);
+//            }
+//            left++;
+//        }
+//        x += right - left + 1;
+//    }
+//    return x;
+//}
+//int main()
+//{
+//    cin >> n >> l >> r;
+//    cin >> s;
+//    long long x = 0, y = 0;
+//    x = func(l - 1);
+//    y = func(r);
+//
+//    cout << y - x << endl;
+//    return 0;
+//}
+
+
 //class Solution {
 //public:
 //    int totalFruit(vector<int>& fruits) {
