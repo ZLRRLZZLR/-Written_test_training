@@ -5,6 +5,29 @@
 
 using namespace std;
 
+//class Solution {
+//public:
+//    int totalFruit(vector<int>& fruits) {
+//        unordered_map<int, int> hash;
+//        int n = fruits.size();
+//        int ret = 0;
+//        for (int left = 0, right = 0; right < n; right++)
+//        {
+//            hash[fruits[right]]++;
+//            while (hash.size() >= 3)
+//            {
+//                hash[fruits[left]]--;
+//                if (!hash[fruits[left]])
+//                {
+//                    hash.erase(fruits[left]);
+//                }
+//                left++;
+//            }
+//            ret = max(ret, right - left + 1);
+//        }
+//        return ret;
+//    }
+//};
 
 //#include<iostream>
 //
