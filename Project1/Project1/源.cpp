@@ -5,6 +5,48 @@
 
 using namespace std;
 
+//#include<iostream>
+//#include<unordered_map>
+//#include<string>
+//#include<vector>
+//#include<algorithm>
+//using namespace std;
+//
+//long long n, l, r;
+//long long arr[300000];
+//long long func(long long m)
+//{
+//    long long x = 0;
+//    unordered_map<int, long long> hash;
+//    for (int left = 0, right = 0; right < n; right++)
+//    {
+//        hash[arr[right]]++;
+//        while (arr[right] - arr[left] > m)
+//        {
+//            --hash[arr[left]];
+//            if (!hash[arr[left]])
+//            {
+//                hash.erase(arr[left]);
+//            }
+//            left++;
+//        }
+//        x += right - left;
+//    }
+//    return x;
+//}
+//int main()
+//{
+//    cin >> n >> l >> r;
+//    for (int i = 0; i < n; i++) cin >> arr[i];
+//    sort(arr, arr + n);
+//    long long x = 0, y = 0;
+//    x = func(l - 1);
+//    y = func(r);
+//
+//    cout << y - x << endl;
+//    return 0;
+//}
+
 
 //#include<iostream>
 //#include<unordered_map>
