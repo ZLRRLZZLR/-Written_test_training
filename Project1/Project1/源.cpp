@@ -5,6 +5,49 @@
 
 using namespace std;
 
+#include <iostream>
+#include <algorithm>
+using namespace std;
+const int N = 2e5 + 10;
+int n, l, r;
+int arr[N];
+int main()
+{
+    cin >> n >> l >> r;
+    for (int i = 1; i <= n; i++) cin >> arr[i];
+    sort(arr + 1, arr + n + 1);
+    long long ret = 0;
+    for (int i = 2; i <= n; i++)
+    {
+        int L, R;
+        // 找左端点
+        int left = 1, right = i - 1;
+        while (left < right)
+        {
+            int mid = (left + right) / 2;
+            if (arr[mid] >= arr[i] - r) right = mid;
+            else left = mid + 1;
+        }
+        if (arr[left] >= arr[i] - r) L = left;
+        else L = left + 1;
+        // 找右端点
+        left = 1, right = i - 1;
+        while (left < right)
+        {
+            int mid = (left + right + 1) / 2;
+            if (arr[mid] <= arr[i] - l) left = mid;
+            else right = mid - 1;
+        }
+        if (arr[left] <= arr[i] - l) R = left;
+        else R = left - 1;
+        if (R >= L) ret += R - L + 1;
+    }
+    cout << ret << endl;
+    return 0;
+}
+
+
+
 //#include<iostream>
 //#include<unordered_map>
 //#include<string>
