@@ -6,6 +6,19 @@
 using namespace std;
 
 
+//差值
+//class Solution {
+//public:
+//    int minDifference(vector<int>& a) {
+//        sort(a.begin(), a.end());
+//        int n = a.size();
+//        long long ret = 0x3f3f3f3f3f3f3f3f;
+//        for (int i = 1; i < n; i++) {
+//            ret = min((long long)(a[i] - a[i - 1]), ret);
+//        }
+//        return ret;
+//    }
+//};
 
 
 //#include<iostream>
