@@ -5,6 +5,53 @@
 
 using namespace std;
 
+#include <iostream>
+#include <cmath>
+using namespace std;
+const int N = 15, M = 1010;
+int n, arr[N];
+bool use[M]; // 记录路径中用了哪些值
+int path; // 记录当前路径中所有元素的和
+int ret = 0x3f3f3f3f; // 统计最终结果
+bool isPrim(int x)
+{
+    if (x <= 1) return false;
+    for (int i = 2; i <= sqrt(x); i++)
+    {
+        if (x % i == 0) return false;
+    }
+    return true;
+}
+void dfs(int pos)
+{
+    if (pos == n)
+    {
+        ret = min(ret, path);
+        return;
+    }
+    // 枚举 arr[pos] 的所有没有使用过的素因子
+    for (int i = 2; i <= arr[pos]; i++)
+    {
+        if (arr[pos] % i == 0 && isPrim(i) && !use[i])
+        {
+            path += i;
+            use[i] = true;
+            dfs(pos + 1);
+            // 回溯 - 恢复现场
+            path -= i;
+            use[i] = false;
+        }
+    }
+}
+int main()
+{
+    cin >> n;
+    for (int i = 0; i < n; i++) cin >> arr[i];
+    dfs(0);
+    if (ret == 0x3f3f3f3f) cout << -1 << endl;
+    else cout << ret << endl;
+    return 0;
+}
 
 //差值
 //class Solution {
