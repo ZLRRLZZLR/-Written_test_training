@@ -6,6 +6,35 @@
 using namespace std;
 
 //#include<iostream>
+//#include<vector>
+//#include<string>
+//using namespace std;
+//
+//long long n = 0;
+//string s;
+//
+//vector<char> arr;
+//int main() {
+//    cin >> n >> s;
+//    for (auto& ch : s) {
+//        if (!arr.size() || ch >= arr.back()) {
+//            arr.push_back(ch);
+//        }
+//        long long left = 0, right = arr.size() - 1;
+//        while (left < right)
+//        {
+//            long long mid = left + (right - left) / 2;
+//            if (arr[mid] > ch) right = mid;
+//            else left = mid + 1;
+//        }
+//        arr[left] = ch;
+//    }
+//    long long ret = s.size() - arr.size();
+//    cout << ret << endl;
+//    return 0;
+//}
+
+//#include<iostream>
 //#include<cmath>
 //#include<cstring>
 //using namespace std;
