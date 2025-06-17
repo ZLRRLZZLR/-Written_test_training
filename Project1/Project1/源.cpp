@@ -5,6 +5,80 @@
 
 using namespace std;
 
+class Solution {
+public:
+    /**
+     * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+     *
+     *
+     * @param CityMap int整型vector<vector<>>
+     * @param n int整型
+     * @param m int整型
+     * @return int整型
+     */
+    int dx[4] = { 1, -1, 0, 0 };
+    int dy[4] = { 0, 0, 1, -1 };
+    int dict[11][11];
+    int map[11][11] = { 0 };
+    int n = 0;
+    int m = 0;
+
+    typedef pair<int, int> PII;
+    void bfs(vector<vector<int> >& CityMap, int i, int j) {
+        queue<PII> q;
+        q.emplace(i, j);
+        while (q.size()) {
+            auto& [a, b] = q.front();
+            q.pop();
+            for (int k = 0; k < 4; k++) {
+                int x = a + dx[k], y = b + dy[k];
+                if (x >= 0 && x < n && y >= 0 && y < m && CityMap[x][y] != -1)
+                {
+                    if (dict[x][y] == -1)
+                    {
+                        dict[x][y] = dict[a][b] + 1;
+                        map[x][y] += map[a][b];
+                        q.emplace(x, y);
+                    }
+                    else
+                    {
+                        if (dict[a][b] + 1 == dict[x][y])
+                        {
+                            map[x][y] += map[a][b];
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    int countPath(vector<vector<int> >& CityMap, int _n, int _m) {
+        memset(dict, -1, sizeof(dict));
+        n = _n;
+        m = _m;
+        queue<int> q;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (CityMap[i][j] == 1) {
+                    dict[i][j] = 0;
+                    map[i][j] = 1;
+                    bfs(CityMap, i, j);
+                }
+            }
+        }
+        int ret = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (CityMap[i][j] == 2) {
+                    ret = map[i][j];
+                }
+            }
+        }
+        return ret;
+    }
+};
+
 //#include<iostream>
 //#include<vector>
 //#include<string>
