@@ -5,6 +5,42 @@
 
 using namespace std;
 
+
+//#include<iostream>
+//#include<algorithm>
+//using namespace std;
+//
+//int n, x;
+//
+//int arr[300000];
+//int main()
+//{
+//    cin >> n >> x;
+//    for (int i = 1; i <= n; i++) cin >> arr[i];
+//    sort(arr + 1, arr + 1 + n);
+//    long long ret = 0;
+//    if (n - x < 0)
+//    {
+//        for (int i = 1; i <= n; i++)
+//        {
+//            ret += arr[i];
+//        }
+//    }
+//    else
+//    {
+//        ret += arr[n - x] * x;
+//        for (int i = n - x + 1; i <= n; i++)
+//        {
+//            ret += arr[i] - arr[n - x];
+//        }
+//    }
+//
+//    cout << ret << endl;
+//
+//    return 0;
+//}
+
+
 //#include <iostream>
 //#include<vector>
 //using namespace std;
