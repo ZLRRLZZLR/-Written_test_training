@@ -1,5 +1,30 @@
 //class Solution {
 //public:
+//    int majorityElement(vector<int>& nums) {
+//        int tmp = nums[0];
+//        int numsize = nums.size();
+//        int count = 1;
+//        for (int i = 1; i < numsize; i++)
+//        {
+//            if (tmp == nums[i])
+//            {
+//                count++;
+//            }
+//            else
+//            {
+//                count--;
+//                if (count == 0)
+//                {
+//                    tmp = nums[i];
+//                    count = 1;
+//                }
+//            }
+//        }
+//        return tmp;
+//    }
+//};
+//class Solution {
+//public:
 //    int singleNumber(vector<int>& nums) {
 //        int ret = 0;
 //        for (auto& num : nums) ret ^= num;
