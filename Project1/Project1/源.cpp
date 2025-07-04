@@ -2,64 +2,156 @@
 #include<vector>
 #include<unordered_map>
 #include<queue>
+#include<cstdio>
+#include<cassert>
 
 using namespace std;
 
-bool load(std::list<MessagePtr>& result)
-{
-    // 1.加载出文件中所有的有效数据：存储格式 4字节长度|数据|4字节长度|数据.....
-    FileHelper data_file_helper(_datafile);
-    size_t offset = 0, msg_size;
-    size_t fsize = data_file_helper.size();
-    bool ret;
+//void InsertSort(int* a,int n)
+//{
+//    for(int i = 0;i < n - 1;i++)
+//    {
+//        int end = i;
+//        int tmp = a[end + 1];
+//        while (end >= 0)
+//        {
+//            if (tmp < a[end])
+//            {
+//                a[end + 1] = a[end];
+//                --end;
+//            }
+//            else
+//            {
+//                break;
+//            }
+//        }
+//        a[end + 1] = tmp;
+//    }
+//}
 
-    // DLOG("准备开始加载持久化数据，当前文件大小: %ld", data_file_helper.size());
-    DBG_LOG("准备开始加载持久化数据，当前文件大小: %ld", data_file_helper.size());
 
-    while (offset < fsize)
-    {
-        DBG_LOG("测试点4:%d", msg_size);
+//int check_sys()
+//{
+//    union
+//    {
+//        int i;
+//        char c;
+//    }un;
+//    un.i = 1;
+//    return un.c;
+//}
+//int check_sys()
+//{
+//    int i = 1;
+//    return (*(char*)&i);
+//}
+//int main()
+//{
+//    int ret = check_sys();
+//    if (ret == 1) {
+//        printf("小端");
+//    }
+//    else
+//    {
+//        printf("大端");
+//    }
+//    return 0;
+//}
 
-        ret = data_file_helper.read((char*)&msg_size, offset, sizeof(size_t));
-        DBG_LOG("测试点1:%d:%d", offset, fsize);
-        DBG_LOG("测试点ret:%d", ret);
-        if (!ret)
-        {
-            ERR_LOG("读取消息长度失败！");
-            return false;
-        }
-        DBG_LOG("测试点4:%d", msg_size);
-        offset += sizeof(size_t);
-        std::string msg_body(msg_size, '\0');
 
-        ret = data_file_helper.read(&msg_body[0], offset, msg_size);
-        DBG_LOG("测试点4:%d", msg_size);
-        if (!ret)
-        {
-            ERR_LOG("读取消息数据失败！");
-            return false;
-        }
-        // DLOG("加载到有效数据：%s",msgp->payload().body().c_str());
-        DBG_LOG("测试点2:%d:%d", offset, fsize);
+//void* memmove (void* dst,const void*src,size_t count)
+//{
+//    void* ret = dst;
+//    if (dst <= src || (char*)dst >= ((char*)src + count)) {
+//        while(count--)
+//        {
+//            *(char*)dst = *(char*)src;
+//            dst = (char*)dst + 1;
+//            src = (char*)src + 1;
+//        }
+//    }
+//    else{
+//        dst = (char*)dst + count - 1;
+//        src = (char*)src + count - 1;
+//        while (count--) {
+//            *(char*)dst = *(char*)src;
+//            dst = (char*)dst - 1;
+//            src = (char*)src - 1;
+//        }
+//    }
+//    return ret;
+//}
 
-        offset += msg_size;
-        MessagePtr msgp = std::make_shared<Message>();
-        msgp->mutable_payload()->ParseFromString(msg_body);
-        DBG_LOG("加载到有效数据：%s", msgp->payload().body().c_str());
+//void* memcpy(void* dst,const void * src,size_t count)
+//{
+//    void* ret = dst;
+//    assert(dst);
+//    assert(src);
+//    while (count--) {
+//        *(char*)dst = *(char*)src;
+//        dst = (char*)dst + 1;
+//        src = (char*)src + 1;
+//    }
+//
+//    return ret;
+//}
 
-        // 有效数据则保存起来
-        if (msgp->payload().valid() == "1")
-        {
-            DBG_LOG("有效数据保存中%s", msgp->payload().properties().id().c_str());
-            result.push_back(msgp);
-        }
-        // 如果是无效信息，则直接处理下一个
-        DBG_LOG("测试点3:%d:%d", offset, fsize);
-        DBG_LOG("测试点4:%d", msg_size);
 
-    }
-    return true;
-}
+//bool load(std::list<MessagePtr>& result)
+//{
+//    // 1.加载出文件中所有的有效数据：存储格式 4字节长度|数据|4字节长度|数据.....
+//    FileHelper data_file_helper(_datafile);
+//    size_t offset = 0, msg_size;
+//    size_t fsize = data_file_helper.size();
+//    bool ret;
+//
+//    // DLOG("准备开始加载持久化数据，当前文件大小: %ld", data_file_helper.size());
+//    DBG_LOG("准备开始加载持久化数据，当前文件大小: %ld", data_file_helper.size());
+//
+//    while (offset < fsize)
+//    {
+//        DBG_LOG("测试点4:%d", msg_size);
+//
+//        ret = data_file_helper.read((char*)&msg_size, offset, sizeof(size_t));
+//        DBG_LOG("测试点1:%d:%d", offset, fsize);
+//        DBG_LOG("测试点ret:%d", ret);
+//        if (!ret)
+//        {
+//            ERR_LOG("读取消息长度失败！");
+//            return false;
+//        }
+//        DBG_LOG("测试点4:%d", msg_size);
+//        offset += sizeof(size_t);
+//        std::string msg_body(msg_size, '\0');
+//
+//        ret = data_file_helper.read(&msg_body[0], offset, msg_size);
+//        DBG_LOG("测试点4:%d", msg_size);
+//        if (!ret)
+//        {
+//            ERR_LOG("读取消息数据失败！");
+//            return false;
+//        }
+//        // DLOG("加载到有效数据：%s",msgp->payload().body().c_str());
+//        DBG_LOG("测试点2:%d:%d", offset, fsize);
+//
+//        offset += msg_size;
+//        MessagePtr msgp = std::make_shared<Message>();
+//        msgp->mutable_payload()->ParseFromString(msg_body);
+//        DBG_LOG("加载到有效数据：%s", msgp->payload().body().c_str());
+//
+//        // 有效数据则保存起来
+//        if (msgp->payload().valid() == "1")
+//        {
+//            DBG_LOG("有效数据保存中%s", msgp->payload().properties().id().c_str());
+//            result.push_back(msgp);
+//        }
+//        // 如果是无效信息，则直接处理下一个
+//        DBG_LOG("测试点3:%d:%d", offset, fsize);
+//        DBG_LOG("测试点4:%d", msg_size);
+//
+//    }
+//    return true;
+//}
 
 //#include<iostream>
 //#include<algorithm>
