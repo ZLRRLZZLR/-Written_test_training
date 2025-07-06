@@ -6,23 +6,54 @@
 #include<cassert>
 
 using namespace std;
-class Solution {
-public:
-    int climbStairs(int n) {
-        if (n == 1) return 1;
-        if (n == 2) return 2;
-        int a = 1;
-        int b = 2;
-        int c = 0;
-        for (int i = 3; i <= n; i++)
-        {
-            c = a + b;
-            a = b;
-            b = c;
-        }
-        return c;
-    }
-};
+
+
+///**
+// * Definition for singly-linked list.
+// * struct ListNode {
+// *     int val;
+// *     ListNode *next;
+// *     ListNode() : val(0), next(nullptr) {}
+// *     ListNode(int x) : val(x), next(nullptr) {}
+// *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+// * };
+// */
+//class Solution {
+//public:
+//    ListNode* reverseList(ListNode* head) {
+//        ListNode* newhead = new ListNode;
+//        newhead->next = nullptr;
+//        ListNode* cur = head;
+//        while (cur)
+//        {
+//            ListNode* next = cur->next;
+//            cur->next = newhead->next;
+//            newhead->next = cur;
+//            cur = next;
+//        }
+//        head = newhead->next;
+//        delete newhead;
+//        return head;
+//    }
+//};
+
+//class Solution {
+//public:
+//    int climbStairs(int n) {
+//        if (n == 1) return 1;
+//        if (n == 2) return 2;
+//        int a = 1;
+//        int b = 2;
+//        int c = 0;
+//        for (int i = 3; i <= n; i++)
+//        {
+//            c = a + b;
+//            a = b;
+//            b = c;
+//        }
+//        return c;
+//    }
+//};
 
 //void InsertSort(int* a,int n)
 //{
