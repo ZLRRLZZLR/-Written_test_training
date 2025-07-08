@@ -13,6 +13,41 @@ using namespace std;
 // * struct ListNode {
 // *     int val;
 // *     ListNode *next;
+// *     ListNode(int x) : val(x), next(NULL) {}
+// * };
+// */
+//class Solution {
+//public:
+//    ListNode* getIntersectionNode(ListNode* headA, ListNode* headB) {
+//        int lenA = 0, lenB = 0;
+//        for (ListNode* cur = headA; cur != nullptr; cur = cur->next) lenA++;
+//        for (ListNode* cur = headB; cur != nullptr; cur = cur->next) lenB++;
+//        int gap = abs(lenA - lenB);
+//        ListNode* longger = headA;
+//        ListNode* shoter = headB;
+//        if (lenA < lenB) {
+//            longger = headB;
+//            shoter = headA;
+//        }
+//        while (gap--)
+//        {
+//            longger = longger->next;
+//        }
+//        while (longger && shoter)
+//        {
+//            if (longger == shoter) return longger;
+//            longger = longger->next;
+//            shoter = shoter->next;
+//        }
+//        return nullptr;
+//    }
+//};
+
+///**
+// * Definition for singly-linked list.
+// * struct ListNode {
+// *     int val;
+// *     ListNode *next;
 // *     ListNode() : val(0), next(nullptr) {}
 // *     ListNode(int x) : val(x), next(nullptr) {}
 // *     ListNode(int x, ListNode *next) : val(x), next(next) {}
