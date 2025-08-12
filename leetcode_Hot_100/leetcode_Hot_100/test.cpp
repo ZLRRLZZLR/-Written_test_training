@@ -1,3 +1,38 @@
+//class Solution {
+//    bool view[7] = { false };
+//    vector<vector<int>> ret;
+//    void _permute(vector<int>& nums, vector<int>& num) {
+//
+//        if (num.size() == nums.size()) {
+//            ret.push_back(num);
+//            return;
+//        }
+//
+//        for (int i = 0; i < nums.size(); i++) {
+//            if (!view[i]) {
+//                view[i] = true;
+//                num.push_back(nums[i]);
+//                _permute(nums, num);
+//                num.pop_back();
+//                view[i] = false;
+//            }
+//        }
+//    }
+//public:
+//    vector<vector<int>> permute(vector<int>& nums) {
+//        vector<int> num;
+//        for (int i = 0; i < nums.size(); i++) {
+//            view[i] = true;
+//            num.push_back(nums[i]);
+//            _permute(nums, num);
+//            num.pop_back();
+//            view[i] = false;
+//        }
+//        return ret;
+//    }
+//};
+
+
 //#include "widget.h"
 //#include "ui_widget.h"
 //
