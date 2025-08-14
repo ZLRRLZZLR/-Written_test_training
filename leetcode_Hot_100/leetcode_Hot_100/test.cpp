@@ -1,22 +1,41 @@
 class Solution {
 public:
-    bool isValid(string s) {
-        string str;
-        for(auto& ch : s){
-            if(str.empty() || (ch == '(' || ch == '{' || ch == '[')){
-                str += ch;
-            }
-            else if((str.back() == '(' && ch == ')') || (str.back() == '{' && ch == '}') || (str.back() == '[' && ch == ']')){
-                str.pop_back();
-            }
-            else{
-                return false;
-            }
+    double findMaxAverage(vector<int>& nums, int k) {
+        int left = 0,right = 0,n = nums.size();
+        double ret = -std::numeric_limits<double>::infinity(),sum = 0;
+        for(int left = 0,right = 0;right < n;right++){
+          sum += nums[right];
+          while(right - left + 1 > k){
+            sum -= nums[left];
+            left++;
+          }
+          if(sum >= ret && right - left + 1 == k) ret = sum;
         }
-        if(str.size()) return false;
-        return true;
+
+        return ret / k;
     }
 };
+
+
+// class Solution {
+// public:
+//     bool isValid(string s) {
+//         string str;
+//         for(auto& ch : s){
+//             if(str.empty() || (ch == '(' || ch == '{' || ch == '[')){
+//                 str += ch;
+//             }
+//             else if((str.back() == '(' && ch == ')') || (str.back() == '{' && ch == '}') || (str.back() == '[' && ch == ']')){
+//                 str.pop_back();
+//             }
+//             else{
+//                 return false;
+//             }
+//         }
+//         if(str.size()) return false;
+//         return true;
+//     }
+// };
 
 //class Solution {
 //    bool view[7] = { false };
