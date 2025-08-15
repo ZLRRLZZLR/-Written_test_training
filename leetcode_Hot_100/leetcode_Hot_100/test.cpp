@@ -1,20 +1,37 @@
 class Solution {
 public:
-    double findMaxAverage(vector<int>& nums, int k) {
-        int left = 0,right = 0,n = nums.size();
-        double ret = -std::numeric_limits<double>::infinity(),sum = 0;
-        for(int left = 0,right = 0;right < n;right++){
-          sum += nums[right];
-          while(right - left + 1 > k){
-            sum -= nums[left];
-            left++;
-          }
-          if(sum >= ret && right - left + 1 == k) ret = sum;
+    vector<int> countBits(int n) {
+        vector<int> ret(n + 1);
+        for(int i = 0;i <= n;i++){
+            int count = 0,tmp = i;
+            while(tmp){
+                count++;
+                tmp = tmp & (tmp - 1);
+            }
+            ret[i] = count;
         }
-
-        return ret / k;
+        return ret;
     }
 };
+
+
+// class Solution {
+// public:
+//     double findMaxAverage(vector<int>& nums, int k) {
+//         int left = 0,right = 0,n = nums.size();
+//         double ret = -std::numeric_limits<double>::infinity(),sum = 0;
+//         for(int left = 0,right = 0;right < n;right++){
+//           sum += nums[right];
+//           while(right - left + 1 > k){
+//             sum -= nums[left];
+//             left++;
+//           }
+//           if(sum >= ret && right - left + 1 == k) ret = sum;
+//         }
+
+//         return ret / k;
+//     }
+// };
 
 
 // class Solution {
