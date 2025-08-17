@@ -594,3 +594,46 @@ public:
 //         return maxval;
 //     }
 // };
+
+// class Solution {
+// public:
+//     int pivotIndex(vector<int>& nums) {
+//         int sum = 0;
+//         for(auto num:nums) sum += num;
+//         vector<int> arr(nums.size());
+//         for(int i = 1;i < nums.size();i++){
+//             arr[i] = nums[i - 1] + arr[i - 1];
+//         }
+//         for(int i = 0;i < nums.size();i++){
+//             if(arr[i] == sum - arr[i] - nums[i]) return i;
+//         }
+//         return -1;
+//     }
+// };
+
+// class Solution {
+// public:
+//     vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2) {
+//         unordered_set<int> hash1,hash2;
+//         for(auto num : nums1) hash1.insert(num);//去除数组中的重复元素
+//         for(auto num : nums2) hash2.insert(num);
+
+//         vector<vector<int>> ret(2);
+
+//     //在hash去重后的数据中找数
+//         for(auto num : hash1){//比较找到num1中独有的数
+//             if(!hash2.count(num)){
+//                 ret[0].emplace_back(num);
+//             }
+//         }
+
+        
+//         for(auto num : hash2){//比较找到num2中独有的数
+//             if(!hash1.count(num)){
+//                 ret[1].emplace_back(num);
+//             }
+//         }
+
+//         return ret;
+//     }
+// };
