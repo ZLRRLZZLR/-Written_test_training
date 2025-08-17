@@ -1,3 +1,9 @@
+#include<iostream>
+#include<vector>
+#include<string>
+
+using namespace std;
+
 // class Solution {
 // public:
 //     int findPeakElement(vector<int>& nums) {
@@ -575,3 +581,16 @@ public:
 //        return { -1,-1 };
 //    }
 //};
+
+// class Solution {
+// public:
+//     int largestAltitude(vector<int>& gain) {
+//         vector<int> ret(gain.size() + 1,0);
+//         int maxval = 0;
+//         for(int i = 1;i < ret.size();i++){
+//             ret[i] = gain[i - 1] + ret[i - 1];
+//             maxval = max(ret[i],maxval);
+//         }
+//         return maxval;
+//     }
+// };
