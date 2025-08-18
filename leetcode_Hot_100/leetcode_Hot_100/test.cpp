@@ -1,8 +1,59 @@
 #include<iostream>
 #include<vector>
 #include<string>
+#include<unordered_map>
 
 using namespace std;
+
+//class Solution {
+//public:
+//    bool uniqueOccurrences(vector<int>& arr) {
+//        unordered_map<int, int> hash, ret;
+//
+//        for (auto& num : arr) hash[num]++;
+//
+//        for (auto& num : hash) {
+//            ret[num.second]++;
+//        }
+//
+//        for (auto& val : ret) {
+//            if (val.second > 1) return false;
+//
+//        }
+//
+//        return true;
+//    }
+//};
+
+////class Solution {
+////public:
+////    bool uniqueOccurrences(vector<int>& arr) {
+////        unordered_map<int, int> hash, ret;
+////
+////        for (auto& num : arr) hash[num]++;
+////
+////        for (auto& num : arr) {
+////            ret[hash[num]]++;
+////        }
+////
+////        for (auto& val : hash) {
+////            if (val.second > 1) return false;
+////
+////        }
+////
+////        return true;
+////    }
+////};
+////
+////int main() {
+////
+////    vector<int> arr{ 1,2,2,1,1,3 };
+////
+////    Solution().uniqueOccurrences(arr);
+////
+////    return 0;
+////}
+
 
 // class Solution {
 // public:
@@ -82,8 +133,8 @@ public:
             ret[i] = count;
         }
         return ret;
-    */}
-};
+////    */
+//};
 
 
 // class Solution {
