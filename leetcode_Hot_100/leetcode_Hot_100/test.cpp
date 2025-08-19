@@ -7,6 +7,21 @@ using namespace std;
 
 //class Solution {
 //public:
+//    string removeStars(string s) {
+//        string ret;
+//        for (auto& ch : s) {
+//            if (ch != '*' || ret.empty()) ret.push_back(ch);
+//            else ret.pop_back();
+//        }
+//
+//        return ret;
+//    }
+//};
+
+
+
+//class Solution {
+//public:
 //    bool uniqueOccurrences(vector<int>& arr) {
 //        unordered_map<int, int> hash, ret;
 //
