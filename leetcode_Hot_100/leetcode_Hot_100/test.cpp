@@ -5,8 +5,47 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     int minCostClimbingStairs(vector<int>& cost) {
+//         int n = cost.size();
+//         if(n <= 1) return 0;
+//         vector<int> dp(n + 1 , 1000);
+//         dp[0] = dp[1] = 0;
+//         for(int i = 2;i <= n;i++){
+//             dp[i] = min(dp[i - 1] + cost[i - 1],dp[i - 2] + cost[i - 2]);
+//         }
+//         return dp[n];
+//     }
+// };
 
 
+// class Solution {
+// public:
+//     int tribonacci(int n) {
+//         int a = 0 , b = 1 , c = 1 , d = 0;
+//         if(n == 0) return a;
+//         else if(n == 1) return b;
+//         else if(n == 2) return c;
+
+//         for(int i = 3;i <= n;i++){
+//             d = a + b + c;
+//             a = b;
+//             b = c;
+//             c = d;
+//         }
+//         return c;
+//     }
+// };
+
+// class Solution {
+// public:
+//     int singleNumber(vector<int>& nums) {
+//         int ret = 0;
+//         for(auto& num : nums) ret ^= num;
+//         return ret;
+//     }
+// };
 // /**
 //  * Definition for a binary tree node.
 //  * struct TreeNode {
