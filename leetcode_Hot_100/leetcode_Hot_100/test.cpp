@@ -5,6 +5,49 @@
 
 using namespace std;
 
+// /**
+//  * Definition for singly-linked list.
+//  * struct ListNode {
+//  *     int val;
+//  *     ListNode *next;
+//  *     ListNode() : val(0), next(nullptr) {}
+//  *     ListNode(int x) : val(x), next(nullptr) {}
+//  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+//         if(list1 == nullptr) return list2;
+//         if(list2 == nullptr) return list1;
+
+//         ListNode* newhead = new ListNode;
+//         ListNode* newtail = newhead;
+
+//         ListNode* cur1 = list1,*cur2 = list2;
+
+//         while(cur1 && cur2){
+//             if(cur1->val > cur2->val){
+//                 newtail->next = cur2;
+//                 cur2 = cur2->next;
+//             }
+//             else{
+//                 newtail->next = cur1;
+//                 cur1 = cur1->next;
+//             }
+//             newtail = newtail->next;
+//         }
+//         if(cur1) newtail->next = cur1;
+//         if(cur2) newtail->next = cur2;
+
+//         cur1 = newhead->next;
+//         delete newhead;
+        
+//         return cur1;
+//     }
+// };
+
+
 // class Solution {
 // public:
 //     int findKthLargest(vector<int>& nums, int k) {
