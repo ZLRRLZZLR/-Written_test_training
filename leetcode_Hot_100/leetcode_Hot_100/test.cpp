@@ -5,6 +5,49 @@
 
 using namespace std;
 
+
+// class Solution {
+
+// int dx[4] = {0,0,1,-1};
+// int dy[4] = {-1,1,0,0};
+// int n,m;
+// typedef pair<int,int> PII;
+
+// public:
+//     void bfs(queue<PII>& q , vector<vector<char>>& grid){
+//         while(q.size()){
+//             auto[a,b] = q.front();
+//             q.pop();
+//             for(int k = 0;k < 4;k++){
+//                 int x = a + dx[k],y = b + dy[k];
+//                 if((x >= 0 && x < n && y >= 0 && y < m )&& grid[x][y] == '1'){
+//                     q.emplace(x,y);
+//                     grid[x][y] = '0';
+//                 }
+//             }
+//         }
+//     }
+
+//     int numIslands(vector<vector<char>>& grid) {
+//         int ret = 0;
+//         queue<PII> q;
+//         n = grid.size(),m = grid[0].size();
+
+//         for(int i = 0;i < n;i++){
+//             for(int j = 0;j < m;j++){
+//                 if(grid[i][j] == '1'){
+//                     ret++;
+//                     grid[i][j] = '0';
+//                     q.emplace(i,j);
+//                     bfs(q , grid);
+//                 }
+//             }
+//         }
+
+//         return ret;
+//     }
+// };
+
 // /**
 //  * Definition for singly-linked list.
 //  * struct ListNode {
