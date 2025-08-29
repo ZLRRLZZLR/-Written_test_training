@@ -5,6 +5,25 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     bool isValid(string s) {
+//         string str;
+//         for(auto& ch : s){
+//             if(str.empty() || (ch == '(' || ch == '{' || ch == '[')){
+//                 str += ch;
+//             }
+//             else if((str.back() == '(' && ch == ')') || (str.back() == '{' && ch == '}') || (str.back() == '[' && ch == ']')){
+//                 str.pop_back();
+//             }
+//             else{
+//                 return false;
+//             }
+//         }
+//         if(str.size()) return false;
+//         return true;
+//     }
+// };
 
 // /**
 //  * Definition for singly-linked list.
