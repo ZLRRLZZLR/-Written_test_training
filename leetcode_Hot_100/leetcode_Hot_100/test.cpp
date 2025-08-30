@@ -5,6 +5,56 @@
 
 using namespace std;
 
+class Solution {
+    int cnt;
+    int dis[10][10];
+    int dir_x[4] = {0, 1, 0, -1};
+    int dir_y[4] = {1, 0, -1, 0};
+public:
+    int orangesRotting(vector<vector<int>>& grid) {
+        queue<pair<int, int>>Q;
+        memset(dis, -1, sizeof(dis));
+        cnt = 0;
+        int n = (int)grid.size(), m = (int)grid[0].size(), ans = 0;
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < m; ++j) {
+                if (grid[i][j] == 2) {
+                    Q.emplace(i, j);
+                    dis[i][j] = 0;
+                }
+                else if (grid[i][j] == 1) {
+                    cnt += 1;
+                }
+            }
+        }
+        while (!Q.empty()){
+            auto [r, c] = Q.front();
+            Q.pop();
+            for (int i = 0; i < 4; ++i) {
+                int tx = r + dir_x[i];
+                int ty = c + dir_y[i];
+                if (tx < 0|| tx >= n || ty < 0|| ty >= m || ~dis[tx][ty] || !grid[tx][ty]) {
+                    continue;
+                }
+                dis[tx][ty] = dis[r][c] + 1;
+                Q.emplace(tx, ty);
+                if (grid[tx][ty] == 1) {
+                    cnt -= 1;
+                    ans = dis[tx][ty];
+                    if (!cnt) {
+                        break;
+                    }
+                }
+            }
+        }
+        return cnt ? -1 : ans;
+    }
+};
+
+作者：力扣官方题解
+链接：https://leetcode.cn/problems/rotting-oranges/solutions/124765/fu-lan-de-ju-zi-by-leetcode-solution/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 // class Solution {
 // public:
 //     bool isValid(string s) {
@@ -53,7 +103,7 @@ using namespace std;
 //         while(fast){
 //             fast = fast->next;
 //             prev = slow;
-//             slow = slow->next; 
+//             slow = slow->next;
 //         }
 
 //         if(prev == nullptr){
@@ -62,7 +112,6 @@ using namespace std;
 //             delete prev;
 //             return slow;
 //         }
-
 
 //         prev->next = slow->next;
 
@@ -92,7 +141,7 @@ using namespace std;
 //         prev->next = tmp;
 
 //         head = cur;
-        
+
 //         return head;
 //     }
 // };
@@ -176,11 +225,10 @@ using namespace std;
 
 //         cur1 = newhead->next;
 //         delete newhead;
-        
+
 //         return cur1;
 //     }
 // };
-
 
 // class Solution {
 // public:
