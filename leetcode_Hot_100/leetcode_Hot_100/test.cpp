@@ -5,51 +5,91 @@
 
 using namespace std;
 
-class Solution
-{
-public:
-    int findCircleNum(vector<vector<int>> &isConnected)
-    {
-        vector<int> set(isConnected.size(), -1);
 
-        // 寻找一个数据的根
-        auto FindRoot = [&](int x) -> int
-        {
-            while (set[x] >= 0)
-            {
-                x = set[x];
-            }
-            return x;
-        };
+// class Solution {
+// public:
+//     bool equationsPossible(vector<string>& equations) {
+//         vector<int> set(26, -1);
 
-        int n = isConnected.size();
-        int m = isConnected[0].size();
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < m; j++)
-            {
-                if (isConnected[i][j])
-                {
-                    int root1 = FindRoot(i);
-                    int root2 = FindRoot(j);
-                    if (root1 != root2)
-                    {
-                        set[root1] += set[root2];
-                        set[root2] = root1;
-                    }
-                }
-            }
-        }
+//         // 寻找一个数据的根
+//         auto FindRoot = [&set](int x)
+//         {
+//             while (set[x] >= 0)
+//             {
+//                 x = set[x];
+//             }
+//             return x;
+//         };
 
-        int sum = 0;
-        for (auto num : set)
-        {
-            if (num < 0)
-                sum++;
-        }
-        return sum;
-    }
-};
+//         for(auto& equation : equations){
+//             if(equation[1] == '='){
+//                 int root1 = FindRoot(equation[0] - 'a');
+//                 int root2 = FindRoot(equation[3] - 'a');
+//                 if(root1 != root2){
+//                     set[root1] += set[root2];
+//                     set[root2] = root1;
+//                 }
+//             }
+//         }
+
+//         for(auto& equation : equations){
+//             if(equation[1] == '!'){
+//                 int root1 = FindRoot(equation[0] - 'a');
+//                 int root2 = FindRoot(equation[3] - 'a');
+//                 if(root1 == root2){
+//                     return false;
+//                 }
+//             }
+//         }
+
+//         return true;
+//     }
+// };
+// class Solution
+// {
+// public:
+//     int findCircleNum(vector<vector<int>> &isConnected)
+//     {
+//         vector<int> set(isConnected.size(), -1);
+
+//         // 寻找一个数据的根
+//         auto FindRoot = [&](int x) -> int
+//         {
+//             while (set[x] >= 0)
+//             {
+//                 x = set[x];
+//             }
+//             return x;
+//         };
+
+//         int n = isConnected.size();
+//         int m = isConnected[0].size();
+//         for (int i = 0; i < n; i++)
+//         {
+//             for (int j = 0; j < m; j++)
+//             {
+//                 if (isConnected[i][j])
+//                 {
+//                     int root1 = FindRoot(i);
+//                     int root2 = FindRoot(j);
+//                     if (root1 != root2)
+//                     {
+//                         set[root1] += set[root2];
+//                         set[root2] = root1;
+//                     }
+//                 }
+//             }
+//         }
+
+//         int sum = 0;
+//         for (auto num : set)
+//         {
+//             if (num < 0)
+//                 sum++;
+//         }
+//         return sum;
+//     }
+// };
 
 // class Solution {
 // public:
