@@ -5,6 +5,22 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     void moveZeroes(vector<int>& nums) {
+//         int n = nums.size();
+//         for(int dest = -1,cur = 0;cur < n;){
+//             if(nums[cur]){
+//                 swap(nums[dest + 1],nums[cur]);
+//                 dest++;
+//                 cur++;
+//             }
+//             else{
+//                 cur++;
+//             }
+//         }
+//     }
+// };
 
 // class Solution {
 // public:
