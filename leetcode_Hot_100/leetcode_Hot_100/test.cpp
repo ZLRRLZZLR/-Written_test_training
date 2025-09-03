@@ -5,6 +5,22 @@
 
 using namespace std;
 
+
+// class Solution {
+// public:
+//     int maxArea(vector<int>& height) {
+//         int ret = 0;
+//         int n = height.size();
+//         for(int left = 0,right = n - 1;left < right;)
+//         {
+//             ret = max(ret,min(height[left] , height[right]) * (right - left));
+//              if(height[left] < height[right]) left++;
+//              else right--;
+//         }
+//         return ret;
+//     }
+// };
+
 // class Solution {
 // public:
 //     void moveZeroes(vector<int>& nums) {
