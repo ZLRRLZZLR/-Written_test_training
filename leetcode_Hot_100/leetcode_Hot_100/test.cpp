@@ -2,8 +2,83 @@
 #include <vector>
 #include <string>
 #include <unordered_map>
+#include<queue>
 
 using namespace std;
+
+//int dx[4] = { 0, 0, 1, -1 };
+//int dy[4] = { 1, -1, 0, 0 };
+//int n = 0;
+//int m = 0;
+//typedef pair<int, int> PII;
+//
+//class Solution
+//{
+//public:
+//    queue<PII> q;
+//
+//    int orangesRotting(vector<vector<int>>& grid)
+//    {
+//        n = grid.size(), m = grid[0].size();
+//        int count = 0;
+//        for (int i = 0; i < n; i++)
+//        {
+//            for (int j = 0; j < m; j++)
+//            {
+//                if (grid[i][j] == 2)
+//                {
+//                    q.emplace(i, j);
+//                }
+//                if (grid[i][j] == 1) count++;
+//            }
+//        }
+//
+//        if (!count) return 0;
+//
+//        int ret = 0;
+//        int levelsize = q.size();
+//
+//        while (q.size())
+//        {
+//            if (!count) {
+//                return ret;
+//            }
+//            while (levelsize--)
+//            {
+//                auto [a, b] = q.front();
+//                q.pop();
+//                for (int k = 0; k < 4; k++)
+//                {
+//                    int x = a + dx[k], y = b + dy[k];
+//                    if (x >= 0 && x < n && y >= 0 && y < m && grid[x][y] == 1)
+//                    {
+//
+//                        if (grid[x][y] == 1) {
+//                            count--;
+//                        }
+//                        grid[x][y] = 2;
+//                        q.emplace(x, y);
+//                    }
+//                }
+//
+//            }
+//            ret++;
+//            levelsize = q.size();
+//        }
+//
+//        return count ? -1 : ret;
+//    }
+//};
+//
+//
+//
+//int main() {
+//
+//    vector<vector<int>> grid{{1,2}};
+//    Solution().orangesRotting(grid);
+//}
+
+
 
 // class Solution {
 // public:
