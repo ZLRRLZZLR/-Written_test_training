@@ -6,6 +6,52 @@
 
 using namespace std;
 
+class LRUCache {
+public:
+    LRUCache(int capacity) 
+        :_capacity(capacity);
+    {    
+    }
+    
+    int get(int key) {
+        auto it = _hashMap.find(key);
+        if(it != _hashMap.end()){
+            _list.splice(_list.front(),_list,it);
+            return it->second;
+        }
+        else{
+            return -1
+        }
+    }
+    
+    void put(int key, int value) {
+        auto it = _hashMap.find(key);
+        if(it != _hashMap.end()){
+            it->second = value;
+        }
+        else{
+            _list.push_front(make_pair(key,value));
+            _hashMap[key] = _list.begin();
+            if(_capacity < _hashMap.size()){
+                
+            }
+        }
+    }
+
+private:
+    int _capacity;
+    typedef list<pair<int,int>>::iterator Iterator;
+    unordered_map<int,Iterator> _hashMap;
+    list<pair<int,int>> _list;
+};
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache* obj = new LRUCache(capacity);
+ * int param_1 = obj->get(key);
+ * obj->put(key,value);
+ */
+
 //int dx[4] = { 0, 0, 1, -1 };
 //int dy[4] = { 1, -1, 0, 0 };
 //int n = 0;
