@@ -6,44 +6,95 @@
 
 using namespace std;
 
-class LRUCache {
-public:
-    LRUCache(int capacity) 
-        :_capacity(capacity);
-    {    
-    }
-    
-    int get(int key) {
-        auto it = _hashMap.find(key);
-        if(it != _hashMap.end()){
-            _list.splice(_list.front(),_list,it);
-            return it->second;
-        }
-        else{
-            return -1
-        }
-    }
-    
-    void put(int key, int value) {
-        auto it = _hashMap.find(key);
-        if(it != _hashMap.end()){
-            it->second = value;
-        }
-        else{
-            _list.push_front(make_pair(key,value));
-            _hashMap[key] = _list.begin();
-            if(_capacity < _hashMap.size()){
-                
-            }
-        }
-    }
 
-private:
-    int _capacity;
-    typedef list<pair<int,int>>::iterator Iterator;
-    unordered_map<int,Iterator> _hashMap;
-    list<pair<int,int>> _list;
-};
+// class Solution {
+// public:
+//     vector<int> findAnagrams(string s, string p) {
+//         int hp[256] = {0};
+//         for(auto e : p) hp[e]++;
+
+//         //count记录滑动窗口内有效的字符个数
+//         int count = 0;
+//         int hs[256] = {0};
+
+//         vector<int> ret;
+//         int n = s.size();
+//         for(int left = 0,right = 0;right < n;right++){
+//             ++hs[s[right]];
+
+//             //<=说明刚刚加上的是有效字符
+//             if(hs[s[right]] <= hp[s[right]]){
+//                 count++;
+//             }
+
+//             if(right - left + 1 > p.size()){
+//                 --hs[s[left]];
+
+//                 //<说明刚刚删除的是有效字符
+//                 if(hs[s[left]] < hp[s[left]]){
+//                     count--;
+//                 }
+//                 left++;
+//             }
+
+//             //有效字符个数等于p,是字母异位词
+//             if(count == p.size())
+//             ret.push_back(left);
+//         }
+
+//         return ret;
+//     }
+// };
+
+
+// class LRUCache {
+// public:
+//     LRUCache(int capacity) 
+//         :_capacity(capacity)
+//     {    
+//     }
+    
+//     int get(int key) {
+//         auto it = _hashMap.find(key);
+//         if(it != _hashMap.end()){
+//             _list.splice(_list.begin(),_list,it->second);
+//             return it->second->second;
+//         }
+//         else{
+//             return -1;
+//         }
+//     }
+    
+//     void put(int key, int value) {
+//         auto it = _hashMap.find(key);
+//         if(it != _hashMap.end()){
+//             it->second->second = value;
+//             _list.splice(_list.begin(),_list,it->second);
+//         }
+//         else{
+//             _list.push_front(make_pair(key,value));
+//             _hashMap[key] = _list.begin();
+//         }
+//         if(_capacity < _hashMap.size()){
+//             auto it = _list.back();
+//             _hashMap.erase(it.first);
+//             _list.pop_back();
+//         }
+//     }
+
+// private:
+//     int _capacity;
+//     typedef list<pair<int,int>>::iterator Iterator;
+//     unordered_map<int,Iterator> _hashMap;
+//     list<pair<int,int>> _list;
+// };
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache* obj = new LRUCache(capacity);
+ * int param_1 = obj->get(key);
+ * obj->put(key,value);
+ */
 
 /**
  * Your LRUCache object will be instantiated and called as such:
