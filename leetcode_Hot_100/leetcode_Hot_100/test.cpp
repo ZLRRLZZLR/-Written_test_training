@@ -6,7 +6,52 @@
 
 using namespace std;
 
+// /**
+//  * Definition for singly-linked list.
+//  * struct ListNode {
+//  *     int val;
+//  *     ListNode *next;
+//  *     ListNode() : val(0), next(nullptr) {}
+//  *     ListNode(int x) : val(x), next(nullptr) {}
+//  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+//         int gap = 0;
+//         ListNode* cur1 = l1;
+//         ListNode* cur2 = l2;
+//         ListNode* newhead = new ListNode;//哨兵节点，较少特殊判断的处理
+//         ListNode* newtail = newhead;
 
+//         while(cur1 || cur2 || gap){
+//             int num = gap;
+
+//             if(cur1){
+//                 num += cur1->val;
+//                 cur1 = cur1->next;
+//             }
+
+//             if(cur2){
+//                 num += cur2->val;
+//                 cur2 = cur2->next;
+//             }
+
+//             gap = num / 10;
+//             num %= 10;
+
+//             newtail->next = new ListNode(num);
+//             newtail = newtail->next;
+//         }
+
+//         cur1 = newhead->next;
+
+//         delete newhead;
+
+//         return cur1;
+//     }
+// };
 // class Solution {
 // public:
 //     vector<int> findAnagrams(string s, string p) {
