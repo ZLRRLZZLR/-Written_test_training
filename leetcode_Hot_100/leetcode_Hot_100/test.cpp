@@ -6,6 +6,44 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
+//         unordered_map<int,vector<int>> edges;
+//         vector<int> in(numCourses);
+
+//         for(auto edge : prerequisites)
+//         {
+//             int a = edge[0],b = edge[1];//记录边和每个点的入度
+//             edges[b].push_back(a);
+//             in[a]++;
+//         }
+
+//         queue<int> q;
+//         for(int i = 0;i < in.size();i++)
+//         {
+//             if(in[i] == 0) q.push(i);//入度为0的点入队列
+//         }
+
+//         while(q.size())
+//         {
+//             int front = q.front();
+//             q.pop();
+//             for(auto num : edges[front])//依次遍历入度为0的点，并根据边，遍历完后减少对应指向点的入度
+//             {
+//                 in[num]--;
+//                 if(in[num] == 0) q.push(num);
+//             }
+//         }
+
+//         for(auto i : in)
+//         {
+//             if(i) return false;//如果还有点入度不为0，说明有环
+//         }
+
+//         return true;
+//     }
+// };
 
 // /**
 //  * Definition for a binary tree node.
