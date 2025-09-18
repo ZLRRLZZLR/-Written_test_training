@@ -6,6 +6,76 @@
 
 using namespace std;
 
+
+// /*
+// // Definition for a Node.
+// class Node {
+// public:
+//     int val;
+//     Node* next;
+//     Node* random;
+    
+//     Node(int _val) {
+//         val = _val;
+//         next = NULL;
+//         random = NULL;
+//     }
+// };
+// */
+
+// class Solution {
+// public:
+//     Node* copyRandomList(Node* head) {
+//         if(head == nullptr) return head;
+//         Node* cur = head;
+
+//         while(cur)//先在每个原节点后面插入拷贝节点
+//         {
+//             Node* newnode = new Node(cur->val);
+//             newnode->next = cur->next;
+//             cur->next = newnode;
+//             cur = newnode->next;
+//         }
+
+//         cur = head;
+
+//         while(cur)//原节点random->next指向的就是复制节点先在对应random应该指向的节点
+//         {
+//             Node* nextnode = cur->next;
+//             if(cur->random)
+//             {
+//                 nextnode->random = cur->random->next;
+//             }
+//             else
+//             {
+//                 nextnode->random = nullptr;
+//             }
+//             cur = nextnode->next;
+//         }
+
+//         cur = head;
+//         Node* pcur = cur->next;
+//         Node* newhead = pcur;
+
+//         while(cur&&pcur)//把复制链表拆下来
+//         {
+//             Node* next = nullptr,*pnext = nullptr;
+
+//             next = pcur->next;
+//             cur->next = next;
+//             if(next)
+//             {
+//                 pnext = next->next;
+//             }
+//             pcur->next = pnext;
+//             pcur = pnext;
+//             cur = next;
+//         }
+
+//         return newhead;
+//     }
+// };
+
 // class Solution {
 // public:
 //     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
