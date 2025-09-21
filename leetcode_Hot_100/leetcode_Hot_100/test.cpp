@@ -8,6 +8,21 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int maxSubArray(vector<int>& nums) {
+//         int n = nums.size();
+//         int ret = INT_MIN;
+//         vector<int> dp(n + 1);
+//         for(int i = 1;i <= n;i++){
+//             //以i为结尾的最大子数组
+//             dp[i] = max(nums[i - 1],dp[i - 1] + nums[i - 1]);
+//             ret = max(ret,dp[i]);
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     int minPathSum(vector<vector<int>>& grid) {
 //         int n = grid.size(),m = grid[0].size();
 //         vector<vector<int>> dp(n + 1,vector<int>(m + 1,INT_MAX));
