@@ -6,6 +6,36 @@
 
 using namespace std;
 
+
+// class Solution {
+// public:
+//     vector<vector<int>> merge(vector<vector<int>>& intervals) {
+//         //排完序后，可以合并的几个区间一定靠在一起，不可以合并的区间与之后的也不可以合并
+//         sort(intervals.begin(),intervals.end());
+
+//         vector<vector<int>> ret;
+//         int left = intervals[0][0],right = intervals[0][1];
+//         for(int i = 1;i < intervals.size();i++)
+//         {
+//             int a = intervals[i][0],b = intervals[i][1];
+//             if(a <= right)
+//             {
+//                 //因为合并区间left一定<=a,所以只需要比较右边界
+//                 right = max(right,b);
+//             }
+//             else
+//             {
+//                 ret.push_back({left,right});
+//                 left = a;
+//                 right = b;
+//             }
+//         }
+
+//         ret.push_back({left,right});
+//         return ret;
+//     }
+// };
+
 // class Solution {
 // public:
 //     int maxSubArray(vector<int>& nums) {
