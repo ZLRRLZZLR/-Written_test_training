@@ -6,6 +6,40 @@
 
 using namespace std;
 
+
+// typedef pair<int,int> PII;
+// class Solution {
+//     class Compare
+//     {
+//     public:
+//         bool operator()(PII a,PII b)
+//         {
+//             return a.second < b.second;
+//         }
+//     };
+// public:
+//     vector<int> topKFrequent(vector<int>& nums, int k) {
+//         unordered_map<int,int> hash;
+//         priority_queue<PII,vector<PII>,Compare> pq;
+
+//         for(auto& num : nums) hash[num]++;
+
+//         vector<int> ret;
+//         for(auto num : hash)
+//         {
+//             pq.push(num);
+//         }
+
+//         while(k--)
+//         {
+//             auto num  = pq.top();
+//             pq.pop();
+//             ret.push_back(num.first);
+//         }
+//         return ret;
+//     }
+// };
+
 // class Solution {
 // public:
 //     int searchInsert(vector<int>& nums, int target) {
