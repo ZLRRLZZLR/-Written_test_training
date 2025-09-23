@@ -6,7 +6,19 @@
 
 using namespace std;
 
-
+// class Solution {
+// public:
+//     void moveZeroes(vector<int>& nums) {
+//         int n = nums.size();
+//         for(int left = -1,right = 0;right < n;right++)
+//         {
+//             if(nums[right] != 0)
+//             {
+//                 swap(nums[++left],nums[right]);
+//             }
+//         }
+//     }
+// };
 // typedef pair<int,int> PII;
 // class Solution {
 //     class Compare
