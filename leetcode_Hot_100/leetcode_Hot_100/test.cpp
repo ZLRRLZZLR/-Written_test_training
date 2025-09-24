@@ -7,6 +7,32 @@
 using namespace std;
 
 // class Solution {
+//     string path;//记录路径
+//     vector<string> ret;
+//     string s[10] = { "","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz" };
+// public:
+//     vector<string> letterCombinations(string digits) {
+//         if(digits.size() == 0) return ret;
+//         dfs(digits,0);
+//         return ret;
+//     }
+
+//     //pos记录层数
+//     void dfs(string digits,int pos){
+//         if(path.size() == digits.size()){
+//             ret.push_back(path);
+//             return ;
+//         }
+//         for(auto c : s[digits[pos] - '0']){
+//             path.push_back(c);
+//             dfs(digits,pos + 1);
+//             path.pop_back();
+//         }
+//     }
+// };
+
+
+// class Solution {
 // public:
 //     vector<int> path;
 //     vector<vector<int>> ret;
