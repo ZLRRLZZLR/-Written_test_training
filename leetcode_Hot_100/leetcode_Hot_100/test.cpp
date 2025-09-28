@@ -6,6 +6,25 @@
 
 using namespace std;
 
+
+// class Solution {
+// public:
+//     int subarraySum(vector<int>& nums, int k) {
+//         unordered_map<int,int> hash;
+//         int ret = 0;
+//         int sum = 0;
+//         hash[0] = 1;
+//         for(auto num : nums)
+//         {
+//             //hash记录到当前位置之前的满足条件的数
+//             sum += num;
+//             if(hash.count(sum - k)) ret += hash[sum - k];
+//             hash[sum]++;
+//         }
+//         return ret;
+//     }
+// };
+
 // class Solution {
 //     string path;//记录路径
 //     vector<string> ret;
