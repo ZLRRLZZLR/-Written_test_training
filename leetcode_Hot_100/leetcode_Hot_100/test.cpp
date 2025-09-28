@@ -6,6 +6,29 @@
 
 using namespace std;
 
+// class Solution {
+//     void reverse(vector<int>& nums,int left,int right)
+//     {
+//         while(left < right)
+//         {
+//             int tmp = nums[left];
+//             nums[left] = nums[right];
+//             nums[right] = tmp;
+//             left++;
+//             right--;
+//         }
+//     }
+// public:
+//     void rotate(vector<int>& nums, int k) {
+//         k %= nums.size();
+//         int n = nums.size();
+//         //先将会轮转到左侧的数交换到左边，
+//         //再轮转一次，使数据恢复原来的顺序
+//         reverse(nums,0,n - 1);
+//         reverse(nums,0,k - 1);
+//         reverse(nums,k,n - 1);
+//     }
+// };
 
 // class Solution {
 // public:
