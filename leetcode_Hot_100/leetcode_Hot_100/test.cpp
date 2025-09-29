@@ -6,6 +6,40 @@
 
 using namespace std;
 
+
+// /**
+//  * Definition for a binary tree node.
+//  * struct TreeNode {
+//  *     int val;
+//  *     TreeNode *left;
+//  *     TreeNode *right;
+//  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     bool isValidBST(TreeNode* root) 
+//     {
+//         long long prev = LONG_MIN;//每次找到一堆的最大值
+//         return _isValidBST(root,prev);
+//     }
+//     bool _isValidBST(TreeNode* root,long long& prev)
+//     {
+//         if(root == nullptr) return true;
+//         bool left = _isValidBST(root->left,prev);
+//         //左子树的最大值与根节点比较
+//         if(prev < root->val) prev = root->val;
+//         else return false;
+//         //根节点的最大值与右子树最大值比较
+//         bool right = _isValidBST(root->right,prev);
+//         if(left&&right) return true;
+//         return false;
+//     }
+// };
+
+
 // class Solution {
 //     void reverse(vector<int>& nums,int left,int right)
 //     {
