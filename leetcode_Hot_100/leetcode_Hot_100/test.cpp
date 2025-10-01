@@ -6,6 +6,54 @@
 
 using namespace std;
 
+
+
+// /**
+//  * Definition for a binary tree node.
+//  * struct TreeNode {
+//  *     int val;
+//  *     TreeNode *left;
+//  *     TreeNode *right;
+//  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+//  * };
+//  */
+// class Solution {
+// class Compare
+// {
+//     public:
+//             bool operator()(TreeNode*a,TreeNode*b)
+//             {
+//                 return a->val > b->val;
+//             }
+// };
+// priority_queue<TreeNode*,vector<TreeNode*>,Compare> pq;
+// public:
+
+//     void TreePath(TreeNode* root)
+//     {
+//         if(root == nullptr)
+//         return ;
+//         pq.push(root);
+//         TreePath(root->left);
+//         TreePath(root->right);
+//     }
+
+//     int kthSmallest(TreeNode* root, int k) {
+//         TreePath(root);
+
+//         int ret = 0;
+//         while(k--)
+//         {
+//             ret = pq.top()->val;
+//             pq.pop();
+//         }
+//         return ret;
+//     }
+// };
+
+
 // class Solution {
 // public:
 //     int rob(vector<int>& nums) {
