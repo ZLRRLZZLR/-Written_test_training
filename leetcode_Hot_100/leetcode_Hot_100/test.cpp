@@ -6,7 +6,37 @@
 
 using namespace std;
 
-
+// /**
+//  * Definition for a binary tree node.
+//  * struct TreeNode {
+//  *     int val;
+//  *     TreeNode *left;
+//  *     TreeNode *right;
+//  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+//  * };
+//  */
+// class Solution {
+//     vector<int> ret;
+// public:
+//     void dfs(TreeNode* root,int depth)
+//     {
+//         if(root == nullptr) return ;
+//         //当第一次到达这一层，对应下标没有节点
+//         if(depth == ret.size())
+//         {
+//             ret.push_back(root->val);
+//         }
+//         dfs(root->right,depth + 1);
+//         dfs(root->left,depth + 1);
+//     }
+//     vector<int> rightSideView(TreeNode* root) {
+//         //ret对应下标就是每一层的节点
+//         dfs(root,0);
+//         return ret;
+//     }
+// };
 
 // /**
 //  * Definition for a binary tree node.
