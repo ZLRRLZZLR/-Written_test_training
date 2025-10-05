@@ -18,6 +18,88 @@ using namespace std;
 //  * };
 //  */
 // class Solution {
+//     TreeNode* _buildTree(vector<int>& preorder, vector<int>& inorder,int& previ,int begini,int endi)
+//     {
+//         if(begini > endi)
+//         {
+//             return nullptr;
+//         }
+
+//         //前序遍历确定根
+//         TreeNode* root = new TreeNode(preorder[previ]);
+
+//         int curi = begini;
+//         while(inorder[curi] != preorder[previ]){
+//             curi++;
+//         }
+
+//         previ++;
+//         //中序遍历划分左右子树
+//         root->left = _buildTree(preorder,inorder,previ,begini,curi - 1);
+//         root->right = _buildTree(preorder,inorder,previ,curi + 1,endi);
+//         return root;
+//     }
+// public:
+//     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+//         int i= 0;
+//         return _buildTree(preorder,inorder,i,0,inorder.size() - 1);
+//     }
+// };
+
+
+// /**
+//  * Definition for a binary tree node.
+//  * struct TreeNode {
+//  *     int val;
+//  *     TreeNode *left;
+//  *     TreeNode *right;
+//  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+//  * };
+//  */
+// class Solution {
+//     unordered_map<long long,int> hash;
+//     int ret = 0;
+//     int target = 0;
+// public:
+//     void dfs(TreeNode* root, long long sum){
+//         sum += root->val;
+//         long long tmp = sum - target;
+//         if(hash[tmp] > 0){
+//             ret += hash[tmp];
+//         }
+//         hash[sum]++;
+//         if(root->left) dfs(root->left,sum);
+//         if(root->right) dfs(root->right,sum);
+//         hash[sum]--;
+//     }
+
+//     //前缀和，使用哈希表处理查找前缀和效率低下问题
+//     int pathSum(TreeNode* root, int targetSum) {
+//         //处理根节点符合目标的特殊情况
+//         hash[0] = 1;
+//         target = targetSum;
+//         if(root == nullptr) return 0;
+//         dfs(root,0);
+//         return ret;
+//     }
+// };
+
+
+
+// /**
+//  * Definition for a binary tree node.
+//  * struct TreeNode {
+//  *     int val;
+//  *     TreeNode *left;
+//  *     TreeNode *right;
+//  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+//  * };
+//  */
+// class Solution {
 //     TreeNode* head;
 // public:
 //     void flatten(TreeNode* root) {
