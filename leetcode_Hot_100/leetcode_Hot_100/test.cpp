@@ -12,6 +12,112 @@ using namespace std;
 //  *     int val;
 //  *     TreeNode *left;
 //  *     TreeNode *right;
+//  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+//  * };
+//  */
+// class Solution {
+//     bool isInTree(TreeNode* root,TreeNode* node){
+//         if(root == nullptr)
+//         return false;
+
+//         return root == node ||  isInTree(root->left,node) || isInTree(root->right,node);
+//     }
+
+// public:
+//     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+//         if(root == nullptr)
+//         return nullptr;
+
+//         //如果这棵数的根跟一个数相等，这个根就是一个最近公共祖先
+//         if(root == q || root == p)
+//         return root;
+
+//         //最近两个点一定分布在最近公共祖先的两侧
+//         bool qInLeftTree = isInTree(root->left,q);
+//         bool qInRightTree = !qInLeftTree;
+
+//         bool pInLeftTree = isInTree(root->left,p);
+//         bool pInRightTree = !pInLeftTree;
+
+//         if(qInLeftTree&&pInLeftTree) return lowestCommonAncestor(root->left,p,q);
+//         if(qInRightTree&&pInRightTree) return lowestCommonAncestor(root->right,p,q);
+
+//         return root;
+//     }
+// };
+
+
+// /**
+//  * Definition for singly-linked list.
+//  * struct ListNode {
+//  *     int val;
+//  *     ListNode *next;
+//  *     ListNode() : val(0), next(nullptr) {}
+//  *     ListNode(int x) : val(x), next(nullptr) {}
+//  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+//  * };
+//  */
+// class Solution {
+
+//     ListNode* mergeList(ListNode* l1,ListNode* l2){
+//         ListNode* newhead = new ListNode(-1);
+//         ListNode* newtail = newhead;
+//         while(l1&&l2){
+//             if(l1->val <= l2->val){
+//                 newtail->next = l1;
+//                 l1 = l1->next;
+//                 newtail = newtail->next;
+//             }
+//             else{
+//                 newtail->next = l2;
+//                 l2 = l2->next;
+//                 newtail = newtail->next;
+//             }
+//         }
+
+//         newtail->next = l1 ? l1 :l2;
+
+//         return newhead->next;
+//     }
+
+//     ListNode* midList(ListNode* head){
+//         ListNode* slow = head;
+//         ListNode* fast = head;
+//         ListNode* prev = slow;
+
+//         while(fast && fast->next != nullptr){
+//             prev = slow;
+//             slow = slow->next;
+//             fast = fast->next->next;
+//         }
+//         prev->next = nullptr;
+//         return slow;
+//     }
+
+// public:
+
+//     ListNode* sortList(ListNode* head) { 
+//         if(head == nullptr || head->next == nullptr){
+//             return head;
+//         }
+//         //先找到中间节点
+//         ListNode* head2 = midList(head);
+
+//         //左右两端分别有序
+//         head = sortList(head);
+//         head2 = sortList(head2);
+
+//         //对两端有序链表使用归并
+//         return mergeList(head,head2);
+//     }
+// };
+
+// /**
+//  * Definition for a binary tree node.
+//  * struct TreeNode {
+//  *     int val;
+//  *     TreeNode *left;
+//  *     TreeNode *right;
 //  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
 //  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 //  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
