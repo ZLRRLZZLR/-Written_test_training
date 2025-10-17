@@ -8,6 +8,28 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int findDuplicate(vector<int>& nums) {
+//         //基环树，转化为环形链表、
+//         int slow = 0,fast = 0;
+//         while(true){
+//             slow = nums[slow];
+//             fast = nums[nums[fast]];
+//             if(slow == fast){
+//                 break;
+//             }
+//         }
+
+//         int head = 0;
+//         while(slow != head){
+//             slow = nums[slow];
+//             head = nums[head];
+//         }
+//         return slow;
+//     }
+// };
+
+// class Solution {
+// public:
 //     bool isValid(string s) {
 //         string str;
 //         for(auto& ch : s){
