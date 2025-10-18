@@ -2,9 +2,71 @@
 #include <vector>
 #include <string>
 #include <unordered_map>
-#include<queue>
+#include <queue>
 
 using namespace std;
+
+class Solution
+{
+public:
+    vector<vector<int>> threeSum(vector<int> &nums)
+    {
+        vector<vector<int>> tables;
+
+        sort(nums.begin(), nums.end());
+
+        int cur = 0;
+        while (cur <= nums.size() - 3)
+        {
+            int left = cur + 1, right = nums.size() - 1;
+            while (left < right)
+            {
+                int sum = nums[left] + nums[right];
+                if (sum < -nums[cur])
+                {
+                    left++;
+                }
+                else if (sum > -nums[cur])
+                {
+                    right--;
+                }
+                else
+                {
+
+                    tables.push_back({nums[cur], nums[left], nums[right]});
+
+                    int num1 = nums[left];
+                    int num2 = nums[right];
+
+                    left++;
+                    right--;
+                    while (nums[left] == num1 && left < right)
+                    {
+                        left++;
+                    }
+                    while (nums[right] == num2 && left < right)
+                    {
+                        right--;
+                    }
+                }
+            }
+
+            int num3 = nums[cur];
+            cur++;
+            while (nums[cur] == num3 && cur <= nums.size() - 3)
+            {
+                cur++;
+            }
+
+            if (nums[cur] > 0)
+            {
+                break;
+            }
+        }
+
+        return tables;
+    }
+};
 
 // class Solution {
 // public:
@@ -26,7 +88,6 @@ using namespace std;
 //         reverse(nums.begin() + i + 1,nums.end());
 //     }
 // };
-
 
 // class Solution {
 // public:
@@ -110,7 +171,6 @@ using namespace std;
 //     }
 // };
 
-
 // /**
 //  * Definition for singly-linked list.
 //  * struct ListNode {
@@ -160,7 +220,7 @@ using namespace std;
 
 // public:
 
-//     ListNode* sortList(ListNode* head) { 
+//     ListNode* sortList(ListNode* head) {
 //         if(head == nullptr || head->next == nullptr){
 //             return head;
 //         }
@@ -242,7 +302,6 @@ using namespace std;
 //     }
 // };
 
-
 // /**
 //  * Definition for a binary tree node.
 //  * struct TreeNode {
@@ -282,8 +341,6 @@ using namespace std;
 //     }
 // };
 
-
-
 // /**
 //  * Definition for a binary tree node.
 //  * struct TreeNode {
@@ -310,7 +367,6 @@ using namespace std;
 //         head = root;
 //     }
 // };
-
 
 // /**
 //  * Definition for a binary tree node.
@@ -389,7 +445,6 @@ using namespace std;
 //     }
 // };
 
-
 // class Solution {
 // public:
 //     int rob(vector<int>& nums) {
@@ -439,7 +494,6 @@ using namespace std;
 //     }
 // };
 
-
 // /**
 //  * Definition for a binary tree node.
 //  * struct TreeNode {
@@ -453,7 +507,7 @@ using namespace std;
 //  */
 // class Solution {
 // public:
-//     bool isValidBST(TreeNode* root) 
+//     bool isValidBST(TreeNode* root)
 //     {
 //         long long prev = LONG_MIN;//每次找到一堆的最大值
 //         return _isValidBST(root,prev);
@@ -471,7 +525,6 @@ using namespace std;
 //         return false;
 //     }
 // };
-
 
 // class Solution {
 //     void reverse(vector<int>& nums,int left,int right)
@@ -539,7 +592,6 @@ using namespace std;
 //         }
 //     }
 // };
-
 
 // class Solution {
 // public:
@@ -677,7 +729,6 @@ using namespace std;
 //             }
 //         }
 
-
 //         return dp[n][m];
 //     }
 // };
@@ -688,7 +739,7 @@ using namespace std;
 //     int val;
 //     Node* next;
 //     Node* random;
-    
+
 //     Node(int _val) {
 //         val = _val;
 //         next = NULL;
@@ -731,7 +782,6 @@ using namespace std;
 //             cur = cur->next;
 //         }
 
-
 //         return newhead;
 //     }
 // };
@@ -743,7 +793,7 @@ using namespace std;
 //     int val;
 //     Node* next;
 //     Node* random;
-    
+
 //     Node(int _val) {
 //         val = _val;
 //         next = NULL;
@@ -961,14 +1011,13 @@ using namespace std;
 //     }
 // };
 
-
 // class LRUCache {
 // public:
-//     LRUCache(int capacity) 
+//     LRUCache(int capacity)
 //         :_capacity(capacity)
-//     {    
+//     {
 //     }
-    
+
 //     int get(int key) {
 //         auto it = _hashMap.find(key);
 //         if(it != _hashMap.end()){
@@ -979,7 +1028,7 @@ using namespace std;
 //             return -1;
 //         }
 //     }
-    
+
 //     void put(int key, int value) {
 //         auto it = _hashMap.find(key);
 //         if(it != _hashMap.end()){
@@ -1018,79 +1067,77 @@ using namespace std;
  * obj->put(key,value);
  */
 
-//int dx[4] = { 0, 0, 1, -1 };
-//int dy[4] = { 1, -1, 0, 0 };
-//int n = 0;
-//int m = 0;
-//typedef pair<int, int> PII;
+// int dx[4] = { 0, 0, 1, -1 };
+// int dy[4] = { 1, -1, 0, 0 };
+// int n = 0;
+// int m = 0;
+// typedef pair<int, int> PII;
 //
-//class Solution
+// class Solution
 //{
-//public:
-//    queue<PII> q;
+// public:
+//     queue<PII> q;
 //
-//    int orangesRotting(vector<vector<int>>& grid)
-//    {
-//        n = grid.size(), m = grid[0].size();
-//        int count = 0;
-//        for (int i = 0; i < n; i++)
-//        {
-//            for (int j = 0; j < m; j++)
-//            {
-//                if (grid[i][j] == 2)
-//                {
-//                    q.emplace(i, j);
-//                }
-//                if (grid[i][j] == 1) count++;
-//            }
-//        }
+//     int orangesRotting(vector<vector<int>>& grid)
+//     {
+//         n = grid.size(), m = grid[0].size();
+//         int count = 0;
+//         for (int i = 0; i < n; i++)
+//         {
+//             for (int j = 0; j < m; j++)
+//             {
+//                 if (grid[i][j] == 2)
+//                 {
+//                     q.emplace(i, j);
+//                 }
+//                 if (grid[i][j] == 1) count++;
+//             }
+//         }
 //
-//        if (!count) return 0;
+//         if (!count) return 0;
 //
-//        int ret = 0;
-//        int levelsize = q.size();
+//         int ret = 0;
+//         int levelsize = q.size();
 //
-//        while (q.size())
-//        {
-//            if (!count) {
-//                return ret;
-//            }
-//            while (levelsize--)
-//            {
-//                auto [a, b] = q.front();
-//                q.pop();
-//                for (int k = 0; k < 4; k++)
-//                {
-//                    int x = a + dx[k], y = b + dy[k];
-//                    if (x >= 0 && x < n && y >= 0 && y < m && grid[x][y] == 1)
-//                    {
+//         while (q.size())
+//         {
+//             if (!count) {
+//                 return ret;
+//             }
+//             while (levelsize--)
+//             {
+//                 auto [a, b] = q.front();
+//                 q.pop();
+//                 for (int k = 0; k < 4; k++)
+//                 {
+//                     int x = a + dx[k], y = b + dy[k];
+//                     if (x >= 0 && x < n && y >= 0 && y < m && grid[x][y] == 1)
+//                     {
 //
-//                        if (grid[x][y] == 1) {
-//                            count--;
-//                        }
-//                        grid[x][y] = 2;
-//                        q.emplace(x, y);
-//                    }
-//                }
+//                         if (grid[x][y] == 1) {
+//                             count--;
+//                         }
+//                         grid[x][y] = 2;
+//                         q.emplace(x, y);
+//                     }
+//                 }
 //
-//            }
-//            ret++;
-//            levelsize = q.size();
-//        }
+//             }
+//             ret++;
+//             levelsize = q.size();
+//         }
 //
-//        return count ? -1 : ret;
-//    }
-//};
+//         return count ? -1 : ret;
+//     }
+// };
 //
 //
 //
-//int main() {
+// int main() {
 //
-//    vector<vector<int>> grid{{1,2}};
-//    Solution().orangesRotting(grid);
-//}
-
-
+//     vector<vector<int>> grid{{1,2}};
+//     Solution().orangesRotting(grid);
+// }
 
 // class Solution {
 // public:
