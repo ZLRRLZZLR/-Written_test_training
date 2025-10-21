@@ -6,67 +6,86 @@
 
 using namespace std;
 
-class Solution
-{
-public:
-    vector<vector<int>> threeSum(vector<int> &nums)
-    {
-        vector<vector<int>> tables;
+// class Solution {
+// public:
+//     vector<int> productExceptSelf(vector<int>& nums) {
+//         int n = nums.size();
+//         vector<int> arr(n,1);
+//         int left = 1,right = 1;
+//         for(int i = 0;i < n;i++){
+//             arr[i] = left;
+//             left *= nums[i];
+//         }
+//         for(int i = n - 1;i >= 0;i--){
+//             arr[i] *= right;
+//             right *= nums[i];
+//         }
+//         return arr;
+//     }
+// };
 
-        sort(nums.begin(), nums.end());
 
-        int cur = 0;
-        while (cur <= nums.size() - 3)
-        {
-            int left = cur + 1, right = nums.size() - 1;
-            while (left < right)
-            {
-                int sum = nums[left] + nums[right];
-                if (sum < -nums[cur])
-                {
-                    left++;
-                }
-                else if (sum > -nums[cur])
-                {
-                    right--;
-                }
-                else
-                {
+// class Solution
+// {
+// public:
+//     vector<vector<int>> threeSum(vector<int> &nums)
+//     {
+//         vector<vector<int>> tables;
 
-                    tables.push_back({nums[cur], nums[left], nums[right]});
+//         sort(nums.begin(), nums.end());
 
-                    int num1 = nums[left];
-                    int num2 = nums[right];
+//         int cur = 0;
+//         while (cur <= nums.size() - 3)
+//         {
+//             int left = cur + 1, right = nums.size() - 1;
+//             while (left < right)
+//             {
+//                 int sum = nums[left] + nums[right];
+//                 if (sum < -nums[cur])
+//                 {
+//                     left++;
+//                 }
+//                 else if (sum > -nums[cur])
+//                 {
+//                     right--;
+//                 }
+//                 else
+//                 {
 
-                    left++;
-                    right--;
-                    while (nums[left] == num1 && left < right)
-                    {
-                        left++;
-                    }
-                    while (nums[right] == num2 && left < right)
-                    {
-                        right--;
-                    }
-                }
-            }
+//                     tables.push_back({nums[cur], nums[left], nums[right]});
 
-            int num3 = nums[cur];
-            cur++;
-            while (nums[cur] == num3 && cur <= nums.size() - 3)
-            {
-                cur++;
-            }
+//                     int num1 = nums[left];
+//                     int num2 = nums[right];
 
-            if (nums[cur] > 0)
-            {
-                break;
-            }
-        }
+//                     left++;
+//                     right--;
+//                     while (nums[left] == num1 && left < right)
+//                     {
+//                         left++;
+//                     }
+//                     while (nums[right] == num2 && left < right)
+//                     {
+//                         right--;
+//                     }
+//                 }
+//             }
 
-        return tables;
-    }
-};
+//             int num3 = nums[cur];
+//             cur++;
+//             while (nums[cur] == num3 && cur <= nums.size() - 3)
+//             {
+//                 cur++;
+//             }
+
+//             if (nums[cur] > 0)
+//             {
+//                 break;
+//             }
+//         }
+
+//         return tables;
+//     }
+// };
 
 // class Solution {
 // public:
