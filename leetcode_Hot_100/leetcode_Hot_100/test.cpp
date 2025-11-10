@@ -7,6 +7,45 @@
 using namespace std;
 
 
+
+// class Solution {
+//     int tar = 0;
+//     set<vector<int>> tmp;
+// public:
+//     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+//         sort(candidates.begin(),candidates.end());
+//         tar = target;
+//         vector<int> path;
+//         int sum = 0;
+//         dfs(candidates,path,sum);
+//         return vector<vector<int>>(tmp.begin(),tmp.end());
+//     }
+
+//     void dfs(vector<int>& candidates,vector<int> path,int sum)
+//     {
+//         if(sum == tar){
+//             sort(path.begin(),path.end());
+//             tmp.insert(path);
+//             return;
+//         }
+
+//         for(auto num : candidates){
+//             if(sum + num <= tar){
+//                 path.push_back(num);
+//                 sum += num;
+//                 dfs(candidates,path,sum);
+//                 sum -= num;
+//                 path.pop_back();
+//             }
+//             else{
+//                 return;
+//             }
+//         }
+
+//     }
+// };
+
+
 //class Solution {
 //public:
 //    bool searchMatrix(vector<vector<int>>& matrix, int target) {
