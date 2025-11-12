@@ -6,7 +6,35 @@
 
 using namespace std;
 
+// class Solution {
+//     vector<string> ret;
+//     int _n;
+// public:
+//     vector<string> generateParenthesis(int n) {
+//         string path(2 * n,0);
+//         _n = n;
+//         dfs(0,0,path);
+//         return ret;
+//     }
 
+//     void dfs(int left,int right,string path){
+//         if(right == _n){
+//             ret.push_back(path);
+//             return;
+//         }
+
+//         if(left < _n){
+//             path[left + right] = '(';
+//             dfs(left + 1,right,path);
+//         }
+
+//         if(right < left){
+//             path[left + right] = ')';
+//             dfs(left,right + 1,path);
+//         }
+//     }
+
+// };
 // class Solution {
 // public:
 //     string longestPalindrome(string s) {
