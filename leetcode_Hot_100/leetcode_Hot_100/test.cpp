@@ -7,6 +7,51 @@
 using namespace std;
 
 
+// /**
+//  * Definition for a binary tree node.
+//  * struct TreeNode {
+//  *     int val;
+//  *     TreeNode *left;
+//  *     TreeNode *right;
+//  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     vector<vector<int>> levelOrder(TreeNode* root) {
+//         queue<TreeNode*> q;
+//         vector<vector<int>> ret;
+//         int levelSize = 0;
+
+//         if(root == nullptr) return ret;
+
+//         q.push(root);
+//         levelSize = 1;
+
+//         while(q.size()){
+//             vector<int> tmp;;
+//             while(levelSize--){
+//                 TreeNode* node = q.front();
+//                 tmp.push_back(node->val);
+//                 q.pop();
+
+//                 if(node->left){
+//                     q.push(node->left);
+//                 }
+//                 if(node->right){
+//                     q.push(node->right);
+//                 }
+//             }
+//             levelSize = q.size();
+//             ret.push_back(tmp);
+//         }
+
+//         return ret;
+//     }
+// };
+
 // class Solution {
 //     vector<int> tmp;
 //     vector<int> index;
