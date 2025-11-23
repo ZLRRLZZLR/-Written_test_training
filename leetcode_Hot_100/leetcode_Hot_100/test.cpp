@@ -8,6 +8,92 @@ using namespace std;
 
 
 // class Solution {
+//     vector<int> tmp;
+//     vector<int> index;
+//     vector<int> tmpindex;
+//     vector<int> counts;
+// public:
+//     vector<int> countSmaller(vector<int>& nums) {
+//         int n = nums.size();
+//         tmp.resize(n,0);
+//         tmpindex.resize(n,0);
+//         index.resize(n,0);//记录下标的映射关系
+//         counts.resize(n,0);
+
+//         for(int i = 0;i < nums.size();i++){
+//             index[i] = i;
+//         }
+
+//         mergeSort(nums,0,nums.size() - 1);
+//         return counts;
+//     }
+
+//     void mergeSort(vector<int>& nums,int left,int right){
+//         if(left >= right) return ;
+//         int mid = (left + right) / 2;
+
+//         mergeSort(nums,left,mid);
+//         mergeSort(nums,mid + 1,right);
+
+//         int cur1 = left;
+//         int cur2 = mid + 1;
+//         int i = 0;
+
+//         //合并两个降序数组
+//         while(cur1 <= mid && cur2 <= right){
+//             if(nums[cur1] <= nums[cur2]){
+//                 tmp[i] = nums[cur2];
+//                 tmpindex[i++] = index[cur2++]; 
+//             }
+//             else{
+//                 counts[index[cur1]] += right - cur2 + 1;
+//                 tmp[i] = nums[cur1];
+//                 tmpindex[i++] = index[cur1++]; 
+//             }
+//         }
+
+//         //处理剩下
+//         while(cur1 <= mid){
+//             tmp[i] = nums[cur1];
+//             tmpindex[i++] = index[cur1++]; 
+//         }
+//         while(cur2 <= right){
+//             tmp[i] = nums[cur2];
+//             tmpindex[i++] = index[cur2++]; 
+//         }
+
+//         for(int j = left;j <= right;j++){
+//             nums[j] = tmp[j - left];
+//             index[j] = tmpindex[j - left];
+//         }
+//     }
+
+// };
+
+// class Solution {
+// public:
+//     vector<int> sortedSquares(vector<int>& nums) {
+//         int n = nums.size();
+//         vector<int> ret(n);
+//         int i = 0;
+//         int j = n - 1;
+//         for(int k = n - 1;k >= 0;){
+//             int x = nums[i]*nums[i];
+//             int y = nums[j]*nums[j];
+//             if(i <= j && x > y){
+//                 ret[k--] = x;
+//                 i++;
+//             }
+//             else{
+//                 ret[k--] = y;
+//                 j--;
+//             }
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
 // public:
 //     vector<vector<int>> threeSum(vector<int>& nums) {
 //         sort(nums.begin(),nums.end());
