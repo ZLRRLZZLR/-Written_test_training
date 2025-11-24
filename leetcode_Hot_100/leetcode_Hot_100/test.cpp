@@ -8,6 +8,28 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int lengthOfLIS(vector<int>& nums) {
+//         int n = nums.size();
+//         vector<int> dp(n,1);
+
+//         int ret = 1;
+//         for(int i = 1;i < n;i++){
+//             for(int j = 0;j < i;j++){
+//                 if(nums[j] < nums[i])
+//                 dp[i] = max(dp[j] + 1,dp[i]);
+//             }
+
+//             ret = max(ret,dp[i]);
+//         }
+
+//         return ret;
+//     }
+// };
+
+
+
+// class Solution {
+// public:
 //     void sortColors(vector<int>& nums) {
 //         int n = nums.size();
 //         int left = -1,right = n;
