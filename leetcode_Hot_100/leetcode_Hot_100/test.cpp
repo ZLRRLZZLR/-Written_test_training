@@ -6,6 +6,103 @@
 
 using namespace std;
 
+
+// /**
+//  * Definition for singly-linked list.
+//  * struct ListNode {
+//  *     int val;
+//  *     ListNode *next;
+//  *     ListNode() : val(0), next(nullptr) {}
+//  *     ListNode(int x) : val(x), next(nullptr) {}
+//  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     void reorderList(ListNode* head) {
+//         int count = 0;
+
+//         ListNode* cur1 = head;
+//         while(cur1){
+//             count++;
+//             cur1 = cur1->next;
+//         }
+
+//         count /= 2;
+//         ListNode* slow = head,*fast = head;
+//         while(count--){
+//             fast = fast->next;
+//         }
+
+//         while(fast&&fast->next){
+//             fast = fast->next;
+//             slow = slow->next;
+//         }
+
+//         ListNode* newhead = new ListNode(-1);
+
+//         ListNode* cur2 = slow;
+//         while(cur2){
+//             ListNode* tmp = cur2->next;
+//             cur2->next = newhead->next;
+//             newhead->next = cur2;
+//             cur2 = tmp;
+//         }
+
+//         cur1 = head;
+//         cur2 = newhead->next;
+
+//         while(cur1&&cur2){
+//             ListNode* tmp1 = cur1->next;
+//             ListNode* tmp2 = cur2->next;
+
+//             cur1->next = cur2;
+//             cur2->next = tmp1;
+
+//             cur1 = tmp1;
+//             cur2 = tmp2;
+//         }
+
+//     }
+// };
+
+
+// class Solution {
+// public:
+//     string minWindow(string s, string t) {
+//         int hash1[256] = {0};
+//         int hash2[256] = {0};
+//         int kinds = 0;
+
+//         for(auto ch : t){
+//             if(hash1[ch]++ == 0){
+//                 kinds++;
+//             }
+//         }
+
+//         int begin = -1,minlen = INT_MAX;
+//         for(int left = 0,right = 0,count = 0;right < s.size();right++){
+//             if(++hash2[s[right]] == hash1[s[right]]){
+//                 count++;
+//             }
+
+//             while(count == kinds){
+//                 if(minlen > right - left + 1){
+//                     minlen = right - left + 1;
+//                     begin = left;
+//                 }
+//                 char out = s[left++];
+//                 if(hash2[out]-- == hash1[out]){
+//                     count--;
+//                 }
+//             }
+//         }
+
+//         if(begin == -1) return "";
+//         return s.substr(begin,minlen);
+//     }
+// };
+
 // class Solution {
 // public:
 //     int lengthOfLIS(vector<int>& nums) {
