@@ -20,6 +20,52 @@ using namespace std;
 //      *
 //      * 
 //      * @param head ListNode类 
+//      * @param k int整型 
+//      * @return ListNode类
+//      */
+//     ListNode* reverseKGroup(ListNode* head, int k) {
+//         // write code here
+//         //找到每次反转的尾部
+//         ListNode* tail = head;
+
+//         for(int i = 0;i < k;i++){
+//             //不足k，不用反转
+//             if(tail == nullptr) return head;
+//             tail = tail->next;
+//         }
+//         //翻转时需要的当前前序和当前节点
+//         ListNode* pre = nullptr;
+//         ListNode* cur = head;
+
+//         while(cur != tail){
+//             ListNode* tmp = cur->next;
+//             cur->next = pre;
+//             pre = cur;
+//             cur = tmp;
+//         }
+
+//         //递归处理后续要翻转的部分
+//         head->next = reverseKGroup(tail,k);
+//         //当前pre指向翻转后新的头结点
+//         return pre;
+//     }
+// };
+
+
+// /**
+//  * struct ListNode {
+//  *	int val;
+//  *	struct ListNode *next;
+//  *	ListNode(int x) : val(x), next(nullptr) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
+//      * @param head ListNode类 
 //      * @param m int整型 
 //      * @param n int整型 
 //      * @return ListNode类
