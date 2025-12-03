@@ -6,6 +6,55 @@
 
 using namespace std;
 
+
+// /**
+//  * struct ListNode {
+//  *	int val;
+//  *	struct ListNode *next;
+//  *	ListNode(int x) : val(x), next(nullptr) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
+//      * @param pHead1 ListNode类 
+//      * @param pHead2 ListNode类 
+//      * @return ListNode类
+//      */
+//     ListNode* Merge(ListNode* pHead1, ListNode* pHead2) {
+//         // write code here
+//         ListNode* newhead = new ListNode(-1);
+//         ListNode* newtail = newhead;
+//         ListNode* cur1 = pHead1;
+//         ListNode* cur2 = pHead2;
+//         while(cur1 && cur2){
+//             if(cur1->val < cur2->val){
+//                 newtail->next = cur1;
+//                 newtail = cur1;
+//                 cur1 = cur1->next;
+//             }
+//             else{
+//                 newtail->next = cur2;
+//                 newtail = cur2;
+//                 cur2 = cur2->next;
+//             }
+//         }
+
+//         if(cur1){
+//             newtail->next = cur1;
+//         }
+
+//         if(cur2){
+//             newtail->next = cur2;
+//         }
+
+//         return newhead->next;
+//     }
+// };
+
 // /**
 //  * struct ListNode {
 //  *	int val;
