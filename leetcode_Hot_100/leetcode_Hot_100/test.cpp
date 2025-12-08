@@ -7,6 +7,87 @@
 using namespace std;
 
 // class Solution {
+//     vector<int> tmp;
+// public:
+//     int reversePairs(vector<int>& record) {
+//         tmp.resize(record.size());
+//         int n = record.size();
+//         return mergeSort(record,0,n - 1);
+//     }
+
+//     int mergeSort(vector<int>& record,int left,int right){
+//         if(left >= right) return 0;
+//         int ret = 0;
+
+//         int mid = left + (right - left) / 2;
+        
+//         ret += mergeSort(record,left,mid);
+//         ret += mergeSort(record,mid + 1,right);
+
+//         int cur1 = left,cur2 = mid + 1,i = 0;
+//         while(cur1 <= mid && cur2 <= right){
+//             if(record[cur1] > record[cur2]){
+//                 ret += right - cur2 + 1;
+//             }
+//             tmp[i++] = record[cur1] > record[cur2] ? record[cur1++]:record[cur2++];
+//         }
+
+//         while(cur1 <= mid){
+//             tmp[i++] = record[cur1++];
+//         }
+//         while(cur2 <= right){
+//             tmp[i++] = record[cur2++];
+//         }
+
+//         for(int j = left;j <= right;j++){
+//             record[j] = tmp[j - left];
+//         }
+
+//         return ret;
+//     }
+
+// };
+
+
+// /**
+//  * Definition for singly-linked list.
+//  * struct ListNode {
+//  *     int val;
+//  *     ListNode *next;
+//  *     ListNode() : val(0), next(nullptr) {}
+//  *     ListNode(int x) : val(x), next(nullptr) {}
+//  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     ListNode* partition(ListNode* head, int x) {
+//         ListNode* newhead1 = new ListNode(-1);
+//         ListNode* newhead2 = new ListNode(-1);
+//         ListNode* cur1 = newhead1,*cur2 = newhead2;
+//         ListNode* cur = head;
+
+//         while(cur){
+//             if(cur->val < x){
+//                 cur1->next = cur;
+//                 cur1 = cur1->next;
+//             }
+//             else{
+//                 cur2->next = cur;
+//                 cur2 = cur2->next;
+//             }
+//             cur = cur->next;
+//         }
+
+//         cur1->next = newhead2->next;
+//         cur2->next = nullptr;
+
+//         return newhead1->next;
+//     }
+// };
+
+
+// class Solution {
 // public:
 //     int mySqrt(int x) {
 //         if (x < 1) return 0;
