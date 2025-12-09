@@ -8,6 +8,30 @@ using namespace std;
 
 // class Solution {
 // public:
+//     string removeKdigits(string num, int k) {
+//         if(k <= 0) return num;
+
+//         vector<char> stack;
+//         int count = num.size() - k;
+//         for(char ch : num){
+//             //当前数比前一个数小，去掉前一个数
+//             while(k > 0 && !stack.empty() && stack.back() > ch){
+//                 stack.pop_back();
+//                 --k;
+//             }
+//             stack.push_back(ch);
+//         }
+
+//         //k不为0，还需要去掉一些数，此时数据是递增的，直接去掉尾部的数据
+//         string ret(stack.begin(),stack.begin() + count);
+//         //头部去掉0
+//         ret.erase(0,ret.find_first_not_of('0'));
+//         return ret.empty() ? "0" : ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     char dismantlingAction(string arr) {
 //         //有序哈希表
 //         vector<char> key;
