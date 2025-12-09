@@ -7,6 +7,32 @@
 using namespace std;
 
 // class Solution {
+// public:
+//     char dismantlingAction(string arr) {
+//         //有序哈希表
+//         vector<char> key;
+//         unordered_map<char,int> hash;
+
+//         for(auto& ch : arr){
+//             //字符第一次出现
+//             if(hash.find(ch) == hash.end()){
+//                 key.push_back(ch);
+//             }
+//             //记录字符出现次数
+//             hash[ch]++;
+//         }
+
+//         //返回第一个出现一次的字符
+//         for(auto& ch : key){
+//             if(hash[ch] == 1){
+//                 return ch;
+//             }
+//         }
+
+//         return ' ';
+//     }
+// };
+// class Solution {
 //     vector<int> tmp;
 // public:
 //     int reversePairs(vector<int>& record) {
