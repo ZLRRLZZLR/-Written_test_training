@@ -8,6 +8,23 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int longestPalindrome(string s){
+//         int ret = 0;
+//         int hash[256] = {0};
+//         for(auto ch : s){
+//             hash[ch]++;
+//         }
+
+//         for(int i = 0;i < 256;i++){
+//             ret += hash[i] / 2 * 2; 
+//         }
+
+//         return ret == s.size() ? ret : ret + 1;
+//     }
+// };
+
+// class Solution {
+// public:
 //     string removeKdigits(string num, int k) {
 //         if(k <= 0) return num;
 
