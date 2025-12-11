@@ -6,6 +6,70 @@
 
 using namespace std;
 
+// /**
+//  * Definition for singly-linked list.
+//  * struct ListNode {
+//  *     int val;
+//  *     ListNode *next;
+//  *     ListNode() : val(0), next(nullptr) {}
+//  *     ListNode(int x) : val(x), next(nullptr) {}
+//  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+//  * };
+//  */
+// class Solution
+// {
+// public:
+//     // 反转链表
+//     ListNode *reverseList(ListNode *head)
+//     {
+//         if (head == nullptr || head->next == nullptr)
+//         {
+//             return head;
+//         }
+
+//         ListNode *newhead = reverseList(head->next);
+//         head->next->next = head;
+//         head->next = nullptr;
+
+//         return newhead;
+//     }
+
+//     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
+//     {
+//         //反转链表模拟计算过程
+//         l1 = reverseList(l1);
+//         l2 = reverseList(l2);
+
+//         int carry = 0;
+
+//         ListNode *newhead = new ListNode(-1);
+//         ListNode *l3 = newhead;
+
+//         while (l1 || l2 || carry)
+//         {
+//             if (l1)
+//             {
+//                 carry += l1->val;
+//                 l1 = l1->next;
+//             }
+//             if (l2)
+//             {
+//                 carry += l2->val;
+//                 l2 = l2->next;
+//             }
+
+//             int val = carry % 10;
+//             carry /= 10;
+
+//             l3->next = new ListNode(val);
+//             l3 = l3->next;
+//         }
+//         //运算完再次反转链表，返回结果
+//         reverseList(newhead->next);
+//         return l3;
+//     }
+// };
+
 // class Solution {
 
 // public:
@@ -28,7 +92,6 @@ using namespace std;
 //     }
 // };
 
-
 // class Solution {
 // public:
 //     int longestPalindrome(string s){
@@ -39,7 +102,7 @@ using namespace std;
 //         }
 
 //         for(int i = 0;i < 256;i++){
-//             ret += hash[i] / 2 * 2; 
+//             ret += hash[i] / 2 * 2;
 //         }
 
 //         return ret == s.size() ? ret : ret + 1;
@@ -110,7 +173,7 @@ using namespace std;
 //         int ret = 0;
 
 //         int mid = left + (right - left) / 2;
-        
+
 //         ret += mergeSort(record,left,mid);
 //         ret += mergeSort(record,mid + 1,right);
 
@@ -137,7 +200,6 @@ using namespace std;
 //     }
 
 // };
-
 
 // /**
 //  * Definition for singly-linked list.
@@ -176,7 +238,6 @@ using namespace std;
 //     }
 // };
 
-
 // class Solution {
 // public:
 //     int mySqrt(int x) {
@@ -204,9 +265,9 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param pHead1 ListNode类 
-//      * @param pHead2 ListNode类 
+//      *
+//      * @param pHead1 ListNode类
+//      * @param pHead2 ListNode类
 //      * @return ListNode类
 //      */
 //     ListNode* Merge(ListNode* pHead1, ListNode* pHead2) {
@@ -252,9 +313,9 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param head ListNode类 
-//      * @param k int整型 
+//      *
+//      * @param head ListNode类
+//      * @param k int整型
 //      * @return ListNode类
 //      */
 //     ListNode* reverseKGroup(ListNode* head, int k) {
@@ -285,7 +346,6 @@ using namespace std;
 //     }
 // };
 
-
 // /**
 //  * struct ListNode {
 //  *	int val;
@@ -298,10 +358,10 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param head ListNode类 
-//      * @param m int整型 
-//      * @param n int整型 
+//      *
+//      * @param head ListNode类
+//      * @param m int整型
+//      * @param n int整型
 //      * @return ListNode类
 //      */
 //     ListNode* reverseBetween(ListNode* head, int m, int n) {
@@ -336,7 +396,6 @@ using namespace std;
 //     }
 // };
 
-
 // /**
 //  * struct ListNode {
 //  *	int val;
@@ -349,8 +408,8 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param head ListNode类 
+//      *
+//      * @param head ListNode类
 //      * @return ListNode类
 //      */
 //     ListNode* ReverseList(ListNode* head) {
@@ -367,7 +426,6 @@ using namespace std;
 //         return newhead->next;
 //     }
 // };
-
 
 // class Solution {
 // public:
@@ -442,7 +500,6 @@ using namespace std;
 //     }
 // };
 
-
 // class Solution {
 // public:
 //     string minWindow(string s, string t) {
@@ -498,8 +555,6 @@ using namespace std;
 //         return ret;
 //     }
 // };
-
-
 
 // class Solution {
 // public:
@@ -635,23 +690,23 @@ using namespace std;
 //         while(cur1 <= mid && cur2 <= right){
 //             if(nums[cur1] <= nums[cur2]){
 //                 tmp[i] = nums[cur2];
-//                 tmpindex[i++] = index[cur2++]; 
+//                 tmpindex[i++] = index[cur2++];
 //             }
 //             else{
 //                 counts[index[cur1]] += right - cur2 + 1;
 //                 tmp[i] = nums[cur1];
-//                 tmpindex[i++] = index[cur1++]; 
+//                 tmpindex[i++] = index[cur1++];
 //             }
 //         }
 
 //         //处理剩下
 //         while(cur1 <= mid){
 //             tmp[i] = nums[cur1];
-//             tmpindex[i++] = index[cur1++]; 
+//             tmpindex[i++] = index[cur1++];
 //         }
 //         while(cur2 <= right){
 //             tmp[i] = nums[cur2];
-//             tmpindex[i++] = index[cur2++]; 
+//             tmpindex[i++] = index[cur2++];
 //         }
 
 //         for(int j = left;j <= right;j++){
@@ -719,7 +774,6 @@ using namespace std;
 //     }
 // };
 
-
 // class Solution {
 //     vector<string> ret;
 //     int _n;
@@ -785,7 +839,6 @@ using namespace std;
 //     }
 // };
 
-
 // class Solution {
 //     int tar = 0;
 //     set<vector<int>> tmp;
@@ -823,22 +876,21 @@ using namespace std;
 //     }
 // };
 
-
-//class Solution {
-//public:
-//    bool searchMatrix(vector<vector<int>>& matrix, int target) {
-//        int m = matrix.size(), n = matrix[0].size();
-//        int left = -1, right = m * n;
-//        while (left + 1 < right) {
-//            int mid = left + (right - left) / 2;
-//            int x = matrix[mid / n][mid % n];
-//            if (x < target) left = mid;
-//            else if (x > target) right = mid;
-//            else return true;
-//        }
-//        return false;
-//    }
-//};
+// class Solution {
+// public:
+//     bool searchMatrix(vector<vector<int>>& matrix, int target) {
+//         int m = matrix.size(), n = matrix[0].size();
+//         int left = -1, right = m * n;
+//         while (left + 1 < right) {
+//             int mid = left + (right - left) / 2;
+//             int x = matrix[mid / n][mid % n];
+//             if (x < target) left = mid;
+//             else if (x > target) right = mid;
+//             else return true;
+//         }
+//         return false;
+//     }
+// };
 
 // class Solution {
 // public:
@@ -857,7 +909,6 @@ using namespace std;
 //         return arr;
 //     }
 // };
-
 
 // class Solution
 // {
