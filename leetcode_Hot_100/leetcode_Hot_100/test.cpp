@@ -7,6 +7,29 @@
 using namespace std;
 
 // class Solution {
+
+// public:
+
+// //判断偶数
+// bool isEven(int num) {
+//     return (num & 1) == 0;
+// }
+// //判断奇数
+// bool isOdd(int num) {
+//     return (num & 1) != 0;
+// }
+//     bool color(string s){
+//         return isOdd(s[0] - 'a' + 1) == isOdd(s[1] - '1');
+//     }
+
+//     bool checkTwoChessboards(string coordinate1, string coordinate2) {
+//         //数字奇偶相同就是黑色，否则白色
+//         return color(coordinate1) == color(coordinate2);
+//     }
+// };
+
+
+// class Solution {
 // public:
 //     int longestPalindrome(string s){
 //         int ret = 0;
