@@ -8,6 +8,24 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int longestOnes(vector<int>& nums, int k) {
+//         //滑动窗口
+//         int ret = 0,left = 0,count0 = 0;
+//         for(int right = 0;right < nums.size();right++){
+//             //记录滑动窗口内0的个数
+//             count0 += 1 - nums[right];
+//             while(count0 > k){
+//                 count0 -= 1 - nums[left];
+//                 left++;
+//             }
+//             ret =max(ret,right - left + 1);
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
 //         //去重
 //         unordered_set<int> st(nums1.begin(),nums1.end());
