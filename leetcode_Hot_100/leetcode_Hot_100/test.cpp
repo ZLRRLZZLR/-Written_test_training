@@ -6,6 +6,23 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+//         //去重
+//         unordered_set<int> st(nums1.begin(),nums1.end());
+//         vector<int> ret;
+//         for(int i : nums2){
+//             if(st.erase(i)){
+//                 //去重，避免第二次加入结果
+//                 ret.push_back(i);
+//             }
+//         }
+//         return ret;
+//     }
+// };
+
+
 // /**
 //  * Definition for singly-linked list.
 //  * struct ListNode {
