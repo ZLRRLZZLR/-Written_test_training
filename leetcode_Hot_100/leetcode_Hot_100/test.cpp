@@ -6,6 +6,42 @@
 
 using namespace std;
 
+
+// /*
+// struct ListNode {
+//     int val;
+//     struct ListNode *next;
+//     ListNode(int x) :
+//         val(x), next(NULL) {
+//     }
+// };
+// */
+// class Solution {
+//   public:
+//     //判断是否成环
+//     ListNode* hasCycle(ListNode* head) {
+//         ListNode* slow = head, *fast = head;
+//         while (fast && fast->next) {
+//             slow = slow->next;
+//             fast = fast->next->next;
+//             //如果成环，返回相遇点
+//             if (fast == slow) return slow;
+//         }
+//         return nullptr;
+//     }
+//     ListNode* EntryNodeOfLoop(ListNode* pHead) {
+//         ListNode* meet = hasCycle(pHead);
+//         if(meet == nullptr) return meet;
+
+//         ListNode* head = pHead;
+//         while(head != meet){
+//             head = head->next;
+//             meet = meet->next;
+//         }
+//         return head;
+//     }
+// };
+
 // /**
 //  * Definition for singly-linked list.
 //  * struct ListNode {
