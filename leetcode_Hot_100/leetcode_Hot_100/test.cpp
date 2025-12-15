@@ -6,6 +6,27 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     int findMaxLength(vector<int>& nums) {
+//         //-1替换0，寻找和为0的最长连续子串
+//         int n = nums.size();
+//         //hash统计前缀和
+//         unordered_map<int,int> hash(n);
+//         //用于计算最长连续子串的长度
+//         hash[0] = -1;
+//         int ret = 0,sum = 0;
+//         for(int i = 0;i < n;i++){
+//             sum += nums[i] == 0 ? -1 : 1;
+//             //如果此时sum之前出现过，那么上次出现的位置到当前位置和为0
+//             if(hash.count(sum)) ret = max(i - hash[sum],ret);
+//             else hash[sum] = i;
+//         }
+
+//         return ret;
+//     }
+};
+
 
 // class Solution {
 // public:
