@@ -8,6 +8,37 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int evalRPN(vector<string>& tokens) {
+//         //用栈模拟
+//         stack<int> tmp;
+//         for(auto s : tokens){
+//             char ch = s[0];
+//             if(s.size() > 1 || isdigit(ch)){
+//                 tmp.push(stoi(s));
+//                 continue;
+//             }
+
+//             int a = tmp.top();
+//             tmp.pop();
+//             if(ch == '+'){
+//                 tmp.top() += a;
+//             }
+//             else if(ch == '-'){
+//                 tmp.top() -= a;
+//             }
+//             else if(ch == '*'){
+//                 tmp.top() *= a;
+//             }
+//             else{
+//                 tmp.top() /= a;
+//             }
+//         }
+//         return tmp.top();
+//     }
+// };
+
+// class Solution {
+// public:
 //     int findMaxLength(vector<int>& nums) {
 //         //-1替换0，寻找和为0的最长连续子串
 //         int n = nums.size();
