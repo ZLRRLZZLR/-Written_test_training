@@ -7,6 +7,35 @@
 using namespace std;
 
 // class Solution {
+//     int dx[4] = {0,1,0,-1};
+//     int dy[4] = {1,0,-1,0};
+// public:
+//     vector<int> spiralOrder(vector<vector<int>>& matrix) {
+//         //模仿
+//         int m = matrix.size(),n = matrix[0].size();
+//         //记录走过路径
+//         vector<int> ret(m * n);
+//         int i = 0,j = 0,k = 0;
+//         for(int a = 0;a < m * n;a++){
+//             ret[a] = matrix[i][j];
+//             //走过位置进行标记
+//             matrix[i][j] = INT_MAX;
+//             int x = i + dx[k];
+//             int y = j + dy[k];
+//             //越界或者已经走过路径不记录
+//             if(x < 0 || x >= m || y < 0 || y >= n || matrix[x][y] == INT_MAX){
+//                 //右转90
+//                 k = (k + 1) % 4;
+//             }
+//             i += dx[k];
+//             j += dy[k];
+//         }
+
+//         return ret;
+//     }
+// };
+
+// class Solution {
 // public:
 //     int evalRPN(vector<string>& tokens) {
 //         //用栈模拟
