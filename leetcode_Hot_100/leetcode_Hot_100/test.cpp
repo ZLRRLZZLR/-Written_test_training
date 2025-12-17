@@ -6,6 +6,28 @@
 
 using namespace std;
 
+
+// class Solution {
+// public:
+//     bool validateBookSequences(vector<int>& putIn, vector<int>& takeOut) {
+//         //模拟
+//         stack<int> st;
+
+//         int i = 0;
+//         for(auto num : putIn){
+//             st.push(num);
+//             //当前元素一致,出栈
+//             while(!st.empty()&&st.top() == takeOut[i]){
+//                 st.pop();
+//                 i++;
+//             }
+//         }
+
+//         //还有元素未取出，说明顺序不一致
+//         return st.empty();
+//     }
+// };
+
 // class Solution {
 // public:
 //     string removeKdigits(string num, int k) {
