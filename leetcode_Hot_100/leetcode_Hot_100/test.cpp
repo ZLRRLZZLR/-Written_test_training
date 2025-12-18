@@ -6,6 +6,19 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     void moveZeroes(vector<int>& nums) {
+//         int n = nums.size();
+//         //双指针划分区间
+//         for(int left = -1,right = 0;right < n;right++){
+//             if(nums[right] != 0){
+//                 //[0,left]之前全是非0元素
+//                 swap(nums[++left],nums[right]);
+//             }
+//         }
+//     }
+// };
 
 // class Solution {
 // public:
