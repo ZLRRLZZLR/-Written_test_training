@@ -6,6 +6,48 @@
 
 using namespace std;
 
+// /**
+//  * struct ListNode {
+//  *	int val;
+//  *	struct ListNode *next;
+//  *	ListNode(int x) : val(x), next(nullptr) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
+//      * @param head ListNode类 
+//      * @param n int整型 
+//      * @return ListNode类
+//      */
+//     ListNode* removeNthFromEnd(ListNode* head, int n) {
+//         // write code 
+//         ListNode* newhead = new ListNode(-1);
+//         newhead->next = head;
+//         ListNode* fast = head;
+//         ListNode* slow = head;
+//         int count = n;
+//         while(fast&&count--){
+//             fast = fast->next;
+//         }
+
+//         ListNode* pre = newhead;
+//         while(fast){
+//             pre = slow;
+//             slow = slow->next;
+//             fast = fast->next;
+//         }
+//         pre->next = slow->next;
+//         delete slow;
+//         fast = newhead->next;
+//         delete newhead;
+//         return fast;
+//     }
+// };
+
 
 // /**
 //  * struct ListNode {
