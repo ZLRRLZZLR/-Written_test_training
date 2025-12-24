@@ -19,6 +19,40 @@ using namespace std;
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
 //      * 
+//      * @param head ListNode类 the head
+//      * @return bool布尔型
+//      */
+//     bool isPail(ListNode* head) {
+//         // write code here
+//         if(head == nullptr) return true;
+//         vector<int> arr;
+//         ListNode* cur = head;
+//         while(cur){
+//             arr.push_back(cur->val);
+//             cur = cur->next;
+//         }
+
+//         for(int left = 0,right = arr.size() - 1;left < right;left++,right--){
+//             if(arr[left] != arr[right]) return false;
+//         }
+
+//         return true;
+//     }
+// };
+
+// /**
+//  * struct ListNode {
+//  *	int val;
+//  *	struct ListNode *next;
+//  *	ListNode(int x) : val(x), next(nullptr) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
 //      * @param head ListNode类 
 //      * @param n int整型 
 //      * @return ListNode类
