@@ -8,6 +8,44 @@ using namespace std;
 
 // /**
 //  * struct ListNode {
+//  *  int val;
+//  *  struct ListNode *next;
+//  *  ListNode(int x) : val(x), next(nullptr) {}
+//  * };
+//  */
+// class Solution {
+//   public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      *
+//      * @param head ListNode类 the head node
+//      * @return ListNode类
+//      */
+//     ListNode* sortInList(ListNode* head) {
+//         // write code here
+//         if (head == nullptr) return nullptr;
+//         vector<int> arr;
+//         ListNode* cur = head;
+//         while (cur) {
+//             arr.push_back(cur->val);
+//             cur = cur->next;
+//         }
+//         sort(arr.begin(),arr.end());
+
+//         ListNode* newhead = new ListNode(-1);
+//         ListNode* newtail = newhead;
+//         for(auto& num : arr){
+//             newtail->next = new ListNode(num);
+//             newtail = newtail->next;
+//         }
+
+//         return newhead->next;
+//     }
+// };
+
+// /**
+//  * struct ListNode {
 //  *	int val;
 //  *	struct ListNode *next;
 //  *	ListNode(int x) : val(x), next(nullptr) {}
