@@ -8,6 +8,39 @@ using namespace std;
 
 // /**
 //  * struct ListNode {
+//  *	int val;
+//  *	struct ListNode *next;
+//  *	ListNode(int x) : val(x), next(nullptr) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
+//      * @param head ListNode类 
+//      * @return ListNode类
+//      */
+//     ListNode* deleteDuplicates(ListNode* head) {
+//         // write code here
+//         ListNode* p = head;
+//         while(p&&p->next){
+//             if(p->val == p->next->val){
+//                 ListNode* tmp = p->next;
+//                 p->next = p->next->next;
+//                 delete tmp;
+//             }
+//             else{
+//                 p = p->next;
+//             }
+//         }
+//         return head;
+//     }
+// };
+
+// /**
+//  * struct ListNode {
 //  *  int val;
 //  *  struct ListNode *next;
 //  *  ListNode(int x) : val(x), next(nullptr) {}
