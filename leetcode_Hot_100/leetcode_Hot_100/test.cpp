@@ -6,6 +6,44 @@
 
 using namespace std;
 
+
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
+//      * @param target int整型 
+//      * @param array int整型vector<vector<>> 
+//      * @return bool布尔型
+//      */
+//     bool Find(int target, vector<vector<int> >& array) {
+//         // write code here
+//         bool ret = false;
+//         for(auto& arr : array){
+//             ret = Search(arr,target);
+//             if(ret) return true;
+//         }
+//         return false;
+//     }
+
+//     bool Search(vector<int> &arr,int target){
+//         int left = 0,right = arr.size() - 1;
+//         while(left <= right){
+//             int mid = left + (right - left) / 2;
+//             if(arr[mid] < target){
+//                 left = mid + 1;
+//             }
+//             else if(arr[mid] > target){
+//                 right = mid - 1;
+//             }
+//             else return true;
+//         }
+//         return false;
+//     }
+
+// };
+
 // /**
 //  * struct ListNode {
 //  *	int val;
