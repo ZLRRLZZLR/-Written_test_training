@@ -6,6 +6,47 @@
 
 using namespace std;
 
+// /**
+//  * struct ListNode {
+//  *	int val;
+//  *	struct ListNode *next;
+//  *	ListNode(int x) : val(x), next(nullptr) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
+//      * @param head ListNode类 
+//      * @return ListNode类
+//      */
+//     ListNode* deleteDuplicates(ListNode* head) {
+//         // write code here
+//         if(head == nullptr || head->next == nullptr) return head;
+
+//         ListNode* newhead = new ListNode(-1);
+//         newhead->next = head;
+//         ListNode* pnode = newhead;
+//         while(pnode->next){
+//             ListNode* ptmp = pnode->next;
+//             bool flag = false;
+//             while(ptmp&&ptmp->next&&ptmp->val == ptmp->next->val){
+//                 ptmp = ptmp->next;
+//                 flag = true;
+//             }
+//             if(flag){
+//                 pnode->next = ptmp->next;
+//             }
+//             else{
+//                 pnode = pnode->next;
+//             }
+//         }
+//         return newhead->next;
+//     }
+// };
+
 // class Solution {
 // public:
 //     /**
