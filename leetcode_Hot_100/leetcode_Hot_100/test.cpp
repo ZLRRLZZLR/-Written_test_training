@@ -6,6 +6,51 @@
 
 using namespace std;
 
+// /**
+//  * struct TreeNode {
+//  *	int val;
+//  *	struct TreeNode *left;
+//  *	struct TreeNode *right;
+//  *	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  * };
+//  */
+// class Solution {
+//     vector<vector<int>> ret;
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
+//      * @param root TreeNode类 
+//      * @return int整型vector<vector<>>
+//      */
+//     vector<vector<int>> levelOrder(TreeNode* root) {
+//         // write code here
+//         if(root == nullptr) return ret;
+//         queue<TreeNode*> q;
+//         q.push(root);
+
+//         int levelsize = 1;
+//         while(q.size()){
+//             vector<int> tmp;
+//             while(levelsize){
+//                 TreeNode* node = q.front();
+//                 q.pop();
+//                 if(node->left){
+//                     q.push(node->left);
+//                 }
+//                 if(node->right){
+//                     q.push(node->right);
+//                 }
+//                 tmp.push_back(node->val);
+//                 levelsize--;
+//             }
+//             levelsize = q.size();
+//             ret.push_back(tmp);
+//         }
+//         return ret;
+//     }
+// };
 
 // /**
 //  * struct TreeNode {
