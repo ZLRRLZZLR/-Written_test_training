@@ -14,6 +14,35 @@ using namespace std;
 //  *	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 //  * };
 //  */
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
+//      * @param root TreeNode类 
+//      * @return int整型
+//      */
+//     int maxDepth(TreeNode* root) {
+//         // write code here
+//         if(root == nullptr) return 0;
+
+//         int left = maxDepth(root->left);
+//         int right = maxDepth(root->right);
+
+//         return left > right ? left + 1 : right + 1;  
+//     }
+// };
+
+
+// /**
+//  * struct TreeNode {
+//  *	int val;
+//  *	struct TreeNode *left;
+//  *	struct TreeNode *right;
+//  *	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  * };
+//  */
 // #include <algorithm>
 // class Solution {
 //     vector<vector<int>> ret;
