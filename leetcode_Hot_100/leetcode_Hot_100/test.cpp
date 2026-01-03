@@ -8,6 +8,54 @@ using namespace std;
 
 // /**
 //  * struct TreeNode {
+//  *  int val;
+//  *  struct TreeNode *left;
+//  *  struct TreeNode *right;
+//  *  TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  * };
+//  */
+// class Solution {
+//     int sum_;
+//   public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      *
+//      * @param root TreeNode类
+//      * @param sum int整型
+//      * @return bool布尔型
+//      */
+//     bool hasPathSum(TreeNode* root, int sum) {
+//         // write code here
+//         sum_ = sum;
+//         if (root == nullptr) return false;
+//         if(!root->left&&!root->right&&root->val == sum) return true;
+//         bool blleft = false, blright = false;
+//         if (root->left) {
+//             blleft = hasPath(root->left, root->val);
+//         }
+//         if (root->right) {
+//             blright = hasPath(root->right, root->val);
+//         }
+//         return blleft || blright;
+//     }
+
+//     bool hasPath(TreeNode* root, int path) {
+//         path += root->val;
+//         if (path == sum_) return true;
+//         bool blleft = false, blright = false;
+//         if (root->left) {
+//             blleft = hasPath(root->left, path);
+//         }
+//         if (root->right) {
+//             blright = hasPath(root->right, path);
+//         }
+//         return blleft || blright;
+//     }
+// };
+
+// /**
+//  * struct TreeNode {
 //  *	int val;
 //  *	struct TreeNode *left;
 //  *	struct TreeNode *right;
