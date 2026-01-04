@@ -8,6 +8,34 @@ using namespace std;
 
 // /**
 //  * struct TreeNode {
+//  *	int val;
+//  *	struct TreeNode *left;
+//  *	struct TreeNode *right;
+//  * };
+//  */
+// /**
+//  * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//  *
+//  * 
+//  * @param pRoot TreeNode类 
+//  * @return bool布尔型
+//  */
+
+// bool recursion(struct TreeNode* pRoot1,struct TreeNode* pRoot2){
+//     if(pRoot1 == NULL && pRoot2 == NULL) return true;
+
+//     if(pRoot1 == NULL || pRoot2 == NULL || pRoot1->val != pRoot2->val) return false;
+
+//     return recursion(pRoot1->left,pRoot2->right) && recursion(pRoot1->right,pRoot2->left);
+// }
+
+// bool isSymmetrical(struct TreeNode* pRoot ) {
+//     // write code here
+//     return recursion(pRoot,pRoot);
+// }
+
+// /**
+//  * struct TreeNode {
 //  *  int val;
 //  *  struct TreeNode *left;
 //  *  struct TreeNode *right;
