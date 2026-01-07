@@ -6,6 +6,29 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
+//      * @param nums int整型vector 
+//      * @return int整型
+//      */
+//     int minNumberDisappeared(vector<int>& nums) {
+//         // write code here
+//         int n = nums.size();
+//         vector<int> ret(n,0);
+//         for(int i = 0;i < n;i++){
+//             if(n >= nums[i] && nums[i] > 0) ret[nums[i] - 1] = 1;
+//         }
+//         for(int i = 0;i < n;i++){
+//             if(ret[i] < 1) return i + 1;
+//         }
+//         return n + 1;
+//     }
+// };
+
 // /**
 //  * struct TreeNode {
 //  *	int val;
