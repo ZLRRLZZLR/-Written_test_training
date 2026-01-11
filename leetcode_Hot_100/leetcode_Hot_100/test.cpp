@@ -7,6 +7,33 @@
 using namespace std;
 
 // class Solution {
+//   public:
+//     void merge(int A[], int m, int B[], int n) {
+//         int cur1 = 0, cur2 = 0;
+//         vector<int> dp(m + n, 0);
+//         int i = 0;
+//         while (cur1 < m && cur2 < n) {
+//             if (A[cur1] <= B[cur2]) {
+//                 dp[i++] = A[cur1++];
+//             } else {
+//                 dp[i++] = B[cur2++];
+//             }
+//         }
+//         while (cur1 < m) {
+//             dp[i++] = A[cur1++];
+//         }
+
+//         while (cur2 < n) {
+//             dp[i++] = B[cur2++];
+//         }
+
+//         for (int j = 0; j < m + n; ++j) {
+//             A[j] = dp[j];
+//         }
+//     }
+// };
+
+// class Solution {
 // public:
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
