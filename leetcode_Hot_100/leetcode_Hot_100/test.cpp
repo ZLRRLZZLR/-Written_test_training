@@ -6,6 +6,29 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      *
+//      * @param str string字符串 待判断的字符串
+//      * @return bool布尔型
+//      */
+//     bool judge(string str) {
+//         // write code here
+//         int left = 0,right = str.size() - 1;
+//         while(left < right){
+//             if(str[left] != str[right]){
+//                 return false;
+//             }
+//             ++left;
+//             --right;
+//         }
+//         return true;
+//     }
+// };
+
 // #include <algorithm>
 // class Solution {
 //   public:
@@ -55,13 +78,13 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param n int整型 
+//      *
+//      * @param n int整型
 //      * @return int整型
 //      */
 //     int Fibonacci(int n) {
 //         // write code here
-//         if(n <= 2) return 1; 
+//         if(n <= 2) return 1;
 //         int a = 1,b = 1,c = 0;
 //         for(int i = 3;i <= n;i++){
 //             c = a + b;
@@ -77,8 +100,8 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param number int整型 
+//      *
+//      * @param number int整型
 //      * @return int整型
 //      */
 //     int jumpFloor(int number) {
@@ -101,8 +124,8 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param nums int整型vector 
+//      *
+//      * @param nums int整型vector
 //      * @return int整型
 //      */
 //     int minNumberDisappeared(vector<int>& nums) {
@@ -133,8 +156,8 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param root TreeNode类 
+//      *
+//      * @param root TreeNode类
 //      * @return bool布尔型
 //      */
 //     bool isValidBST(TreeNode* root) {
@@ -153,15 +176,15 @@ using namespace std;
 //  *	struct TreeNode *left;
 //  *	struct TreeNode *right;
 //  *	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-//  * }; 
+//  * };
 //  */
 // class Solution {
 // public:
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param pRoot TreeNode类 
+//      *
+//      * @param pRoot TreeNode类
 //      * @return TreeNode类
 //      */
 //     TreeNode* Mirror(TreeNode* pRoot) {
@@ -176,7 +199,8 @@ using namespace std;
 
 //         return pRoot;
 //     }
-};
+}
+;
 
 // /**
 //  * struct TreeNode {
@@ -188,8 +212,8 @@ using namespace std;
 // /**
 //  * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //  *
-//  * 
-//  * @param pRoot TreeNode类 
+//  *
+//  * @param pRoot TreeNode类
 //  * @return bool布尔型
 //  */
 
@@ -267,8 +291,8 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param root TreeNode类 
+//      *
+//      * @param root TreeNode类
 //      * @return int整型
 //      */
 //     int maxDepth(TreeNode* root) {
@@ -278,10 +302,9 @@ using namespace std;
 //         int left = maxDepth(root->left);
 //         int right = maxDepth(root->right);
 
-//         return left > right ? left + 1 : right + 1;  
+//         return left > right ? left + 1 : right + 1;
 //     }
 // };
-
 
 // /**
 //  * struct TreeNode {
@@ -298,8 +321,8 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param pRoot TreeNode类 
+//      *
+//      * @param pRoot TreeNode类
 //      * @return int整型vector<vector<>>
 //      */
 //     vector<vector<int> > Print(TreeNode* pRoot) {
@@ -351,8 +374,8 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param root TreeNode类 
+//      *
+//      * @param root TreeNode类
 //      * @return int整型vector<vector<>>
 //      */
 //     vector<vector<int>> levelOrder(TreeNode* root) {
@@ -397,8 +420,8 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param root TreeNode类 
+//      *
+//      * @param root TreeNode类
 //      * @return int整型vector
 //      */
 //     vector<int> inorderTraversal(TreeNode* root) {
@@ -428,8 +451,8 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param root TreeNode类 
+//      *
+//      * @param root TreeNode类
 //      * @return int整型vector
 //      */
 //     vector<int> postorderTraversal(TreeNode* root) {
@@ -460,8 +483,8 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param root TreeNode类 
+//      *
+//      * @param root TreeNode类
 //      * @return int整型vector
 //      */
 //     vector<int> preorderTraversal(TreeNode* root) {
@@ -481,9 +504,9 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param target int整型 
-//      * @param array int整型vector<vector<>> 
+//      *
+//      * @param target int整型
+//      * @param array int整型vector<vector<>>
 //      * @return bool布尔型
 //      */
 //     bool Find(int target, vector<vector<int> >& array) {
@@ -525,8 +548,8 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param head ListNode类 
+//      *
+//      * @param head ListNode类
 //      * @return ListNode类
 //      */
 //     ListNode* deleteDuplicates(ListNode* head) {
@@ -559,9 +582,9 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param nums int整型vector 
-//      * @param target int整型 
+//      *
+//      * @param nums int整型vector
+//      * @param target int整型
 //      * @return int整型
 //      */
 //     int search(vector<int>& nums, int target) {
@@ -571,7 +594,7 @@ using namespace std;
 //             int mid = left + (right - left) / 2;
 //             if(nums[mid] == target) return mid;
 //             else if(nums[mid] > target) right = mid - 1;
-//             else left = mid + 1; 
+//             else left = mid + 1;
 //         }
 //         return -1;
 //     }
@@ -589,8 +612,8 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param head ListNode类 
+//      *
+//      * @param head ListNode类
 //      * @return ListNode类
 //      */
 //     ListNode* oddEvenList(ListNode* head) {
@@ -626,8 +649,8 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param head ListNode类 
+//      *
+//      * @param head ListNode类
 //      * @return ListNode类
 //      */
 //     ListNode* deleteDuplicates(ListNode* head) {
@@ -697,7 +720,7 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
+//      *
 //      * @param head ListNode类 the head
 //      * @return bool布尔型
 //      */
@@ -731,13 +754,13 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param head ListNode类 
-//      * @param n int整型 
+//      *
+//      * @param head ListNode类
+//      * @param n int整型
 //      * @return ListNode类
 //      */
 //     ListNode* removeNthFromEnd(ListNode* head, int n) {
-//         // write code 
+//         // write code
 //         ListNode* newhead = new ListNode(-1);
 //         newhead->next = head;
 //         ListNode* fast = head;
@@ -761,7 +784,6 @@ using namespace std;
 //     }
 // };
 
-
 // /**
 //  * struct ListNode {
 //  *	int val;
@@ -774,9 +796,9 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
-//      * 
-//      * @param pHead ListNode类 
-//      * @param k int整型 
+//      *
+//      * @param pHead ListNode类
+//      * @param k int整型
 //      * @return ListNode类
 //      */
 //     ListNode* FindKthToTail(ListNode* pHead, int k) {
@@ -867,7 +889,7 @@ using namespace std;
 
 //         ret.erase(0,ret.find_first_not_of('0'));
 
-//         return ret.empty() ? "0" : ret; 
+//         return ret.empty() ? "0" : ret;
 //     }
 // };
 
@@ -950,8 +972,8 @@ using namespace std;
 
 //         return ret;
 //     }
-};
-
+}
+;
 
 // class Solution {
 // public:
@@ -1057,7 +1079,6 @@ using namespace std;
 //         return ret;
 //     }
 // };
-
 
 // /**
 //  * Definition for singly-linked list.
