@@ -8,6 +8,29 @@ using namespace std;
 
 // class Solution {
 //   public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      *
+//      * @param m int整型
+//      * @param n int整型
+//      * @return int整型
+//      */
+//     int uniquePaths(int m, int n) {
+//         // write code here
+//         vector<vector<int>> dp(m,vector<int>(n,1));
+
+//         for (int i = 1; i < m; i++) {
+//             for (int j = 1; j < n; j++) {
+//                 dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+//             }
+//         }
+//         return dp[m - 1][n - 1];
+//     }
+// };
+
+// class Solution {
+//   public:
 //     void merge(int A[], int m, int B[], int n) {
 //         int cur1 = 0, cur2 = 0;
 //         vector<int> dp(m + n, 0);
