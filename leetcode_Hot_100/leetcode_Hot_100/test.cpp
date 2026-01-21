@@ -6,6 +6,46 @@
 
 using namespace std;
 
+// /**
+//  * struct Interval {
+//  *	int start;
+//  *	int end;
+//  *	Interval(int s, int e) : start(start), end(e) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
+//      * @param intervals Interval类vector 
+//      * @return Interval类vector
+//      */
+//     static bool cmp(Interval&a,Interval&b){
+//         return a.start < b.start;
+//     }
+
+//     vector<Interval> merge(vector<Interval>& intervals) {
+//         // write code here
+//         vector<Interval> res;
+//         if(intervals.size() == 0){
+//             return res;
+//         }
+//         sort(intervals.begin(),intervals.end(),cmp);
+//         res.push_back(intervals[0]);
+//         for(int i = 1;i < intervals.size();i++){
+//             if(intervals[i].start <= res.back().end){
+//                 res.back().end = max(res.back().end,intervals[i].end);
+//             }
+//             else{
+//                 res.push_back(intervals[i]);
+//             }
+//         }
+//         return res;
+//     }
+// };
+
 // class Solution
 // {
 // public:
