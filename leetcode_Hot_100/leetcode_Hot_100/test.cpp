@@ -6,6 +6,46 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 判断岛屿数量
+//      * @param grid char字符型vector<vector<>> 
+//      * @return int整型
+//      */
+//     int dx[4] = {0,0,1,-1};
+//     int dy[4] = {1,-1,0,0};
+//     int ret = 0;
+//     int n = 0;
+//     int m = 0;
+//     int solve(vector<vector<char> >& grid) {
+//         // write code here
+//         n = grid.size();
+//         m = grid[0].size();
+//         for(int i = 0;i < n;i++){
+//             for(int j = 0;j < m;j++){
+//                 if(grid[i][j] == '1'){
+//                     ret++;
+//                     grid[i][j] = '0';
+//                     bfs(grid,i,j);
+//                 }
+//             }
+//         }
+//         return ret;
+//     }
+//     void bfs(vector<vector<char> >& grid,int x,int y){
+//         for(int k = 0;k < 4;k++){
+//             int a = x + dx[k],b = y + dy[k];
+//             if(a >= 0 && a < n && b >= 0 && b < m && grid[a][b] == '1'){
+//                 grid[a][b] = '0';
+//                 bfs(grid,a,b);
+//             }
+//         }
+//     }
+// };
+
 // /**
 //  * struct Interval {
 //  *	int start;
