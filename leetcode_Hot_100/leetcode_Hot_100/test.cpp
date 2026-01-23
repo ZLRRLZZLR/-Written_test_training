@@ -11,6 +11,50 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
+//      * 
+//      * @param numbers int整型vector 
+//      * @param target int整型 
+//      * @return int整型vector
+//      */
+    
+//     vector<int> twoSum(vector<int>& numbers, int target) {
+//         // write code here
+//         unordered_map<int,int> hash;
+//         for(int i = 0;i < numbers.size();i++){
+//             hash[numbers[i]] = i + 1;
+//         }
+
+//         set<int> st;
+
+//         for(int i = 0;i < numbers.size();i++){
+//             int a = numbers[i];
+//             int b = target - a;
+//             auto it = hash.find(b);
+//             if(it != hash.end()){
+//                 int index1 = i + 1;
+//                 int index2 = it->second;
+//                 if(index1 < index2){
+//                     st.insert(index1);
+//                     st.insert(index2);
+//                 }
+//                 else if(index1 > index2){
+//                     st.insert(index2);
+//                     st.insert(index1);
+//                 }
+//                 else{
+//                     continue;
+//                 }
+//             }
+//         }
+//         return {st.begin(),st.end()};
+//     }
+// };
+
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
 //      * 判断岛屿数量
 //      * @param grid char字符型vector<vector<>> 
 //      * @return int整型
