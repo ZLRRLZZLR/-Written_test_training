@@ -12,6 +12,46 @@ using namespace std;
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
 //      * 
+//      * @param num int整型vector 
+//      * @return int整型vector<vector<>>
+//      */
+//      int n = 0;
+//      vector<vector<int>> ret;
+//      bool vec[7] = {false};
+//     vector<vector<int> > permute(vector<int>& num) {
+//         // write code here
+//         n = num.size();
+//         for(int i = 0;i < n;i++){
+//             vec[i] = true;
+//             dfs(num,{num[i]});
+//             vec[i] = false;
+//         }
+//         return ret;
+//     }
+
+//     void dfs(vector<int>& num,vector<int> tmp){
+//         if(tmp.size() == n){
+//             ret.push_back(tmp);
+//             return ;
+//         }
+//         for(int i = 0;i < n;i++){
+//             if(!vec[i]){
+//                 tmp.push_back(num[i]);
+//                 vec[i] = true;
+//                 dfs(num,tmp);
+//                 vec[i] = false;
+//                 tmp.pop_back();
+//             }
+//         }
+//     }
+// };
+
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
 //      * @param numbers int整型vector 
 //      * @param target int整型 
 //      * @return int整型vector
