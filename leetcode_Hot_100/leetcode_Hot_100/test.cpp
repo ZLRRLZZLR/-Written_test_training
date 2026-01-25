@@ -21,6 +21,41 @@ using namespace std;
 //      *
 //      * 
 //      * @param root TreeNode类 
+//      * @return bool布尔型
+//      */
+//     void dfs(TreeNode* root,int index,int& count,int& maxindex){
+//         if(!root) return ;
+
+//         dfs(root->left,2*index,count,maxindex);
+//         dfs(root->right,2*index + 1,count,maxindex);
+//         count++;
+//         maxindex = max(index,maxindex);
+//     }
+//     bool isCompleteTree(TreeNode* root) {
+//         // write code here
+//         int maxindex = -0x3f,count = 0;
+//         if(!root) return true;
+
+//         dfs(root,1,count,maxindex);
+//         return count == maxindex;
+//     }
+// };
+
+// /**
+//  * struct TreeNode {
+//  *	int val;
+//  *	struct TreeNode *left;
+//  *	struct TreeNode *right;
+//  *	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
+//      * @param root TreeNode类 
 //      * @param o1 int整型 
 //      * @param o2 int整型 
 //      * @return int整型
