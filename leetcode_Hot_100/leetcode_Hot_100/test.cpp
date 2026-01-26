@@ -8,6 +8,26 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int characterReplacement(string s, int k) {
+//         int left = 0,right = 0;
+//         int n = s.size();
+//         int arr[26] = {0};
+//         int maxlen = 0;
+//         while(right < n){
+//             arr[s[right] - 'A']++;
+//             maxlen = max(maxlen,arr[s[right] - 'A']);
+//             if(right - left + 1 - maxlen > k){
+//                 arr[s[left] - 'A']--;
+//                 left++;
+//             }
+//             right++;
+//         }
+//         return right - left;
+//     }
+// };
+
+// class Solution {
+// public:
 //     int maxProduct(vector<int>& nums) {
 //         int a = -0x3f3f3f3f,b = -0x3f3f3f3f;
 //         for(auto& num : nums){
