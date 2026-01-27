@@ -8,6 +8,32 @@ using namespace std;
 
 // class Solution {
 // public:
+//     string minWindow(string s, string t) {
+//         unordered_map<char,int> hs,ht;
+//         string ret;
+//         for(auto& ch : t) ht[ch]++;
+//         int left = 0,right = 0, count = 0;
+//         for(;right < s.size();right++){
+//             hs[s[right]]++;
+
+//             if(hs[s[right]] <= ht[s[right]]) count++;
+
+//             while(hs[s[left]] > ht[s[left]]){
+//                 hs[s[left]]--;
+//                 left++;
+//             }
+//             if(count == t.size()){
+//                 if(ret.empty() || right - left + 1 < ret.size()){
+//                     ret = s.substr(left,right - left + 1);
+//                 }
+//             }
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     string reverseOnlyLetters(string s) {
 //         int left = 0,right = s.size() - 1;
 //         while(left < right){
