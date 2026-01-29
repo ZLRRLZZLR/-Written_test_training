@@ -8,6 +8,16 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int lengthOfLastWord(string s) {
+//         s = " " + s;
+//         s = s.substr(0,s.find_last_not_of(' '));
+//         string ret  = s.substr(s.find_last_of(' '));
+//         return ret.size();
+//     }
+// };
+
+// class Solution {
+// public:
 //     int search(vector<int>& nums, int target) {
 //         int n = nums.size();
 //         for(int left = 0,right = n - 1;left <= right;){
