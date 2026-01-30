@@ -8,6 +8,35 @@ using namespace std;
 
 // class Solution {
 // public:
+//     bool judge(string& s,int left,int right){
+//         while(left < right){
+//             if(s[left] != s[right]){
+//                 return false;
+//             }
+//             ++left;
+//             --right;
+//         }
+//         return true;
+//     }
+
+//     bool validPalindrome(string s) {
+//         int n = s.size();
+//         if(n <= 1) return true;
+//         int left = 0,right = n - 1;
+//         while(left < right){
+//             if(s[left] != s[right]){
+//                 return judge(s,left + 1,right) || judge(s,left,right - 1);
+//             }else{
+//                 ++left;
+//                 --right;
+//             }
+//         }
+//         return true;
+//     }
+// };
+
+// class Solution {
+// public:
 //     int lengthOfLastWord(string s) {
 //         s = " " + s;
 //         s = s.substr(0,s.find_last_not_of(' '));
