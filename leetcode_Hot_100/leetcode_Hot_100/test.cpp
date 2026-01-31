@@ -8,6 +8,21 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int numJewelsInStones(string jewels, string stones) {
+//         unordered_map<char,int> hash;
+//         for(auto& ch : jewels){
+//             hash[ch]++;
+//         }
+//         int ret = 0;
+//         for(auto& ch : stones){
+//             if(hash.count(ch)) ret++;
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     int mySqrt(int x) {
 //         int left = 0,right = x;
 //         while(left < right){
