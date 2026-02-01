@@ -7,6 +7,53 @@
 using namespace std;
 
 // class Solution {
+//     bool check[9];
+//     vector<int> path;
+//     vector<vector<int>> ret;
+// public:
+//     vector<vector<int>> permuteUnique(vector<int>& nums) {
+//         sort(nums.begin(),nums.end());
+//         dfs(nums);
+//         return ret;
+//     }
+//     void dfs(vector<int>& nums) {
+//         if(path.size() == nums.size()){
+//             ret.push_back(path);
+//         }
+//         for(int i = 0;i < nums.size();i++){
+//             if(!(check[i] == true || (i != 0 && nums[i] == nums[i - 1] && check[i - 1] == false))){
+//                 path.push_back(nums[i]);
+//                 check[i] = true;
+//                 dfs(nums);
+//                 path.pop_back();
+//                 check[i] = false;
+//             }
+//         }
+//     }
+// };
+
+// class Solution {
+// public:
+//     int Sum(int n){
+//         int s = 0;
+//         while(n){
+//             s += pow(n % 10,2);
+//             n /= 10;
+//         }
+//         return s;
+//     }
+
+//     bool isHappy(int n) {
+//         int slow = Sum(n),fast = Sum(Sum(n));
+//         while(fast != slow){
+//             slow = Sum(slow);
+//             fast = Sum(Sum(fast));
+//         }
+//         return slow == 1;
+//     }
+// };
+
+// class Solution {
 // public:
 //     int numJewelsInStones(string jewels, string stones) {
 //         unordered_map<char,int> hash;
