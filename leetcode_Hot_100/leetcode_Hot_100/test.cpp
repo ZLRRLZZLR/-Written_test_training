@@ -8,6 +8,38 @@ using namespace std;
 
 // class Solution {
 // public:
+//     vector<int> productExceptSelf(vector<int>& nums) {
+//         int n = nums.size();
+//         int left = 1,right = 1;
+//         vector<int> arr(n,1);
+//         for(int i = 0;i < n;i++){
+//             arr[i] = left;
+//             left *= nums[i];
+//         }
+//         for(int i = n - 1;i >= 0;i--){
+//             arr[i] *= right;
+//             right *= nums[i];
+//         }
+//         return arr;
+//     }
+// };
+
+// class Solution {
+// public:
+//     int maxSubArray(vector<int>& nums) {
+//         int n = nums.size();
+//         int ret = INT_MIN;
+//         vector<int> dp(n + 1);
+//         for(int i = 1;i <= n;i++){
+//             dp[i] = max(nums[i - 1],dp[i - 1] + nums[i - 1]);
+//             ret = max(ret,dp[i]);
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     int maxArea(vector<int>& height) {
 //         int left = 0,right = height.size() - 1,ret = 0;
 //         while(left < right){
