@@ -8,6 +8,47 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int longestConsecutive(vector<int>& nums) {
+//         unordered_set<int> st(nums.begin(),nums.end());
+//         int ret = 0;
+//         for(int i : st){
+//             if(st.contains(i - 1)){
+//                 continue;
+//             }
+
+//             int j = i + 1;
+//             while(st.contains(j)){
+//                 j++;
+//             }
+//             ret = max(ret,j - i);
+//             if(ret * 2 >= st.size()){
+//                 break;
+//             }
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
+//     int deleteGreatestValue(vector<vector<int>>& grid) {
+//         for(auto& row : grid){
+//             sort(row.begin(),row.end());
+//         }
+//         int ret = 0,n = grid[0].size();
+//         for(int i = 0;i < n;i++){
+//             int mx = 0;
+//             for(auto& row : grid){
+//                 mx = max(mx,row[i]);
+//             }
+//             ret += mx;
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     vector<int> productExceptSelf(vector<int>& nums) {
 //         int n = nums.size();
 //         int left = 1,right = 1;
