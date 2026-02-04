@@ -8,6 +8,23 @@ using namespace std;
 
 // class Solution {
 // public:
+//     vector<vector<int>> merge(vector<vector<int>>& intervals) {
+//         sort(intervals.begin(),intervals.end());
+//         vector<vector<int>> ret;
+
+//         for(auto& tmp : intervals){
+//             if(!ret.empty() && ret.back()[1] >= tmp[0]){
+//                 ret.back()[1] = max(tmp[1],ret.back()[1]);
+//             }else{
+//                 ret.push_back(tmp);
+//             }
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     int longestConsecutive(vector<int>& nums) {
 //         unordered_set<int> st(nums.begin(),nums.end());
 //         int ret = 0;
