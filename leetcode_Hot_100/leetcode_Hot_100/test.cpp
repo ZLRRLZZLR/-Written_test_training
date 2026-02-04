@@ -8,6 +8,18 @@ using namespace std;
 
 // class Solution {
 // public:
+//     vector<int> sortArrayByParity(vector<int>& nums) {
+//         for(int left = -1,right = 0;right < nums.size();right++){
+//             if(nums[right] % 2 == 0){
+//                 swap(nums[++left],nums[right]);
+//             }
+//         }
+//         return nums;
+//     }
+// };
+
+// class Solution {
+// public:
 //     vector<vector<int>> minimumAbsDifference(vector<int>& arr) {
 //         sort(arr.begin(),arr.end());
 //         int min_diff = INT_MAX;
