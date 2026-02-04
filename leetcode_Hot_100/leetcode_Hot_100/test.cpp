@@ -8,6 +8,24 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int findMaxLength(vector<int>& nums) {
+//         int n = nums.size();
+//         int ret = 0;
+//         unordered_map<int,int> hash(n);
+//         hash[0] = -1;
+
+//         int sum = 0;
+//         for(int i = 0;i < n;i++){
+//             sum += nums[i] == 0 ? -1 : 1;
+//             if(hash.count(sum)) ret = max(ret,i - hash[sum]);
+//             else hash[sum] = i;
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     vector<vector<int>> merge(vector<vector<int>>& intervals) {
 //         sort(intervals.begin(),intervals.end());
 //         vector<vector<int>> ret;
