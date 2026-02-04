@@ -8,6 +8,29 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int thirdMax(vector<int>& nums) {
+//         long long a = -3e9,b = -3e9,c = -3e9;
+//         int n = nums.size();
+//         for(int i = 0;i < n;i++){
+//             if(nums[i] == a || nums[i] == b || nums[i] == c) continue;
+//             if(nums[i] > a){
+//                 c = b;
+//                 b = a;
+//                 a = nums[i];
+//             }else if(nums[i] > b){
+//                 c = b;
+//                 b = nums[i];
+//             }
+//             else if(nums[i] > c){
+//                 c = nums[i];
+//             }
+//         }
+//         return c == -3e9 ? a : c;
+//     }
+// };
+
+// class Solution {
+// public:
 //     int findMaxLength(vector<int>& nums) {
 //         int n = nums.size();
 //         int ret = 0;
