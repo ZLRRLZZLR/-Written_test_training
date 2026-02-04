@@ -8,6 +8,25 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int totalFruit(vector<int>& fruits) {
+//         unordered_map<int,int> hash;
+//         int ret = INT_MIN;
+//         for(int left = 0,right = 0;right < fruits.size();right++){
+//             hash[fruits[right]]++;
+//             while(hash.size() >= 3){
+//                 if(--hash[fruits[left]] == 0){
+//                     hash.erase(fruits[left]);
+//                 }
+//                 left++;
+//             }
+//             ret = max(ret,right - left + 1);
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     vector<int> sortArrayByParity(vector<int>& nums) {
 //         for(int left = -1,right = 0;right < nums.size();right++){
 //             if(nums[right] % 2 == 0){
