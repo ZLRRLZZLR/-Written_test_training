@@ -8,6 +8,29 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int minOperations(vector<int>& nums, int x) {
+//         int target = 0;
+//         for(auto& num : nums){
+//             target += num;
+//         }
+//         target -= x;
+//         if(target < 0) return -1;
+//         int n = nums.size(),left = 0,right = 0;
+//         int sum = 0,ret = -1;
+//         while(right < n){
+//             sum += nums[right];
+//             while(sum > target){
+//                 sum -= nums[left++];
+//             }
+//             if(sum == target) ret = max(ret,right - left + 1);
+//             right++;
+//         }
+//         return ret == -1 ? -1 : n - ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     int thirdMax(vector<int>& nums) {
 //         long long a = -3e9,b = -3e9,c = -3e9;
 //         int n = nums.size();
