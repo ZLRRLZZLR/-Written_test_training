@@ -8,6 +8,28 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int findContentChildren(vector<int>& g, vector<int>& s) {
+//         sort(g.begin(),g.end());
+//         sort(s.begin(),s.end());
+
+//         int l1 = 0,l2 = 0;
+//         int n = g.size();
+//         int m = s.size();
+//         while(l1 < n && l2 < m){
+//             while(l1 < n && l2 < m && g[l1] <= s[l2]){
+//                 l1++;
+//                 l2++;
+//             }
+//             while(l1 < n && l2 < m && g[l1] > s[l2]){
+//                 l2++;
+//             }
+//         }
+//         return l1;
+//     }
+// };
+
+// class Solution {
+// public:
 //     int minOperations(vector<int>& nums, int x) {
 //         int target = 0;
 //         for(auto& num : nums){
