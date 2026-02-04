@@ -8,6 +8,26 @@ using namespace std;
 
 // class Solution {
 // public:
+//     vector<vector<int>> minimumAbsDifference(vector<int>& arr) {
+//         sort(arr.begin(),arr.end());
+//         int min_diff = INT_MAX;
+//         vector<vector<int>> ret;
+//         for(int i = 1;i < arr.size();i++){
+//             int x = arr[i - 1],y = arr[i];
+//             int diff = y - x;
+//             if(diff < min_diff){
+//                 min_diff = diff;
+//                 ret = {{x,y}};
+//             }else if(diff == min_diff){
+//                 ret.push_back({x,y});
+//             }
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     int findContentChildren(vector<int>& g, vector<int>& s) {
 //         sort(g.begin(),g.end());
 //         sort(s.begin(),s.end());
