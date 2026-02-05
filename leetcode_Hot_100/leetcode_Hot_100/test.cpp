@@ -8,6 +8,32 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int evalRPN(vector<string>& tokens) {
+//         stack<int> st;
+//         for(auto& s : tokens){
+//             char i = s[0];
+//             if(s.size() > 1 || isdigit(i)){
+//                 st.push(stoi(s));
+//                 continue;
+//             }
+//             int a = st.top();
+//             st.pop();
+//             if(i == '+'){
+//                 st.top() += a;
+//             }else if(i == '-'){
+//                 st.top() -= a;
+//             }else if(i == '/'){
+//                 st.top() /= a;
+//             }else {
+//                 st.top() *= a;
+//             }
+//         }
+//         return st.top();
+//     }
+// };
+
+// class Solution {
+// public:
 //     bool isUnique(string astr) {
 //         if(astr.size() > 26) return false;
 //         int flag = 0;
