@@ -8,6 +8,23 @@ using namespace std;
 
 // class Solution {
 // public:
+//     bool isUnique(string astr) {
+//         if(astr.size() > 26) return false;
+//         int flag = 0;
+//         for(auto i : astr){
+//             if((flag >> (i - 'a') & 1) == 0){
+//                 flag |= (1 << (i - 'a'));
+//             }
+//             else{
+//                 return false;
+//             }
+//         }
+//         return true;
+//     }
+// };
+
+// class Solution {
+// public:
 //     int totalFruit(vector<int>& fruits) {
 //         unordered_map<int,int> hash;
 //         int ret = INT_MIN;
