@@ -6,6 +6,51 @@
 
 using namespace std;
 
+// class MyQueue {
+// public:
+//     MyQueue() {}
+
+//     void push(int x) { stin.push(x); }
+
+//     int pop() {
+//         if (stout.empty()) {
+//             while (stin.size()) {
+//                 stout.push(stin.top());
+//                 stin.pop();
+//             }
+//         }
+//         int ret = stout.top();
+//         stout.pop();
+//         return ret;
+//     }
+
+//     int peek() {
+//         if (stout.empty()) {
+//             while (stin.size()) {
+//                 stout.push(stin.top());
+//                 stin.pop();
+//             }
+//         }
+//         return stout.top();
+//     }
+
+//     bool empty(){
+//         return stin.empty() && stout.empty();
+//     }
+    
+//     stack<int> stin;
+//     stack<int> stout;
+// };
+
+/**
+ * Your MyQueue object will be instantiated and called as such:
+ * MyQueue* obj = new MyQueue();
+ * obj->push(x);
+ * int param_2 = obj->pop();
+ * int param_3 = obj->peek();
+ * bool param_4 = obj->empty();
+ */
+
 // class Solution {
 // public:
 //     int multiply(int A, int B) {
