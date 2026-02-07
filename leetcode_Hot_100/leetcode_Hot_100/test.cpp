@@ -8,6 +8,16 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int multiply(int A, int B) {
+//         if(!B)
+//         return 0;
+
+//         return A + multiply(A, B - 1);
+//     }
+// };
+
+// class Solution {
+// public:
 //     int missingNumber(vector<int>& nums) {
 //         int ret = 0;
 //         for(int i = 0;i <= nums.size();i++){
