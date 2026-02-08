@@ -6,6 +6,28 @@
 
 using namespace std;
 
+
+// class Solution {
+//     int dx[4] = {0,1,0,-1};
+//     int dy[4] = {1,0,-1,0};
+// public:
+//     vector<vector<int>> generateMatrix(int n) {
+//         vector<vector<int>> ret(n,vector<int>(n,0));
+//         int i = 0,j = 0,di = 0;
+//         for(int val = 1;val <= n * n;val++){
+//             ret[i][j] = val;
+//             int x = i + dx[di];
+//             int y = j + dy[di];
+//             if(x < 0 || x >= n || y < 0 || y >= n || ret[x][y]){
+//                 di = (di + 1) % 4;
+//             }
+//             i += dx[di];
+//             j += dy[di];
+//         }
+//         return ret;
+//     }
+// };
+
 // class MyQueue {
 // public:
 //     MyQueue() {}
