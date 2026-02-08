@@ -6,6 +6,34 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     int findUnsortedSubarray(vector<int>& nums) {
+//         vector<int> ret = nums;
+//         sort(ret.begin(), ret.end());
+//         int left = 0, right = nums.size() - 1;
+//         int l = 0, r = 0;
+//         while (left < nums.size()) {
+//             if (nums[left] != ret[left]) {
+//                 l = left;
+//                 break;
+//             }
+//             left++;
+//         }
+
+//         if(left == nums.size()) return 0;
+
+//         while (right >= 0) {
+//             if (nums[right] != ret[right]) {
+//                 r = right;
+//                 break;
+//             }
+//             right--;
+//         }
+//         return r - l + 1;
+//     }
+// };
+
 
 // class Solution {
 //     int dx[4] = {0,1,0,-1};
