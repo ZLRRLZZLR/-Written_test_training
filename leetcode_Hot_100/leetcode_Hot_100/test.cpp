@@ -8,6 +8,36 @@ using namespace std;
 
 // class Solution {
 // public:
+//     string decodeString(string s) {
+//         int i = 0;
+//         return dfs(s,i);
+//     }
+
+//     string dfs(string& s,int& i){
+//         string ret;   
+//         int k = 0;
+//         while(i < s.size()){
+//             char c = s[i];
+//             i++;
+//             if(isalpha(c)){
+//                 ret += c;
+//             }else if(isdigit(c)){
+//                 k = k * 10 + (c - '0');
+//             }else if(c == '['){
+//                 string t = dfs(s,i);
+//                 for(;k > 0;k--){
+//                     ret += t;
+//                 }
+//             }else{
+//                 break;
+//             }
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     string multiply(string num1, string num2) {
 //         int l1 = num1.size();
 //         int l2 = num2.size();
