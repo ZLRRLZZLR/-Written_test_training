@@ -8,6 +8,20 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int maxSubArray(vector<int>& nums) {
+//         int n = nums.size();
+//         int ret = INT_MIN;
+//         vector<int> dp(n + 1,0);
+//         for(int i = 1;i <= n;i++){
+//             dp[i] = max(nums[i - 1],dp[i - 1] + nums[i - 1]);
+//             ret = max(ret,dp[i]);
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     string decodeString(string s) {
 //         int i = 0;
 //         return dfs(s,i);
