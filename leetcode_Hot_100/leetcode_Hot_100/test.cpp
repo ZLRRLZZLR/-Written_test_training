@@ -8,6 +8,25 @@ using namespace std;
 
 // class Solution {
 // public:
+//     string removeKdigits(string num, int k) {
+//         vector<int> st;
+//         int count = num.size() - k;
+//         for(auto ch : num){
+//             while(k > 0 && !st.empty() && st.back() > ch){
+//                 st.pop_back();
+//                 --k;
+//             }
+//             st.push_back(ch);
+//         }
+
+//         string ret(st.begin(),st.begin() + count);
+//         ret.erase(0,ret.find_first_not_of('0'));
+//         return ret.empty() ? "0" : ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     int maxSubArray(vector<int>& nums) {
 //         int n = nums.size();
 //         int ret = INT_MIN;
