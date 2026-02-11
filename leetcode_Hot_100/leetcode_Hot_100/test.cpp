@@ -7,6 +7,43 @@
 using namespace std;
 
 // /**
+//  * Definition for singly-linked list.
+//  * struct ListNode {
+//  *     int val;
+//  *     ListNode *next;
+//  *     ListNode() : val(0), next(nullptr) {}
+//  *     ListNode(int x) : val(x), next(nullptr) {}
+//  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     ListNode* partition(ListNode* head, int x) {
+//         ListNode* newhead1 = new ListNode(-1);
+//         ListNode* newhead2 = new ListNode(-1);
+
+//         ListNode* cur1 = newhead1,*cur2 = newhead2;
+//         ListNode* cur = head;
+//         while(cur){
+//             if(cur->val < x){
+//                 cur1->next = cur;
+//                 cur1 = cur1->next;
+//             }
+//             else{
+//                 cur2->next = cur;
+//                 cur2 = cur2->next;
+//             }
+//             cur = cur->next;
+//         }
+
+//         cur1->next = newhead2->next;
+//         cur2->next = nullptr;
+
+//         return newhead1->next;
+//     }
+// };
+
+// /**
 //  * Definition for a binary tree node.
 //  * struct TreeNode {
 //  *     int val;
