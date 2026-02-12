@@ -18,6 +18,68 @@ using namespace std;
 //  */
 // class Solution {
 // public:
+//     ListNode* rotateRight(ListNode* head, int k) {
+//         if(head == nullptr || head->next == nullptr) return head;
+//         ListNode* prev = head;
+//         int count = 0;
+//         while(prev){
+//             prev = prev->next;
+//             count++;
+//         }
+//         k %= count;
+//         if(k == count || k == 0) return head;
+//         ListNode*slow = head,*fast = head;
+//         prev = head;
+//         while(k--){
+//             fast = fast->next;
+//         }
+//         while(fast){
+//             prev = slow;
+//             fast = fast->next;
+//             slow = slow->next;
+//         }
+//         ListNode* newhead = slow;
+//         while(slow->next){
+//             slow = slow->next;
+//         }
+//         prev->next = nullptr;
+//         slow->next = head;
+//         return newhead;
+//     }
+// };
+
+// class Solution {
+// public:
+//     void hanota(vector<int>& A, vector<int>& B, vector<int>& C) {
+//         int n = A.size();
+//         move(n,A,B,C);
+//     }
+
+//     void move(int n,vector<int>& A,vector<int>& B,vector<int>& C){
+//         if(n == 1){
+//             C.push_back(A.back());
+//             A.pop_back();
+//             return;
+//         }
+//         move(n - 1,A,C,B);
+//         C.push_back(A.back());
+//         A.pop_back();
+//         move(n - 1,B,A,C);
+//     }
+// };
+
+// /**
+//  * Definition for singly-linked list.
+//  * struct ListNode {
+//  *     int val;
+//  *     ListNode *next;
+//  *     ListNode() : val(0), next(nullptr) {}
+//  *     ListNode(int x) : val(x), next(nullptr) {}
+//  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+//  * };
+//  */
+// class Solution {
+// public:
 //     ListNode* partition(ListNode* head, int x) {
 //         ListNode* newhead1 = new ListNode(-1);
 //         ListNode* newhead2 = new ListNode(-1);
