@@ -6,6 +6,35 @@
 
 using namespace std;
 
+// class CQueue {
+// public:
+//     CQueue() {
+        
+//     }
+    
+//     void appendTail(int value) {
+//         q.push(value);
+//     }
+    
+//     int deleteHead() {
+//         if(q.empty()) return -1;
+//         int top = q.front();
+//         q.pop();
+//         return top;
+//     }
+//     queue<int> q;
+// };
+
+// /**
+//  * Your CQueue object will be instantiated and called as such:
+//  * CQueue* obj = new CQueue();
+//  * obj->appendTail(value);
+//  * int param_2 = obj->deleteHead();
+//  */
+
+// # Write your MySQL query statement below
+// select ifnull((select distinct salary from Employee order by Salary desc limit 1,1),null) as SecondHighestSalary
+
 // # Write your MySQL query statement below
 // select max(distinct salary) as SecondHighestSalary from Employee where salary < (select max(distinct salary) from Employee)
 
