@@ -6,6 +6,9 @@
 
 using namespace std;
 
+// # Write your MySQL query statement below
+// select Department.name as Department,e1.name as Employee,e1.Salary as Salary from Employee as e1 , Department where e1.DepartmentId = Department.ID and 3 > (select count(distinct e2.Salary) from Employee as e2 where e1.Salary < e2.Salary and e1.DepartmentId = e2.DepartmentId); 
+
 // class Solution {
 // public:
 //     char dismantlingAction(string arr) {
