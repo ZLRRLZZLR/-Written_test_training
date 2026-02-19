@@ -6,6 +6,24 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     char dismantlingAction(string arr) {
+//         vector<int> keys;
+//         unordered_map<char,bool> hmap;
+//         for(auto ch : arr){
+//             if(hmap.find(ch) == hmap.end()){
+//                 keys.push_back(ch);
+//             }
+//             hmap[ch] = hmap.find(ch) == hmap.end();
+//         }
+//         for(char ch : keys){
+//             if(hmap[ch]) return ch;
+//         }
+//         return ' ';
+//     }
+// };
+
 // class MyCircularQueue {
 // public:
 //     MyCircularQueue(int k) {
