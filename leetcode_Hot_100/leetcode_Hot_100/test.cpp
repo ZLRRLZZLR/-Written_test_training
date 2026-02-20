@@ -6,6 +6,63 @@
 
 using namespace std;
 
+// class AnimalShelf {
+// public:
+//     AnimalShelf() {}
+
+//     void enqueue(vector<int> animal) {
+//         if (animal[1]) {
+//             Dogqueue.push({count, animal[0]});
+//         } else {
+//             Catqueue.push({count, animal[0]});
+//         }
+//         count++;
+//     }
+
+//     vector<int> dequeueAny() {
+//         if (Dogqueue.empty() && Catqueue.empty())
+//             return {-1, -1};
+//         else if (Dogqueue.empty() && Catqueue.size())
+//             return dequeueCat();
+//         else if (Dogqueue.size() && Catqueue.empty())
+//             return dequeueDog();
+//         else if (Dogqueue.front().first < Catqueue.front().first)
+//             return dequeueDog();
+//         else
+//             return dequeueCat();
+//     }
+
+//     vector<int> dequeueDog() {
+//         if (Dogqueue.empty())
+//             return {-1, -1};
+//         int tmp = Dogqueue.front().first;
+//         Dogqueue.pop();
+//         return {tmp, 1};
+//     }
+
+//     vector<int> dequeueCat() {
+//         if (Catqueue.empty())
+//             return {-1, -1};
+//         int tmp = Catqueue.front().first;
+//         Catqueue.pop();
+//         return {tmp, 0};
+//     }
+
+// private:
+//     queue<pair<int, int>> Catqueue;
+//     queue<pair<int, int>> Dogqueue;
+//     int count = 0;
+// };
+
+// /**
+//  * Your AnimalShelf object will be instantiated and called as such:
+//  * AnimalShelf* obj = new AnimalShelf();
+//  * obj->enqueue(animal);
+//  * vector<int> param_2 = obj->dequeueAny();
+//  * vector<int> param_3 = obj->dequeueDog();
+//  * vector<int> param_4 = obj->dequeueCat();
+//  */
+
 // # Write your MySQL query statement below
 // select Department.name as Department,e1.name as Employee,e1.Salary as Salary from Employee as e1 , Department where e1.DepartmentId = Department.ID and 3 > (select count(distinct e2.Salary) from Employee as e2 where e1.Salary < e2.Salary and e1.DepartmentId = e2.DepartmentId); 
 
