@@ -7,6 +7,67 @@
 using namespace std;
 
 
+// struct Entry {
+//     int key, value, freq;
+// };
+
+// class LFUCache {
+// public:
+//     LFUCache(int capacity) :capacity(capacity) {}
+
+//     int get(int key) {
+//         auto iter = key_to_iter.find(key);
+//         if (iter == key_to_iter.end()) {
+//             return -1;
+//         }
+//         int value = iter->second->value;
+//         move(iter->second);
+//         return value;
+//     }
+
+//     void put(int key, int value) {
+//         auto iter = key_to_iter.find(key);
+//         if (iter != key_to_iter.end()) {
+//             iter->second->value = value;
+//             move(iter->second);
+//             return;
+//         }
+//         if (key_to_iter.size() == capacity) {
+//             auto& lst = freq_to_list[min_freq];
+//             key_to_iter.erase(lst.back().key);
+//             lst.pop_back();
+//         }
+//         freq_to_list[1].emplace_front(key, value, 1);
+//         key_to_iter[key] = freq_to_list[1].begin();
+//         min_freq = 1;
+//     }
+
+// private:
+//     void move(list<Entry>::iterator it) {
+//         Entry e = *it;
+//         freq_to_list[e.freq].erase(it);
+//         if (freq_to_list[min_freq].empty()) {
+//             min_freq++;
+//         }
+//         e.freq++;
+//         freq_to_list[e.freq].emplace_front(e);
+//         key_to_iter[e.key] = freq_to_list[e.freq].begin();
+//     }
+
+// private:
+//     int capacity;
+//     int min_freq;
+//     unordered_map<int, list<Entry>::iterator> key_to_iter;
+//     unordered_map<int, list<Entry>> freq_to_list;
+// };
+
+// /**
+//  * Your LFUCache object will be instantiated and called as such:
+//  * LFUCache* obj = new LFUCache(capacity);
+//  * int param_1 = obj->get(key);
+//  * obj->put(key,value);
+//  */
+
 // class Solution {
 // public:
 //     vector<string> findRelativeRanks(vector<int>& score) {
