@@ -6,6 +6,77 @@
 
 using namespace std;
 
+// class LRUCache {
+// public:
+//     LRUCache(int capacity) : capacity(capacity) {}
+
+//     int get(int key) {
+//         auto iter = key_to_iter.find(key);
+//         if (iter == key_to_iter.end()) {
+//             return -1;
+//         }
+//         auto list_iter = iter->second;
+//         cache_list.splice(cache_list.begin(), cache_list, list_iter);
+//         return list_iter->second;
+//     }
+
+//     void put(int key, int value) {
+//         auto iter = key_to_iter.find(key);
+//         if (iter != key_to_iter.end()) {
+//             auto list_iter = iter->second;
+//             list_iter->second = value;
+//             cache_list.splice(cache_list.begin(), cache_list, list_iter);
+//             return ;
+//         }
+//         cache_list.emplace_front(key,value);
+//         key_to_iter[key] = cache_list.begin();
+//         if(key_to_iter.size() > capacity){
+//             key_to_iter.erase(cache_list.back().first);
+//             cache_list.pop_back();
+//         }
+//     }
+
+// private:
+//     int capacity;
+//     list<pair<int, int>> cache_list;
+//     unordered_map<int, list<pair<int, int>>::iterator> key_to_iter;
+// };
+
+// /**
+//  * Your LRUCache object will be instantiated and called as such:
+//  * LRUCache* obj = new LRUCache(capacity);
+//  * int param_1 = obj->get(key);
+//  * obj->put(key,value);
+//  */
+
+// /**
+//  * Definition for a binary tree node.
+//  * struct TreeNode {
+//  *     int val;
+//  *     TreeNode *left;
+//  *     TreeNode *right;
+//  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left),
+//  * right(right) {}
+//  * };
+//  */
+// class Solution {
+//     vector<int> ret;
+
+// public:
+//     void dfs(TreeNode* root, int depth) {
+//         if (root == nullptr)
+//             return;
+//         if (depth == ret.size()) {
+//             ret.push_back(root->val);
+//         }
+//         dfs(root->right, depth + 1);
+//         dfs(root->left, depth + 1);
+//     }
+//     vector<int> rightSideView(TreeNode* root) { dfs(root, 0); return ret;}
+// };
+
 // class AnimalShelf {
 // public:
 //     AnimalShelf() {}
