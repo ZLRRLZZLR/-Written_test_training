@@ -6,6 +6,32 @@
 
 using namespace std;
 
+
+// class Solution {
+// public:
+//     vector<string> findRelativeRanks(vector<int>& score) {
+//         unordered_map<int, int> hmap;
+//         int n = score.size();
+//         vector<string> ret(n);
+//         for (int i = 0; i < n; i++) {
+//             hmap[score[i]] = i;
+//         }
+//         sort(score.begin(), score.end(), greater());
+//         for (int i = 0; i < n; i++) {
+//             if (i == 0) {
+//                 ret[hmap[score[i]]] = "Gold Medal";
+//             } else if (i == 1) {
+//                 ret[hmap[score[i]]] = "Silver Medal";
+//             } else if (i == 2) {
+//                 ret[hmap[score[i]]] = "Bronze Medal";
+//             } else {
+//                 ret[hmap[score[i]]] = to_string(i + 1);
+//             }
+//         }
+//         return ret;
+//     }
+// };
+
 // class LRUCache {
 // public:
 //     LRUCache(int capacity) : capacity(capacity) {}
