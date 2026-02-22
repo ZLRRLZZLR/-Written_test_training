@@ -6,6 +6,56 @@
 
 using namespace std;
 
+// class Solution {
+//   public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      *
+//      * @param nums int整型vector
+//      * @return int整型
+//      */
+//     long long M = 1000000007;
+//     vector<int> tmp;
+//     int InversePairs(vector<int>& nums) {
+//         // write code here
+//         long long n = nums.size();
+//         tmp.resize(n);
+//         return Merge(nums, 0, n - 1) % M;
+//     }
+//     int Merge(vector<int>& nums, int left, int right) {
+//         if (left >= right) return 0;
+
+//         int ret = 0;
+//         int mid = left + (right - left) / 2;
+//         int cur1 = left;
+//         int cur2 = mid + 1;
+//         int i = 0;
+//         ret = (ret + Merge(nums, left, mid) % M) % M;
+//         ret = (ret + Merge(nums, mid + 1, right) % M) % M;
+
+//         while (cur1 <= mid && cur2 <= right) {
+//             if (nums[cur1] > nums[cur2]) {
+//                 ret += (right - cur2 + 1) % M;
+//             }
+//             tmp[i++] = nums[cur1] > nums[cur2] ? nums[cur1++] : nums[cur2++];
+//         }
+
+//         while (cur1 <= mid) {
+//             tmp[i++] = nums[cur1++];
+//         }
+
+//         while (cur2 <= right) {
+//             tmp[i++] = nums[cur2++];
+//         }
+
+//         for(int j = left;j <= right;j++){
+//             nums[j] = tmp[j - left];
+//         }
+//         return ret;
+//     }
+// };
+
 
 // struct Entry {
 //     int key, value, freq;
