@@ -11,6 +11,40 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
+//      * 比较版本号
+//      * @param version1 string字符串
+//      * @param version2 string字符串
+//      * @return int整型
+//      */
+//     int compare(string version1, string version2) {
+//         // write code here
+//         int len1 = 0, len2 = 0, n1 = version1.size(), n2 = version2.size();
+//         while (len1 < n1 || len2 < n2) {
+//             int num1 = 0, num2 = 0;
+//             while (len1 < n1 && version1[len1] != '.') {
+//                 num1 = num1 * 10 + (version1[len1++] - '0');
+//             }
+//             while (len2 < n2 && version2[len2] != '.') {
+//                 num2 = num2 * 10 + (version2[len2++] - '0');
+//             }
+//             if (num1 > num2) {
+//                 return 1;
+//             } else if (num1 < num2) {
+//                 return -1;
+//             }
+//             ++len1;
+//             ++len2;
+//         }
+//         return 0;
+//     }
+// };
+
+
+// class Solution {
+//   public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
 //      *
 //      * @param nums int整型vector
 //      * @return int整型
