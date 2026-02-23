@@ -7,6 +7,34 @@
 using namespace std;
 
 // class Solution {
+// public:
+//     int timeRequiredToBuy(vector<int>& tickets, int k) {
+//         int ret = 0,tk = tickets[k];
+//         //第 k 个人此时买了 3 张票，那么排在他前面的人，此时也至多买了 3 张票；排在他后面的人，此时至多买了 2 张票
+//         for(int i = 0;i < tickets.size();i++){
+//             ret += min(tickets[i],tk - (i > k));
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
+//     int countStudents(vector<int>& students, vector<int>& sandwiches) {
+//         int cnt[2] = {0};
+//         //统计喜欢吃不同类型三明治的学生人数
+//         for(auto& i : students) ++cnt[i];
+
+//         for(auto& i : sandwiches){
+//             //如果当前三明治没人吃，那就卡住了，直接返回剩余人数
+//             if(cnt[i] == 0) return cnt[1 - i];
+//             --cnt[i];
+//         }
+//         return 0;
+//     }
+// };
+
+// class Solution {
 //   public:
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
