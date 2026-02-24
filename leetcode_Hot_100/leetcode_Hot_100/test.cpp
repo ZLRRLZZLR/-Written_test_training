@@ -6,6 +6,33 @@
 
 using namespace std;
 
+// class Solution {
+//     private:
+//     vector<vector<int>> ret;
+//     vector<int> path;
+// public:
+//     vector<vector<int>> findSubsequences(vector<int>& nums) {
+//         dfs(nums,0);
+//         return ret;
+//     }
+
+//     void dfs(vector<int>& nums,int index){
+//         if(path.size() > 1){
+//             ret.push_back(path);
+//         }
+//         unordered_set<int> uset;
+//         for(int i = index;i < nums.size();++i){
+//             if(!path.empty()&&nums[i] < path.back() || uset.find(nums[i]) != uset.end()){
+//                 continue;
+//             }
+//             uset.insert(nums[i]);
+//             path.push_back(nums[i]);
+//             dfs(nums,i + 1);
+//             path.pop_back();
+//         }
+//     }
+// };
+
 // class RecentCounter {
 //     int slot = 0;
 //     queue<int> time;
