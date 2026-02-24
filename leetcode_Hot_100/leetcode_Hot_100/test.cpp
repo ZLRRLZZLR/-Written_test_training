@@ -6,6 +6,48 @@
 
 using namespace std;
 
+// /*
+// // Definition for a Node.
+// class Node {
+// public:
+//     int val;
+//     Node* next;
+//     Node* random;
+    
+//     Node(int _val) {
+//         val = _val;
+//         next = NULL;
+//         random = NULL;
+//     }
+// };
+// */
+
+// class Solution {
+// public:
+//     Node* copyRandomList(Node* head) {
+//         unordered_map<Node*,Node*> hash;
+//         Node* cur = head;
+//         while(cur){
+//             Node* node = new Node(cur->val);
+//             hash[cur] = node;
+//             cur = cur->next;
+//         }
+
+//         cur = head;
+//         Node* newhead = hash[head];
+//         while(cur){
+//             if(cur->next)
+//             hash[cur]->next = hash[cur->next];
+//             if(cur->random)
+//             hash[cur]->random = hash[cur->random];
+
+//             cur = cur->next;
+//         }
+
+//         return newhead;
+//     }
+// };
+
 // class Solution {
 // public:
 //     int timeRequiredToBuy(vector<int>& tickets, int k) {
