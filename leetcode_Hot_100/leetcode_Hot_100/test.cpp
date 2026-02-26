@@ -6,6 +6,37 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     string multiply(string num1, string num2) {
+//         int l1 = num1.size();
+//         int l2 = num2.size();
+//         reverse(num1.begin(),num1.end());
+//         reverse(num2.begin(),num2.end());
+//         vector<int> tmp(l1 + l2 - 1);
+
+//         for(int i = 0;i < l1;i++){
+//             for(int j = 0;j < l2;j++){
+//                 tmp[i + j] += (num1[i] - '0') * (num2[j] - '0');
+//             }
+//         }
+
+//         int cur = 0,t = 0;
+//         string ret;
+//         while(cur < l1 + l2 - 1 || t){
+//             if(cur < l1 + l2 - 1){
+//                 t += tmp[cur++];
+//             }
+//             ret += t % 10 + '0';
+//             t /= 10;
+//         }
+
+//         while(ret.size() > 1 && ret.back() == '0') ret.pop_back();
+//         reverse(ret.begin(),ret.end());
+//         return ret;
+//     }
+// };
+
 // /**
 //  * Definition for a binary tree node.
 //  * struct TreeNode {
