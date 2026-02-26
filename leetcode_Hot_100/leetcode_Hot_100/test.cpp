@@ -6,6 +6,48 @@
 
 using namespace std;
 
+// /**
+//  * Definition for singly-linked list.
+//  * struct ListNode {
+//  *     int val;
+//  *     ListNode *next;
+//  *     ListNode() : val(0), next(nullptr) {}
+//  *     ListNode(int x) : val(x), next(nullptr) {}
+//  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     ListNode* reverseKGroup(ListNode* head, int k) {
+//         ListNode* cur = head;
+//         int len = 0;
+//         while(cur){
+//             cur = cur->next;
+//             len++;
+//         }
+
+//         ListNode newhead(0, head);
+//         ListNode* p0 = &newhead;
+//         ListNode* pre = nullptr;
+//         cur = head;
+
+//         for(;len >= k; len-= k){
+//             for(int i = 0;i < k;i++){
+//                 ListNode* next = cur->next;
+//                 cur->next = pre;
+//                 pre = cur;
+//                 cur = next;
+//             }
+
+//             ListNode* next = p0->next;
+//             p0->next->next = cur;
+//             p0->next = pre;
+//             p0 = next;
+//         }
+//         return newhead.next;
+//     }
+// };
+
 // class Solution {
 // public:
 //     string multiply(string num1, string num2) {
