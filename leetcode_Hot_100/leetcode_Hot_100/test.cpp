@@ -6,6 +6,18 @@
 
 using namespace std;
 
+// class Solution {
+//     int dfs(int n,int m){
+//         if(n == 1) return 0;
+//         return (dfs(n - 1,m) + m) % n; 
+//     }
+// public:
+//     int iceBreakingGame(int num, int target) {
+//         return dfs(num,target);
+//     }
+// };
+
+
 // /**
 //  * Definition for a binary tree node.
 //  * struct TreeNode {
