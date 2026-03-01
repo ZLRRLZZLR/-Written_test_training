@@ -7,6 +7,36 @@
 using namespace std;
 
 // class Solution {
+//     bool isroot(string& root, string& word) {
+//         for (int i = 0; i < root.size(); i++) {
+//             if (root[i] != word[i]) {
+//                 return false;
+//             }
+//         }
+//         return true;
+//     }
+
+// public:
+//     string replaceWords(vector<string>& dictionary, string sentence) {
+//         sort(dictionary.begin(), dictionary.end(),
+//              [](auto& s1, auto& s2) { return s1.size() < s2.size(); });
+//         string ret, word;
+//         stringstream input(sentence);
+//         while (input >> word) {
+//             for (auto& root : dictionary) {
+//                 if (isroot(root, word)) {
+//                     word = root;
+//                     break;
+//                 }
+//             }
+//             ret += word + " ";
+//         }
+//         ret.pop_back();
+//         return ret;
+//     }
+// };
+
+// class Solution {
 //     int dfs(int n,int m){
 //         if(n == 1) return 0;
 //         return (dfs(n - 1,m) + m) % n; 
