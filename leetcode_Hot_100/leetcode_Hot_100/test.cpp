@@ -14,6 +14,40 @@ using namespace std;
 //  *     TreeNode *right;
 //  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
 //  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     int widthOfBinaryTree(TreeNode* root) {
+//         queue<pair<TreeNode*, unsigned int>> q;
+//         unsigned int ret = 0;
+//         unsigned int levelsize = 1;
+//         q.push({root,1});
+//         while(q.size()){
+//             unsigned int tmp = q.back().second - q.front().second + 1;
+//             ret = max(ret,tmp);
+//             while(levelsize--){
+//                 auto node = q.front();
+//                 q.pop();
+//                 if(node.first->left) q.push({node.first->left,node.second * 2});
+//                 if(node.first->right) q.push({node.first->right,node.second * 2 + 1});
+//             }
+//             levelsize = q.size();
+//         }
+//         return ret;
+//     }
+// };
+
+
+// /**
+//  * Definition for a binary tree node.
+//  * struct TreeNode {
+//  *     int val;
+//  *     TreeNode *left;
+//  *     TreeNode *right;
+//  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 //  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left),
 //  * right(right) {}
 //  * };
