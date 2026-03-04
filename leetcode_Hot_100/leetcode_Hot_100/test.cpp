@@ -7,6 +7,62 @@
 using namespace std;
 
 // /**
+//  * Definition for singly-linked list.
+//  * struct ListNode {
+//  *     int val;
+//  *     ListNode *next;
+//  *     ListNode() : val(0), next(nullptr) {}
+//  *     ListNode(int x) : val(x), next(nullptr) {}
+//  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     void reorderList(ListNode* head) {
+//         int count = 0;
+//         ListNode* cur1 = head;
+//         while (cur1) {
+//             count++;
+//             cur1 = cur1->next;
+//         }
+//         cur1 = head;
+
+//         count /= 2;
+//         count += 1;
+//         ListNode* newhead = new ListNode(-1);
+//         ListNode* cur2 = head;
+//         ListNode* prev = cur2;
+//         while (count--) {
+//             prev = cur2;
+//             cur2 = cur2->next;
+//         }
+
+//         prev->next = nullptr;
+
+//         while (cur2) {
+//             ListNode* tmp = cur2->next;
+//             cur2->next = newhead->next;
+//             newhead->next = cur2;
+//             cur2 = tmp;
+//         }
+
+//         cur2 = newhead->next;
+
+//         while (cur1 != nullptr && cur2 != nullptr) {
+//             ListNode* tmp1 = cur1->next;
+//             ListNode* tmp2 = cur2->next;
+
+//             cur1->next = cur2;
+//             cur2->next = tmp1;
+
+//             cur1 = tmp1;
+//             cur2 = tmp2;
+//         }
+
+//     }
+// };
+
+// /**
 //  * Definition for a binary tree node.
 //  * struct TreeNode {
 //  *     int val;
