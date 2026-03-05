@@ -6,6 +6,23 @@
 
 using namespace std;
 
+
+// class Solution {
+// public:
+//     vector<vector<string>> groupAnagrams(vector<string>& strs) {
+//         vector<vector<string>> ret;
+//         unordered_map<string, vector<string>> hash;
+//         for (auto& s : strs) {
+//             string str = s;
+//             sort(str.begin(), str.end());
+//             hash[str].push_back(s);
+//         }
+//         for (auto& tmp : hash) {
+//             ret.push_back(tmp.second);
+//         }
+//         return ret;
+//     }
+// };
 // class Solution {
 // public:
 //     int firstMissingPositive(vector<int>& nums) {
