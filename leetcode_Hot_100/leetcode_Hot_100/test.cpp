@@ -6,6 +6,53 @@
 
 using namespace std;
 
+/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    vector<Node*> children;
+
+    Node() {}
+
+    Node(int _val) {
+        val = _val;
+    }
+
+    Node(int _val, vector<Node*> _children) {
+        val = _val;
+        children = _children;
+    }
+};
+*/
+
+// class Solution {
+// public:
+//     vector<vector<int>> levelOrder(Node* root) {
+//         if(root == nullptr) return {};
+//         queue<Node*> q;
+//         q.push(root);
+//         int levelsize = 1;
+//         vector<vector<int>> ret;
+
+//         while(q.size()){
+//             vector<int> tmp;
+//             while(levelsize--){
+//                 auto front = q.front();
+//                 q.pop();
+//                 tmp.push_back(front->val);
+//                 for(auto& child : front->children){
+//                     if(child != nullptr){
+//                         q.push(child);
+//                     }
+//                 }
+//             }
+//             ret.push_back(tmp);
+//             levelsize = q.size();
+//         }
+//         return ret;
+//     }
+// };
 
 // class Solution {
 // public:
