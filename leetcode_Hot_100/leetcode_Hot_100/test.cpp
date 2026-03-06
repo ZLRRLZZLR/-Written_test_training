@@ -6,6 +6,28 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     string removeKdigits(string num, int k) {
+//         string ret;
+//         for (auto& ch : num) {
+//             while (k > 0 && ret.size() > 0 && ret.back() > ch) {
+//                 ret.pop_back();
+//                 k--;
+//             }
+//             ret.push_back(ch);
+//         }
+//         while (k > 0 && ret.size() > 0) {
+//             ret.pop_back();
+//             k--;
+//         }
+
+//         ret.erase(0, ret.find_first_not_of("0"));
+//         return ret.empty() ? "0" : ret;
+//     }
+// };
+
+
 /*
 // Definition for a Node.
 class Node {
