@@ -6,6 +6,39 @@
 
 using namespace std;
 
+// class Solution {
+//     int dx[4] = {1,-1,0,0};
+//     int dy[4] = {0,0,1,-1};
+//     int n = 0;
+//     int m = 0;
+// public:
+//     int numIslands(vector<vector<char>>& grid) {
+//         n = grid.size();
+//         m = grid[0].size();
+//         int ret = 0;
+//         for(int i = 0;i < n;i++){
+//             for(int j = 0;j < m;j++){
+//                 if(grid[i][j] == '1'){
+//                     grid[i][j] = '0';
+//                     bfs(grid,i,j);
+//                     ret++;
+//                 }
+//             }
+//         }
+//         return ret;
+//     }
+//     void bfs(vector<vector<char>>& grid,int a,int b){
+//         for(int i = 0;i < 4;i++){
+//             int x = a + dx[i];
+//             int y = b + dy[i];
+//             if(x >= 0 && x < n && y >= 0 && y < m && grid[x][y] == '1'){
+//                 grid[x][y] = '0';
+//                 bfs(grid,x,y);
+//             }
+//         }
+//     }
+// };
+
 // class LRUCache {
 // public:
 //     LRUCache(int capacity) : capacity(capacity) {}
