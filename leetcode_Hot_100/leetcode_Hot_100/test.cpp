@@ -7,6 +7,66 @@
 using namespace std;
 
 // class Solution {
+// public:
+//     //无向图拓扑排序,从外向内一层一层剥开，最中心的就是结果
+//     vector<int> findMinHeightTrees(int n, vector<vector<int>>& edges) {
+//         if (n == 1) {
+//             return {0};
+//         }
+//         vector<vector<int>> g(n);
+//         vector<int> dgree(n);
+//         for (auto& e : edges) {
+//             int a = e[0], b = e[1];
+//             g[a].push_back(b);
+//             g[b].push_back(a);
+//             ++dgree[a];
+//             ++dgree[b];
+//         }
+//         queue<int> q;
+//         for(int i = 0;i < n;i++){
+//             if(dgree[i] == 1){
+//                 q.push(i);
+//             }
+//         }
+//         vector<int> ret;
+//         while(q.size()){
+//             ret.clear();
+//             for(int i = q.size();i > 0;--i){
+//                 int a = q.front();
+//                 q.pop();
+//                 ret.push_back(a);
+//                 for(int b : g[a]){
+//                     if(--dgree[b] == 1){
+//                         q.push(b);
+//                     }
+//                 }
+//             }
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
+//     bool CheckPermutation(string s1, string s2) {
+//         if (s1.size() != s2.size()) {
+//             return false;
+//         }
+//         unordered_map<char, int> hash;
+//         for (auto& ch : s1) {
+//             hash[ch]++;
+//         }
+//         for (auto& ch : s2) {
+//             hash[ch]--;
+//         }
+//         for(auto& p : hash){
+//             if(p.second != 0) return false;
+//         }
+//         return true;
+//     }
+// };
+
+// class Solution {
 //     int dx[4] = {1,-1,0,0};
 //     int dy[4] = {0,0,1,-1};
 //     int n = 0;
