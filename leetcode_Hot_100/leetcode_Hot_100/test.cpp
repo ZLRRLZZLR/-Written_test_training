@@ -6,6 +6,44 @@
 
 using namespace std;
 
+// /**
+//  * Definition for a binary tree node.
+//  * struct TreeNode {
+//  *     int val;
+//  *     TreeNode *left;
+//  *     TreeNode *right;
+//  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     bool isInTree(TreeNode* root,TreeNode* node){
+//         if(root == nullptr){
+//             return false;
+//         }
+//         return root == node || isInTree(root->left,node) || isInTree(root->right,node);
+//     }
+
+//     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+//         if(root == nullptr){
+//             return nullptr;
+//         }
+//         if(root == p || root == q){
+//             return root;
+//         }
+//         bool pInLeftTree = isInTree(root->left,p);
+//         bool pInRightTree = !pInLeftTree;
+
+//         bool qInLeftTree = isInTree(root->left,q);
+//         bool qInRightTree = !qInLeftTree;
+
+//         if(pInLeftTree&&qInLeftTree) return lowestCommonAncestor(root->left,p,q);
+//         if(pInRightTree&&qInRightTree) return lowestCommonAncestor(root->right,p,q);
+
+//         return root;
+//     }
+// };
+
 // class Solution {
 // public:
 //     //无向图拓扑排序,从外向内一层一层剥开，最中心的就是结果
