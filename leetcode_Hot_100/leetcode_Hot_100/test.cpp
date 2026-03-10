@@ -9,6 +9,19 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int maxProfit(vector<int>& prices) {
+//         int minprice = INT_MAX;
+//         int ret = 0;
+//         for(int i = 0;i < prices.size();i++){
+//             minprice = min(minprice,prices[i]);
+//             ret = max(ret,prices[i] - minprice);
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     vector<vector<int>> generate(int numRows) {
 //         vector<vector<int>> ret(numRows);
 //         for(int i = 0;i < numRows;i++){
