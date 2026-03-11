@@ -8,6 +8,29 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int storeWater(vector<int>& bucket, vector<int>& vat) {
+//         int mx = 0;
+//         for(int i = 0;i < vat.size();i++){
+//             mx = max(mx,vat[i]);
+//         }
+//         if(mx == 0){
+//             return 0;
+//         }
+//         int ret = INT_MAX;
+//         int n = bucket.size();
+//         for(int x = 1; x <= mx;x++){
+//             int y = 0;
+//             for(int i = 0;i < n;i++){
+//                 y += max(0,(vat[i] + x - 1) / x - bucket[i]);
+//             }
+//             ret = min(ret,x + y);
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     int fib(int n) {
 //         if(n == 0) return 0;
 //         if(n == 1) return 1;
