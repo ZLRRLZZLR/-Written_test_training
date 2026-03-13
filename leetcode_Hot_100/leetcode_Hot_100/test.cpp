@@ -6,6 +6,32 @@
 
 using namespace std;
 
+
+// class Solution {
+// public:
+//     int nthSuperUglyNumber(int n, vector<int>& primes) {
+//         vector<long long> dp(n + 1);
+//         dp[1] = 1;
+//         int m = primes.size();
+//         vector<long long> nums(m);
+//         vector<int> pointers(m,1);
+//         for(int i = 2;i <= n;i++){
+//             long long minm = INT_MAX;
+//             for(int j = 0;j < m;j++){
+//                 nums[j] = dp[pointers[j]] * primes[j];
+//                 minm = min(minm,nums[j]);
+//             }
+//             dp[i] = minm;
+//             for(int j = 0;j < m;j++){
+//                 if(minm == nums[j]){
+//                     pointers[j]++;
+//                 }
+//             }
+//         }
+//         return dp[n];
+//     }
+// };
+
 // class Solution {
 // public:
 //     int storeWater(vector<int>& bucket, vector<int>& vat) {
