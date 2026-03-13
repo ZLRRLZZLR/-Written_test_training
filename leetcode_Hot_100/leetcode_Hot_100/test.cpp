@@ -8,6 +8,32 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int eatenApples(vector<int>& apples, vector<int>& days) {
+//         int ret = 0;
+//         priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
+//         for(int i = 0;i < apples.size() || pq.size();i++){
+//             //去除已经腐烂的
+//             while(pq.size() && pq.top().first == i){
+//                 pq.pop();
+//             }
+//             if(i < apples.size() && apples[i]){
+//                 pq.emplace(i + days[i],apples[i]);
+//             }
+//             if(pq.size()){
+//                 ret++;
+//                 auto [day,num] = pq.top();
+//                 pq.pop();
+//                 if(num > 1){
+//                     pq.emplace(day,num - 1);
+//                 }
+//             }
+//         }
+//         return ret;
+//     }
+// }; 
+
+// class Solution {
+// public:
 //     int maxProfit(vector<int>& prices) {
 //         int n = prices.size();
 //         int left = 0,right = 1;
