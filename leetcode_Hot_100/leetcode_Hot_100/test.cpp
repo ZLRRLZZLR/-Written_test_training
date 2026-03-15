@@ -6,6 +6,47 @@
 
 using namespace std;
 
+
+// /**
+//  * struct TreeNode {
+//  *	int val;
+//  *	struct TreeNode *left;
+//  *	struct TreeNode *right;
+//  *	TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
+//      * @param preOrder int整型vector 
+//      * @param vinOrder int整型vector 
+//      * @return TreeNode类
+//      */
+//     TreeNode* RebuildTree(vector<int>& preOrder, vector<int>& vinOrder,int& prei,int vinbegin,int vinend){
+//         if(vinbegin >= vinend){
+//             return nullptr;
+//         }
+//         TreeNode* root = new TreeNode(preOrder[prei]);
+//         int cur = vinbegin;
+//         while(vinOrder[cur] != preOrder[prei]){
+//             cur++;
+//         }
+//         prei++;
+//         root->left = RebuildTree(preOrder, vinOrder, prei, vinbegin, cur);
+//         root->right = RebuildTree(preOrder, vinOrder, prei, cur + 1, vinend);
+//         return root;
+//     }
+
+//     TreeNode* reConstructBinaryTree(vector<int>& preOrder, vector<int>& vinOrder) {
+//         // write code here
+//         int i = 0;
+//         return RebuildTree(preOrder,vinOrder,i,0,vinOrder.size());
+//     }
+// };
+
 // class Solution {
 // public:
 //     int eatenApples(vector<int>& apples, vector<int>& days) {
