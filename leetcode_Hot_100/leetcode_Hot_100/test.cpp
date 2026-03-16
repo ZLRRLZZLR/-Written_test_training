@@ -7,6 +7,56 @@
 using namespace std;
 
 
+// class Solution {
+//   public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 求二叉树的右视图
+//      * @param preOrder int整型vector 先序遍历
+//      * @param inOrder int整型vector 中序遍历
+//      * @return int整型vector
+//      */
+//      vector<int> ret;
+//     TreeNode* RebuildTree(vector<int>& preOrder, vector<int>& vinOrder, int& prei,
+//                           int vinbegin, int vinend) {
+//         if (vinbegin >= vinend) {
+//             return nullptr;
+//         }
+//         TreeNode* root = new TreeNode(preOrder[prei]);
+//         int cur = vinbegin;
+//         while (vinOrder[cur] != preOrder[prei]) {
+//             cur++;
+//         }
+//         prei++;
+//         root->left = RebuildTree(preOrder, vinOrder, prei, vinbegin, cur);
+//         root->right = RebuildTree(preOrder, vinOrder, prei, cur + 1, vinend);
+//         return root;
+//     }
+
+//     void dfs(TreeNode* root,int deepth){
+//         if(root == nullptr){
+//             return ;
+//         }
+
+//         if(deepth == ret.size()){
+//             ret.push_back(root->val);
+//         }
+//         dfs(root->right,deepth + 1);
+//         dfs(root->left,deepth + 1);
+//     }
+
+//     vector<int> solve(vector<int>& preOrder, vector<int>& inOrder) {
+//         // write code here
+//             int i = 0;
+//             TreeNode* root;
+//             root = RebuildTree(preOrder, inOrder, i, 0, inOrder.size());
+
+//             dfs(root,0);
+//             return ret;
+//     }
+// };
+
 // /**
 //  * struct TreeNode {
 //  *	int val;
