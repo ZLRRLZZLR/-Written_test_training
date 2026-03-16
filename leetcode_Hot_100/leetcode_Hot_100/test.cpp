@@ -7,6 +7,29 @@
 using namespace std;
 
 // class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
+//      * @param a int整型vector 
+//      * @param n int整型 
+//      * @param K int整型 
+//      * @return int整型
+//      */
+//     int findKth(vector<int>& a, int n, int K) {
+//         // write code here
+//         priority_queue<int,vector<int>,less<int>> pq(a.begin(),a.end());
+//         int top = 0;
+//         while(K--){
+//             top = pq.top();
+//             pq.pop();
+//         }
+//         return top;
+//     }
+// };
+
+// class Solution {
 //   public:
 //     void push(int value) {
 //         st.push(value);
