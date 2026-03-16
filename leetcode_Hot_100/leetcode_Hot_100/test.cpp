@@ -6,6 +6,31 @@
 
 using namespace std;
 
+// class Solution {
+//   public:
+//     void push(int value) {
+//         st.push(value);
+//         if(minst.empty() || value <= minst.top()){
+//             minst.push(value);
+//         }
+//     }
+//     void pop() {
+//         int top = st.top();
+//         st.pop();
+//         if(top == minst.top()){
+//             minst.pop();
+//         }
+//     }
+//     int top() {
+//         return st.top();
+//     }
+//     int min() {
+//         return minst.top();
+//     }
+//   private:
+//     stack<int> st;
+//     stack<int> minst;
+// };
 
 // class Solution {
 //   public:
