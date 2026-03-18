@@ -12,6 +12,85 @@ using namespace std;
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
 //      * 
+//      * @param num int整型vector 
+//      * @param size int整型 
+//      * @return int整型vector
+//      */
+//     vector<int> maxInWindows(vector<int>& num, int size) {
+//         // write code here
+//         if(num.size() == 0 || num.size() < size || size == 0) return {};
+
+//         vector<int> ret;
+//         int n = num.size();
+//         for(int i = 0;i + size - 1 < n;i++){
+//             int j = i + size - 1;
+//             int maxval = num[j];
+//             for(int k = i;k < j;k++){
+//                 maxval = max(maxval,num[k]);
+//             }
+//             ret.push_back(maxval);
+//         }
+//         return ret;
+//     }
+// };
+
+
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
+//      * @param s string字符串 
+//      * @return bool布尔型
+//      */
+//     bool isValid(string s) {
+//         // write code here
+//         vector<int> ret;
+//         for(auto& ch : s){
+//             if(ret.empty()){
+//                 ret.push_back(ch);
+//             }
+//             else if((ch == ']' && ret.back() == '[') || (ch == ')' && ret.back() == '(') || (ch == '}' && ret.back() == '{')){
+//                 ret.pop_back();
+//             }
+//             else{
+//                 ret.push_back(ch);
+//             }
+//         }
+//         return ret.empty();
+//     }
+// };
+
+// #include <functional>
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
+//      * @param input int整型vector 
+//      * @param k int整型 
+//      * @return int整型vector
+//      */
+//     vector<int> GetLeastNumbers_Solution(vector<int>& input, int k) {
+//         // write code here
+//         priority_queue<int,vector<int>,greater<int>> pq(input.begin(),input.end());
+//         vector<int> ret;
+//         while(k--){
+//             ret.push_back(pq.top());
+//             pq.pop();
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
 //      * @param a int整型vector 
 //      * @param n int整型 
 //      * @param K int整型 
