@@ -6,6 +6,35 @@
 
 using namespace std;
 
+// #include <functional>
+// #include <queue>
+// class Solution {
+//   public:
+//     void Insert(int num) {
+//         cnt++;
+//         max.push(num);
+//         min.push(max.top());
+//         max.pop();
+//         if(max.size() < min.size()){
+//             max.push(min.top());
+//             min.pop();
+//         }
+//     }
+
+//     double GetMedian() {
+//         if(cnt % 2 == 1){
+//             return (double)max.top();
+//         }
+//         else{
+//             return (double)(min.top() + max.top()) / 2;
+//         }
+//     }
+//   private:
+//   int cnt = 0;
+//     priority_queue<int, vector<int>, less<int>> max;
+//     priority_queue<int, vector<int>, greater<int>> min;
+};
+
 // class Solution {
 // public:
 //     /**
