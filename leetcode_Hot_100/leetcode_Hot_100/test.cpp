@@ -11,6 +11,31 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
+//      * 
+//      * @param matrix int整型vector<vector<>> the matrix
+//      * @return int整型
+//      */
+//     int minPathSum(vector<vector<int> >& matrix) {
+//         // write code here
+//         int n = matrix.size();
+//         int m = matrix[0].size();
+//         vector<vector<int>> dp(n + 1,vector<int>(m + 1,INT_MAX));
+//         dp[0][1] = 0;
+//         dp[1][0] = 0;
+//         for(int i = 1;i <= n;i++){
+//             for(int j = 1;j <= m;j++){
+//                 dp[i][j] = min(dp[i - 1][j],dp[i][j - 1]) + matrix[i - 1][j - 1];
+//             }
+//         }
+//         return dp[n][m];
+//     }
+// };
+
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
 //      * longest common substring
 //      * @param str1 string字符串 the string
 //      * @param str2 string字符串 the string
