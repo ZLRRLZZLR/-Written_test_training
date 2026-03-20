@@ -11,6 +11,38 @@ using namespace std;
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
 //      *
+//      * 解码
+//      * @param nums string字符串 数字串
+//      * @return int整型
+//      */
+//     int solve(string nums) {
+//         // write code here
+//         int n = nums.size();
+//         if(n == 0 || nums[0] == '0') return 0;
+//         vector<int> dp(n + 1,0);
+//         dp[0] = 1;
+//         dp[1] = 1;
+//         for(int i = 2;i <= n;i++){
+//             if((nums[i - 1] - '0') >= 1 && (nums[i - 1] - '0') <= 26){
+//                 dp[i] += dp[i - 1];
+//             }
+//             int tmp = (nums[i - 2] - '0') * 10 + (nums[i - 1] - '0');
+//             if(tmp >= 10 && tmp <= 26){
+//                 dp[i] += dp[i - 2];
+//             }
+//             if(nums[i - 1] == '0' && (tmp < 10 || tmp > 26)){
+//                 return 0;
+//             }
+//         }
+//         return dp[n];
+//     }
+// };
+
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
 //      * 
 //      * @param matrix int整型vector<vector<>> the matrix
 //      * @return int整型
