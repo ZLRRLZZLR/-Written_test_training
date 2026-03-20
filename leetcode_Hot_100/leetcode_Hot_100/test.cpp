@@ -7,6 +7,38 @@
 using namespace std;
 
 // class Solution {
+//   public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 最少货币数
+//      * @param arr int整型vector the array
+//      * @param aim int整型 the target
+//      * @return int整型
+//      */
+//     int minMoney(vector<int>& arr, int aim) {
+//         // write code here
+//         sort(arr.begin(), arr.end());
+//         if (aim == 0) return 0;
+//         int n = arr.size();
+//         if (n == 0) return -1;
+//         if (arr[0] > aim) return -1;
+
+//         vector<int> dp(aim + 1, INT_MAX);
+//         dp[0] = 0;
+//         for(int i = 1;i <= aim;i++){
+//             for(auto& num : arr){
+//                 if(num <= i && dp[i - num] != INT_MAX){
+//                     dp[i] = min(dp[i],dp[i - num] + 1);
+//                 }
+//             }
+//         }
+
+//         return dp[aim] == INT_MAX ? -1 : dp[aim];
+//     }
+// };
+
+// class Solution {
 // public:
 //     /**
 //      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
