@@ -6,6 +6,42 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * longest common substring
+//      * @param str1 string字符串 the string
+//      * @param str2 string字符串 the string
+//      * @return string字符串
+//      */
+//     string LCS(string str1, string str2) {
+//         // write code here
+//         int maxlen = 0;
+//         int endi = 0;
+//         int n = str1.size();
+//         int m = str2.size();
+
+//         vector<vector<int>> dp(n,vector<int>(m,0));
+//         if(str1[0] == str2[0]) dp[0][0] = 1;
+//         for(int i = 1;i < n;i++){
+//             for(int j = 1;j < m;j++){
+//                 if(str1[i] == str2[j]){
+//                         dp[i][j] = dp[i - 1][j - 1] + 1;
+//                         if(maxlen < dp[i][j]){
+//                             maxlen = dp[i][j];
+//                             endi = i;
+//                     }
+//                 }else{
+//                     dp[i][j] = 0;
+//                 }
+//             }
+//         }
+//         return str1.substr(endi - maxlen + 1,maxlen);
+//     }
+// };
+
 // #include <functional>
 // #include <queue>
 // class Solution {
