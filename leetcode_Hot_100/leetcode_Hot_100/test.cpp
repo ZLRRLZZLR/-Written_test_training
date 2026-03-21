@@ -6,6 +6,33 @@
 
 using namespace std;
 
+
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int n = 0;
+//     cin >> n;
+//     long long maxnum = 998244353;
+//     if (n == 1) {
+//         cout << 1 << endl;
+//         return 0;
+//     }
+//     if (n == 2) {
+//         cout << 2 << endl;
+//         return 0;
+//     }
+//     long a = 1, b = 2, c = 0;
+//     for (int i = 3; i <= n; i++) {
+//         c = (a + b) % maxnum;
+//         a = b;
+//         b = c;
+//     }
+//     cout << c << endl;
+//     return 0;
+// }
+// // 64 位输出请用 printf("%lld")
+
 // class Solution {
 // public:
 //     /**
