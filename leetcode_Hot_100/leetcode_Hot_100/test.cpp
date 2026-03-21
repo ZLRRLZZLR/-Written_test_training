@@ -6,6 +6,33 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      * 
+//      * @param strs string字符串vector 
+//      * @return string字符串
+//      */
+//     string longestCommonPrefix(vector<string>& strs) {
+//         // write code 
+//         if(strs.size() == 0) return "";
+//         sort(strs.begin(),strs.end());
+//         string str = strs[0];
+//         for(int i = 1;i < strs.size();i++){
+//             int l1 = str.size(),l2 = strs[i].size();
+//             if(l2 == 0) return "";
+//             for(int j = 0;j < min(l1,l2);j++){
+//                 if(str[j] != strs[i][j]){
+//                     str = str.substr(0,j);
+//                 }
+//             }
+//         }
+//         return str;
+//     }
+// };
+
 // #include <algorithm>
 // class Solution {
 //   public:
