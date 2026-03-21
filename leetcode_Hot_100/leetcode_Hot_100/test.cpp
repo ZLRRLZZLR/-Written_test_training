@@ -7,6 +7,33 @@
 using namespace std;
 
 
+// #include <climits>
+// #include <iostream>
+// #include<vector>
+// using namespace std;
+
+// int main() {
+//     vector<int> arr;
+//     int n = 0;
+//     cin >> n;
+//     for(int i = 0;i < n;i++){
+//         int num = 0;
+//         cin >> num;
+//         arr.push_back(num);
+//     }
+
+//     vector<int> dp(n,INT_MAX);
+//     dp[0] = arr[0];
+//     dp[1] = arr[1];
+
+//     for(int i = 2;i < n;i++){
+//         dp[i] = min(dp[i - 1],dp[i - 2]) + arr[i];
+//     }
+//     cout << dp[n - 1] << endl;
+//     return 0;
+// }
+// // 64 位输出请用 printf("%lld")
+
 // #include <iostream>
 // using namespace std;
 
