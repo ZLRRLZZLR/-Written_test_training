@@ -6,6 +6,39 @@
 
 using namespace std;
 
+// #include <algorithm>
+// class Solution {
+//   public:
+//     /**
+//      * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可
+//      *
+//      *
+//      * @param s string字符串
+//      * @param n int整型
+//      * @return string字符串
+//      */
+//     string trans(string s, int n) {
+//         // write code here
+//         int i = 0, j = 0;
+//         while (i < n) {
+//             j = i;
+//             while (s[j] != ' ' && s[j] != '\0') {
+//                 if (s[j] >= 'a' && s[j] <= 'z') {
+//                     s[j] += 'A' - 'a';
+//                 } else {
+//                     s[j] += 'a' - 'A';
+//                 }
+//                 ++j;
+//             }
+//             reverse(s.begin() + i, s.begin() + j);
+//             i = j + 1;
+//         }
+//         reverse(s.begin(), s.begin() + n);
+//         return s;
+//     }
+// };
+
+
 // class Solution {
 //   public:
 //     /**
