@@ -6,6 +6,31 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+//         int n = nums.size();
+//         vector<int> ret(n - k + 1);
+//         deque<int> q;
+
+//         for(int i = 0;i < n;i++){
+//             while(q.size() && nums[q.back()] <= nums[i]){
+//                 q.pop_back();
+//             }
+//             q.push_back(i);
+
+//             int left = i - k + 1;
+//             if(left > q.front()){
+//                 q.pop_front();
+//             }
+
+//             if(left >= 0)
+//             ret[left] = nums[q.front()];
+//         }
+
+//         return ret;
+//     }
+// };
 
 // class Solution {
 // public:
