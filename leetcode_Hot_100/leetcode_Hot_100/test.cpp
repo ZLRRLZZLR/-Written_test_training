@@ -6,6 +6,47 @@
 
 using namespace std;
 
+
+// class Solution {
+// public:
+//     string minWindow(string s, string t) {
+//         int n = s.size();
+//         int m = t.size();
+//         int ret_left = -1,ret_right = n;
+//         int kinds = 0;
+//         unordered_map<char,int> hash;
+//         for(auto& ch : t){
+//             if(hash[ch] == 0){
+//                 kinds++;
+//             }
+//             hash[ch]--;
+//         }
+//         int count = 0;
+//         int left = 0,right = 0;
+//         for(int right = 0;right < n;right++){
+//             hash[s[right]]++;
+//             if(hash[s[right]] == 0){
+//                 count++;
+//             }
+
+//             while(count == kinds){
+//                 if(right - left < ret_right - ret_left){
+//                     ret_right = right;
+//                     ret_left = left;
+//                 }
+
+//                 if(hash[s[left]] == 0){
+//                     count--;
+//                 }
+
+//                 hash[s[left]]--;
+//                 left++;
+//             }
+//         }
+//         return ret_left < 0 ? "" : s.substr(ret_left,ret_right - ret_left + 1);
+//     }
+// };
+
 // class Solution {
 // public:
 //     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
