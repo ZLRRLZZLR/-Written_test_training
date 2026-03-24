@@ -6,6 +6,49 @@
 
 using namespace std;
 
+// class Solution {
+//     bool vis[7][7] = {0};
+//     int m = 0;
+//     int n = 0;
+//     int dx[4] = {0,0,1,-1};
+//     int dy[4] = {1,-1,0,0};
+// public:
+//     bool exist(vector<vector<char>>& board, string word) {
+//         n = board.size();
+//         m = board[0].size();
+//         for(int i = 0;i < n;i++){
+//             for(int j = 0;j < m;j++){
+//                 if(board[i][j] == word[0]){
+//                     vis[i][j] = true;
+//                     if(dfs(board,word,i,j,1)){
+//                         return true;
+//                     }
+//                     vis[i][j] = false;
+//                 }
+//             }
+//         }
+//         return false;
+//     }
+
+//     bool dfs(vector<vector<char>>& board, string& word,int i,int j,int pos){
+//         if(pos == word.size()){
+//             return true;
+//         }
+
+//         for(int k = 0;k < 4;k++){
+//             int x = i + dx[k],y = j + dy[k];
+//             if(x >= 0 && x < n && y >= 0 && y < m && !vis[x][y] && board[x][y] == word[pos]){
+//                 vis[x][y] = true;
+//                 if(dfs(board,word,x,y,pos + 1)){
+//                     return true;
+//                 }
+//                 vis[x][y] = false;
+//             }
+//         }
+//         return false;
+//     }
+// };
+
 
 // class Solution {
 // public:
