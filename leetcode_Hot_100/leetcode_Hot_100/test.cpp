@@ -7,6 +7,26 @@
 using namespace std;
 
 // class Solution {
+// public:
+//     int firstMissingPositive(vector<int>& nums) {
+//         int n = nums.size();
+//         for(int i = 0;i < n;i++){
+//             while(1 <= nums[i] && nums[i] <= n && nums[nums[i] - 1] != nums[i]){
+//                 int j = nums[i] - 1;
+//                 swap(nums[i],nums[j]);
+//             }
+//         }
+
+//         for(int i = 0;i < n;i++){
+//             if(nums[i] != i + 1){
+//                 return i + 1;
+//             }
+//         }
+//         return n + 1;
+//     }
+// };
+
+// class Solution {
 //     bool vis[7][7] = {0};
 //     int m = 0;
 //     int n = 0;
