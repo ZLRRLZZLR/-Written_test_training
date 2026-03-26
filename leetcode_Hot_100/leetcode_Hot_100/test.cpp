@@ -8,6 +8,23 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int jump(vector<int>& nums) {
+//         int ret = 0;
+//         int mx = 0;
+//         int curx = 0;
+//         for (int i = 0; i < nums.size() - 1; i++) {
+//             mx = max(mx, i + nums[i]);
+//             if (i == curx) {
+//                 curx = mx;
+//                 ret++;
+//             }
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     bool canJump(vector<int>& nums) {
 //         int mx = 0;
 //         for(int i = 0;mx < nums.size() - 1;i++){
