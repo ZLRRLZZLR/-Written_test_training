@@ -8,6 +8,28 @@ using namespace std;
 
 // class Solution {
 // public:
+//     vector<int> partitionLabels(string s) {
+//         int hash[26] = {0};
+//         for (int i = 0; i < s.size(); i++) {
+//             hash[s[i] - 'a'] = i;
+//         }
+
+//         vector<int> ret;
+//         int start = 0, end = 0;
+//         for (int i = 0; i < s.size(); i++) {
+
+//             end = max(end, hash[s[i] - 'a']);
+//             if (end == i) {
+//                 ret.push_back(end - start + 1);
+//                 start = i + 1;
+//             }
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     int jump(vector<int>& nums) {
 //         int ret = 0;
 //         int mx = 0;
