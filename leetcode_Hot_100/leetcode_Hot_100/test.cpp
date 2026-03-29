@@ -6,6 +6,43 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     bool is_palindrome(const string& s, int left, int right) {
+//         while(left < right){
+//             if(s[left++] != s[right--]){
+//                 return false;
+//             }
+//         }
+//         return true;
+//     }
+
+//     vector<vector<string>> ret;
+//     vector<string> path;
+//     int n = 0;
+//     vector<vector<string>> partition(string s) {
+//         n = s.size();
+//         dfs(s,0,0);
+//         return ret; 
+//     }
+
+//     void dfs(string& s,int i,int start){
+//         if(i == n){
+//             ret.push_back(path);
+//             return ;
+//         }
+
+//         if(i < n - 1){
+//             dfs(s,i + 1,start);
+//         }
+
+//         if(is_palindrome(s,start,i)){
+//             path.push_back(s.substr(start,i - start + 1));
+//             dfs(s,i + 1,i + 1);
+//             path.pop_back();
+//         }
+//     }
+// };
 
 // class Solution {
 // public:
