@@ -8,6 +8,32 @@ using namespace std;
 
 // class Solution {
 // public:
+//     int dx[4] = {0,1,0,-1};
+//     int dy[4] = {1,0,-1,0};
+
+//     vector<int> spiralOrder(vector<vector<int>>& matrix) {
+//         int m = matrix.size();
+//         int n = matrix[0].size();
+//         vector<int> ret(m * n);
+//         int i = 0,j = 0,k = 0;
+//         for(int pos = 0;pos < m * n;pos++){
+//             ret[pos] = matrix[i][j];
+//             matrix[i][j] = INT_MAX;
+
+//             int x = i + dx[k];
+//             int y = j + dy[k];
+//             if(x < 0 || x >= m || y < 0 || y >= n || matrix[x][y] == INT_MAX){
+//                 k = (k + 1) % 4;
+//             }
+//             i += dx[k];
+//             j += dy[k];
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     void rotate(vector<vector<int>>& matrix) {
 //         int m = matrix.size();
 //         int n = matrix[0].size();
