@@ -6,6 +6,44 @@
 
 using namespace std;
 
+// #include <iostream>
+// #include<vector>
+// #include <limits.h>
+// using namespace std;
+
+// int main() {
+//     int n = 0,V = 0;
+//     cin >> n >> V;
+
+//     vector<int> vom(n + 1);
+//     vector<int> cost(n + 1);
+//     for(int i = 1;i <= n;i++){
+//         cin >> vom[i] >> cost[i];
+//     }
+
+//     vector<vector<int>> dp1(n + 1,vector<int>(V + 1,0));
+//     vector<vector<int>> dp2(n + 1,vector<int>(V + 1,0));
+//     for(int i = 1;i <= V;i++)
+//         dp2[0][i] = -1;
+
+//     for(int i = 1;i <= n;i++){
+//         for(int j = 1;j <= V;j++){
+//             dp1[i][j] = dp1[i - 1][j];
+//             dp2[i][j] = dp2[i - 1][j];
+//             if(j - vom[i] >= 0 && dp2[i - 1][j - vom[i]] != -1){
+//                 dp2[i][j] = max(cost[i] + dp2[i - 1][j - vom[i]],dp2[i][j]);
+//             }
+//             if(j - vom[i] >= 0){
+//                 dp1[i][j] = max(cost[i] + dp1[i - 1][j - vom[i]],dp1[i][j]);
+//             }
+//         }
+//     }
+
+//     cout << dp1[n][V] << endl << (dp2[n][V] == -1 ? 0 : dp2[n][V]) << endl;
+//     return 0;
+// }
+// // 64 位输出请用 printf("%lld")
+
 // class Solution {
 // public:
 //     int dx[4] = {0,1,0,-1};
