@@ -8,6 +8,25 @@ using namespace std;
 
 // class Solution {
 // public:
+//     bool wordBreak(string s, vector<string>& wordDict) {
+//         int n = s.size();
+//         unordered_set<string> dict(wordDict.begin(),wordDict.end());
+//         s = ' ' + s;
+//         vector<bool> dp(n,0);
+//         dp[0] = true;
+//         for(int i = 1;i <= n;i++){
+//             for(int j = 1;j <= i;j++){
+//                 if(dp[j - 1] && dict.find(s.substr(j,i - j + 1)) != dict.end()){
+//                     dp[i] = true;
+//                 }
+//             }
+//         }
+//         return dp[n];
+//     }
+// };
+
+// class Solution {
+// public:
 //     int coinChange(vector<int>& coins, int amount) {
 //         int n = coins.size();
 //         vector<int> dp(amount + 1,0x3f3f3f3f);
