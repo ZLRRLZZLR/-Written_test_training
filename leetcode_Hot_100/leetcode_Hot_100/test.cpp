@@ -6,6 +6,23 @@
 
 using namespace std;
 
+// class Solution {
+// public:
+//     int numSquares(int n) {
+//         int k = sqrt(n);
+//         vector<int> dp(n + 1,0x3f3f3f3f);
+//         dp[0] = 0;
+
+//         for(int i = 1;i <= k;i++){
+//             for(int j = 0;j <= n;j++){
+//                 if(j >= i * i)
+//                 dp[j] = min(dp[j],dp[j - i * i] + 1);
+//             }
+//         }
+//         return dp[n];
+//     }
+// };
+
 // #include <iostream>
 // #include<vector>
 // #include <limits.h>
