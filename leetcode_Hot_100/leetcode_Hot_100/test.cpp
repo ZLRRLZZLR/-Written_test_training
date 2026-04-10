@@ -8,6 +8,41 @@ using namespace std;
 
 // class Solution {
 // public:
+//     string decodeString(string s) {
+//         int i = 0;
+//         return dfs(s,i);
+//     }
+
+//     string dfs(string& s,int& i){
+//         string ret;
+//         int k = 0;
+//         while(i < s.size())
+//         {
+//             char c = s[i];
+//             ++i;
+//             if(isalpha(c)){
+//                 ret += c;
+//             }
+//             else if(isdigit(c)){
+//                 k = k * 10 + (c - '0'); 
+//             }
+//             else if(c == '['){
+//                 string tmp = dfs(s,i);
+//                 for(;k > 0;k--){
+//                     ret += tmp;
+//                 }
+//             }
+//             else{
+//                 break;
+//             }
+//         }
+//         return ret;
+//     }
+// };
+
+
+// class Solution {
+// public:
 //     int findMin(vector<int>& nums) {
 //         int left = 0,right = nums.size() - 1;
 //         int n = nums.size();
