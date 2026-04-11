@@ -8,6 +8,19 @@ using namespace std;
 
 // class Solution {
 // public:
+//     bool searchMatrix(vector<vector<int>>& matrix, int target) {
+//         int i = matrix.size() - 1,j = 0;
+//         while(i >= 0 && j < matrix[0].size()){
+//             if(target < matrix[i][j]) i--;
+//             else if(target > matrix[i][j]) j++;
+//             else return true;
+//         }
+//         return false;
+//     }
+// };
+
+// class Solution {
+// public:
 //     vector<int> dailyTemperatures(vector<int>& temperatures) {
 //         int n = temperatures.size();
 //         stack<int> st;
