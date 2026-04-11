@@ -8,6 +8,24 @@ using namespace std;
 
 // class Solution {
 // public:
+//     vector<int> dailyTemperatures(vector<int>& temperatures) {
+//         int n = temperatures.size();
+//         stack<int> st;
+//         vector<int> ret(n,0);
+//         for(int i = 0;i < n;i++){
+//             while(st.size() && temperatures[st.top()] < temperatures[i]){
+//                 auto t = st.top();
+//                 st.pop();
+//                 ret[t] = i - t;
+//             }
+//             st.push(i);
+//         }
+//         return ret;
+//     }
+// };
+
+// class Solution {
+// public:
 //     bool canPartition(vector<int>& nums) {
 //         int sum = 0;
 //         for(auto num : nums)
